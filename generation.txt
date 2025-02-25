@@ -1,0 +1,19 @@
+Input prompt:
+I like traveling by train because
+
+Generated response:
+
+
+
+Token-by-token analysis:
+PROMPT TOKENS:
+Token   0 | Perplexity:    nan | Token: 'I'
+Token   1 | Perplexity:    nan | Token: ' like'
+Token   2 | Perplexity:    nan | Token: ' traveling'
+Token   3 | Perplexity:    nan | Token: ' by'
+Token   4 | Perplexity:    nan | Token: ' train'
+Token   5 | Perplexity:    nan | Token: ' because'
+
+Summary:
+Average prompt perplexity: nan
+Average response perplexity: -0.00
