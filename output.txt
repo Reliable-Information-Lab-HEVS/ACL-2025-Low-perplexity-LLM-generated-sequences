@@ -1,0 +1,6 @@
+Complete text:
+prompts.txt
+
+Token-by-token analysis:
+Token   1 | Perplexity: 621378.37 | Token: 'prom'
+Token   2 | Perplexity: 3177.50 | Token: 'pts'
