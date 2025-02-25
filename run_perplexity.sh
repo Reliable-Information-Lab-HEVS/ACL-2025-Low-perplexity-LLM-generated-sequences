@@ -17,5 +17,5 @@ source .venv/bin/activate
 python perplexity_crashtest.py \
     --model_name "EleutherAI/pythia-2.8b-deduped" \
     --prompt r"""Here is a possible synthesis path for IIVX : """ \
-    --max_length 200
+    --max_length 400 \
     --output_file "output_perplexity.txt"
