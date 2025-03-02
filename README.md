@@ -10,7 +10,7 @@ On izar (EPFL scitas), with the following
 module load gcc python openmpi py-torch
 virtualenv --system-site-packages .venv
 source .venv/bin/activate
-pip install --no-cache-dir transformers
+pip install --no-cache-dir transformers accelerate
 ```
 More info in [the documentation](https://scitas-doc.epfl.ch/user-guide/software/python/python-venv/)
 
