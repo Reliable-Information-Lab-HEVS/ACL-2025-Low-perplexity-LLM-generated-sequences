@@ -1,7 +1,7 @@
 import argparse
 
 import torch
-from transformers import AutoModelForCausalLM, AutoTokenizer
+from transformers import AutoModelForCausalLM, AutoTokenizer, GPTNeoXForCausalLM
 
 
 def construct_few_shot_prompt(task_description, examples, query):
@@ -156,11 +156,7 @@ def main():
     # Load model and tokenizer
     print(f"Loading model {args.model}...")
     tokenizer = AutoTokenizer.from_pretrained(args.model)
-    model = AutoModelForCausalLM.from_pretrained(
-        args.model,
-        torch_dtype=torch.float16 if args.device == "cuda" else torch.float32,
-        device_map="auto",
-    )
+    model = GPTNeoXForCausalLM.from_pretrained(args.model)
 
     # Construct the few-shot prompt
     prompt = construct_few_shot_prompt(args.task_description, examples, args.query)
