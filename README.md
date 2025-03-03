@@ -2,6 +2,18 @@
 
 Trying to find harmful content in the training data of LLMs by looking at their outputs. 
 
+## Files
+
+```
+├── outputs/              # Contains output txt files from the LLMs (prompts variations, LLM outputs, ...)
+│
+├── report/               # Documentation and project reports (
+│
+├── run_scripts/          # Scripts to run the project on the cluster (.sh shell or slurm scripts)
+│
+├── src/                  # Source code files (.py)
+```
+
 ## Cluster setup
 
 On izar (EPFL scitas), with the following 
