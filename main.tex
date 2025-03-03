@@ -1,35 +1,71 @@
 \documentclass[a4paper,12pt]{article}
-\usepackage{xcolor}
+\usepackage[dvipsnames]{xcolor}
 \usepackage{emoji}
 \usepackage{enumitem}
+\usepackage{natbib}
+\usepackage[backend=biber]{biblatex}
+\addbibresource{references.bib}
 
 \title{\textbf{Project Status Report} \emoji{rocket}}
-\author{Your Name}
+\author{Arthur Wuhrmann}
 \date{\today}
+\usepackage{hyperref}
 
 \begin{document}
 
 \maketitle
 
+\paragraph{Goal (to refine)} We discussed on 21/02, and it seems like many approaches could be taken and it is important to be specific about what I want to achieve. 
+The goal is to perform exact or near-exact matching from the output of the LLM to its training data. We will first cover a word-specific topic to make the task simpler, like chemistry. Different prompt can be used to try to match some input, like using "According to academia, [...]" as a prefix. The matching can be done either on Google, or by indexing some parts of the training data (if known). 
+
+This means we will not look for general model biases (like biased representations of jobs etc.), because it is less tractable. We might also limit ourselves to certain training data / models, for computational reasons.
+
 \section*{Reading \emoji{books}}
 \subsection*{Papers Read}
 \begin{itemize}
-    \item \textbf{Paper 1:} Author et al. (Year) - \textit{Title of the Paper} \emoji{white-check-mark}
-    \item \textbf{Paper 2:} Author et al. (Year) - \textit{Title of the Paper} \emoji{hourglass-not-done}
-    \item \textbf{Paper 3:} Author et al. (Year) - \textit{Title of the Paper} \emoji{white-check-mark}
+    \item \textbf{Paper 1:} \citeauthor{bender_dangers_2021} (\citeyear{bender_dangers_2021}) - \textit{\citetitle{bender_dangers_2021}} \emoji{white-check-mark}
+        \item \textbf{Paper 2:} \citeauthor{elazar_whats_2024} (\citeyear{elazar_whats_2024}) - \textit{\citetitle{elazar_whats_2024}} \emoji{white-check-mark}
+
+    \item \textbf{Paper 3:} \citeauthor{marone_data_2023} (\citeyear{marone_data_2023}) - \textit{\citetitle{marone_data_2023}} \emoji{white-check-mark}
+
+    \item \textbf{Paper 4:} \citeauthor{mirzadeh_gsm-symbolic_2024} (\citeyear{mirzadeh_gsm-symbolic_2024}) - \textit{\citetitle{mirzadeh_gsm-symbolic_2024}} \emoji{white-check-mark}
+    \item \textbf{Paper 5:} \citeauthor{lee_deduplicating_2022} (\citeyear{lee_deduplicating_2022}) - \textit{\citetitle{lee_deduplicating_2022}}: Shows different approaches to removing duplicates \emoji{white-check-mark}
+
 \end{itemize}
+
 
 \subsection*{Main Takeaways}
 \begin{itemize}
-    \item \textbf{[Done]} Key insight from Paper 1 \emoji{bulb}
-    \item \textbf{[In Progress]} Interesting result from Paper 2 \emoji{chart-increasing}
-    \item \textbf{[Done]} Methodology note from Paper 3 \emoji{memo}
+    \item Type of indexing to try contains Bloom filters\cite{marone_data_2023}, suffix arrays \cite{lee_deduplicating_2022}, grepping\cite{marone_data_2023}, Jaccard index for partial matching \cite{lee_deduplicating_2022}
+    \item Unsafe models to do preliminary analysis : \href{https://huggingface.co/spaces/DontPlanToEnd/UGI-Leaderboard}{HuggingFace link}. However, harder to find a pair unsafe model - dataset, where the dataset is properly labelled and where some parts only can be downloaded (like the chemistry part)
+    \item However, this approach would also mean that we probably won't have exact matching. Thus, we should be careful and 
 \end{itemize}
 
+
+
 \section*{Coding \emoji{computer}}
-\textit{Not yet}
+Available on \href{https://github.com/Reliable-Information-Lab-HEVS/HAIDI-Graphs}{GitHub}. 
+\subsection*{To be done until Mar 01 / Mar 08}
+\begin{itemize}
+    \item [\color{ForestGreen}{DONE}] Got model inference on cluster (Put right parameters, as Andrei suggested)
+    \item [\color{Goldenrod}{WIP}] Create diverse dangerous prompts.
+    \item [\color{Goldenrod}WIP] Get the perplexity for each token of the answer and make nice visualization plots
+    \item [\color{BrickRed}SOON] Isolate potential matches from the outputs
+    \item [\color{BrickRed}SOON] Implement (near-)grep and bloom filters on the chemistry part of The Pile
+    \item [\color{BrickRed}SOON] Perform matching and evaluate the performance
+\end{itemize}
 
 \section*{Writing \emoji{pencil}}
 \textit{Not yet}
 
+\section*{Meetings}
+\begin{itemize}
+    \item \textbf{2025/02/10}: First meeting. Talked about the project in general, mentioned what techniques existed. We agreed that we should try a smaller size project, and might have to target smaller datasets, only on specific areas for example.  
+    \item \textbf{2025/02/21}: We reviewed some of the literature, and try to specify clearly which goal we would achieve (see the beginning of the report). We stated clear next steps, i.e. try a first implementation. Infer some dangerous prompt, try to find it back. For now, "simple" technique like (near-)grepping or bloom filters. Also, look at the perplexity of the model when answering.  
+    \item \textbf{2025/02/27}: Meeting with Andrei, Alexander, Anastasiia, Ines and Leo. We cleared differentiated the points of our projects, and got some feedback. I need to log more what I find. We mentioned some of the difficulties I would encounter (non-exact matching, size of data, ...)
+    
+\end{itemize}
+
+\printbibliography
 \end{document}
+
