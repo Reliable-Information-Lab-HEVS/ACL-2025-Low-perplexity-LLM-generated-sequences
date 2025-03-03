@@ -14,7 +14,7 @@ module load gcc python openmpi py-torch
 source .venv/bin/activate 
 
 # Run the script
-python run_inference.py \
+python src/run_inference.py \
     --model_name "SicariusSicariiStuff/Impish_Mind_8B" \
     --prompt "prompts.txt" \
     --max_length 200 \
