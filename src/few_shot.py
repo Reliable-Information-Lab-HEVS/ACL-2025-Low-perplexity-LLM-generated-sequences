@@ -31,7 +31,7 @@ def construct_few_shot_prompt(task_description, examples, query):
 
 
 def generate_response(
-    prompt, model, tokenizer, max_new_tokens=100, temperature=0.7, top_p=0.9
+    prompt, model, tokenizer, max_length=100, temperature=0.7, top_p=0.9, top_k=50
 ):
     """
     Generate a response for the given prompt using the model.
@@ -40,34 +40,70 @@ def generate_response(
         prompt (str): The input prompt
         model: The transformer model
         tokenizer: The tokenizer
-        max_new_tokens (int): Maximum number of tokens to generate
+        max_length (int): Maximum number of tokens to generate
         temperature (float): Controls randomness in generation
         top_p (float): Controls diversity via nucleus sampling
+        top_k (int): Controls diversity by limiting to top k tokens
 
     Returns:
         str: The generated response
     """
-    inputs = tokenizer(prompt, return_tensors="pt")
+    try:
+        inputs = tokenizer(prompt, return_tensors="pt")
 
-    # Move inputs to the same device as the model
-    inputs = {k: v.to(model.device) for k, v in inputs.items()}
+        # Move inputs to the same device as the model
+        inputs = {k: v.to(model.device) for k, v in inputs.items()}
 
-    # Generate the response
-    with torch.no_grad():
-        outputs = model.generate(
-            **inputs,
-            max_new_tokens=max_new_tokens,
-            temperature=temperature,
-            top_p=top_p,
-            do_sample=True,
-        )
+        # Generate the response with more conservative parameters and error handling
+        with torch.no_grad():
+            outputs = model.generate(
+                **inputs,
+                max_new_tokens=max_length,
+                do_sample=True,
+                temperature=temperature,
+                top_p=top_p,
+                top_k=top_k,
+                pad_token_id=tokenizer.eos_token_id,
+                num_return_sequences=1,
+                repetition_penalty=1.2,
+                # Add more stable parameters
+                bad_words_ids=None,
+                no_repeat_ngram_size=3,
+            )
 
-    # Decode the output, skip the input tokens
-    response = tokenizer.decode(
-        outputs[0][inputs["input_ids"].shape[1] :], skip_special_tokens=True
-    )
+        # Decode the output
+        response = tokenizer.decode(outputs[0], skip_special_tokens=True)
 
-    return response
+        # Return only the response part, not the original prompt
+        if prompt in response:
+            response = response[len(prompt) :]
+
+        return response.strip()
+
+    except RuntimeError as e:
+        # Fallback to greedy decoding if sampling fails
+        print(f"Sampling failed with error: {e}. Falling back to greedy decoding.")
+
+        try:
+            with torch.no_grad():
+                outputs = model.generate(
+                    **inputs,
+                    max_length=max_length,
+                    do_sample=False,  # Greedy decoding
+                    pad_token_id=tokenizer.eos_token_id,
+                    num_return_sequences=1,
+                )
+
+            response = tokenizer.decode(outputs[0], skip_special_tokens=True)
+
+            if prompt in response:
+                response = response[len(prompt) :]
+
+            return response.strip()
+
+        except Exception as e2:
+            print(f"Greedy decoding also failed: {e2}")
+            return f"Error generating response: {e2}"
 
 
 def main():
@@ -139,7 +175,7 @@ def main():
         prompt,
         model,
         tokenizer,
-        max_new_tokens=args.max_new_tokens,
+        max_length=args.max_new_tokens,
         temperature=args.temperature,
         top_p=args.top_p,
     )
