@@ -182,7 +182,7 @@ def main():
     # Generate the responses
     responses = []
     for i in range(args.n):  # we do it n times
-
+        print(f"Generated {i}/{args.n}")
         response = generate_response(
             prompt,
             model,
