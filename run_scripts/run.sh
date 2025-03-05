@@ -15,7 +15,7 @@ source .venv/bin/activate
 
 # Run the script
 python src/run_inference.py \
-    --model_name "SicariusSicariiStuff/Impish_Mind_8B" \
+    --model_name "EleutherAI/pythia-2.8b" \
     --prompt "prompts.txt" \
     --max_length 200 \
     --output_file "output.txt"
