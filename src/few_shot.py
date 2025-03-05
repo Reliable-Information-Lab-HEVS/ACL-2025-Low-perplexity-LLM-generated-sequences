@@ -193,7 +193,7 @@ def main():
         )
         responses.append(response)
 
-    dic = {"prompt": prompt, "variants": responses}
+    dic = {"prompt": args.query, "variants": responses}
 
     content = json.dumps(dic, indent=4)
 
