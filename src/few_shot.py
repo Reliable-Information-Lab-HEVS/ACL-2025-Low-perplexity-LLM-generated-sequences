@@ -1,4 +1,5 @@
 import argparse
+import json
 
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer, GPTNeoXForCausalLM
@@ -118,6 +119,12 @@ def main():
         "--task_description", type=str, required=True, help="Description of the task"
     )
     parser.add_argument(
+        "--output",
+        type=str,
+        required=True,
+        help="Name of the JSON output file, in which the prompts will be stored.",
+    )
+    parser.add_argument(
         "--examples_file",
         type=str,
         required=True,
@@ -125,6 +132,12 @@ def main():
     )
     parser.add_argument(
         "--query", type=str, required=True, help="Query to generate a response for"
+    )
+    parser.add_argument(
+        "--n",
+        type=int,
+        default=10,
+        help="Number of prompts variation to generate",
     )
     parser.add_argument(
         "--max_new_tokens",
@@ -166,20 +179,31 @@ def main():
     print(prompt)
     print("-" * 50)
 
-    # Generate the response
-    response = generate_response(
-        prompt,
-        model,
-        tokenizer,
-        max_length=args.max_new_tokens,
-        temperature=args.temperature,
-        top_p=args.top_p,
-    )
+    # Generate the responses
+    responses = []
+    for i in range(args.n):  # we do it n times
 
-    print("\nGenerated Response:")
+        response = generate_response(
+            prompt,
+            model,
+            tokenizer,
+            max_length=args.max_new_tokens,
+            temperature=args.temperature,
+            top_p=args.top_p,
+        )
+        responses.append(response)
+
+    dic = {"prompt": prompt, "variants": responses}
+
+    content = json.dumps(dic, indent=4)
+
+    print("\nLast Response Generated:")
     print("-" * 50)
-    print(response)
+    print(responses[-1])
     print("-" * 50)
+
+    with open(args.output, "w", encoding="utf-8") as f:
+        f.write(content)
 
 
 if __name__ == "__main__":
