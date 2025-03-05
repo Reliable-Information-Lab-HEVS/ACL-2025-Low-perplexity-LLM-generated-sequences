@@ -169,7 +169,7 @@ def main():
     # Load model and tokenizer
     print(f"Loading model {args.model}...")
     tokenizer = AutoTokenizer.from_pretrained(args.model)
-    model = GPTNeoXForCausalLM.from_pretrained(args.model)
+    model = AutoModelForCausalLM.from_pretrained(args.model)
 
     # Construct the few-shot prompt
     prompt = construct_few_shot_prompt(args.task_description, examples, args.query)
