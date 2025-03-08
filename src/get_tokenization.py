@@ -16,12 +16,6 @@ def main():
     )
     args = parser.parse_args()
 
-    # Load examples from file
-    import json
-
-    with open(args.examples_file, "r") as f:
-        examples = json.load(f)
-
     # Load model and tokenizer
     print(f"Loading tokenizer {args.model}...")
     tokenizer = AutoTokenizer.from_pretrained(args.model)
