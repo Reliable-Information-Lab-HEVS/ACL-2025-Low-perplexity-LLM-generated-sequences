@@ -72,6 +72,11 @@ def main():
             prompts = [prompt_data['prompt']] + prompt_data.get('variants', [])
     else:
         prompts = [args.prompt]
+        
+    # Ensure the output directory exists
+    output_dir = os.path.dirname(args.output_file)
+    if output_dir and not os.path.exists(output_dir):
+        os.makedirs(output_dir)
     
     for prompt in prompts:
     
@@ -88,7 +93,7 @@ def main():
             
             # Write results to file
             with open(current_output_file, 'w', encoding='utf-8') as f:
-                f.write(f"Prompt: {args.prompt}\n\n")
+                f.write(f"Prompt: {prompt}\n\n")
                 f.write(f"Generated text:\n{generated_text}\n\n")
                 f.write("Token perplexities:\n")
                 for token, perplexity in token_perplexities:
