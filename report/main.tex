@@ -48,8 +48,8 @@ Available on \href{https://github.com/Reliable-Information-Lab-HEVS/HAIDI-Graphs
 \subsection*{To be done until Mar 01 / Mar 08}
 \begin{itemize}
     \item [\color{ForestGreen}{DONE}] Got model inference on cluster (Put right parameters, as Andrei suggested)
-    \item [\color{Goldenrod}{WIP}] Create diverse dangerous prompts.
-    \item [\color{Goldenrod}WIP] Get the perplexity for each token of the answer and make nice visualization plots
+    \item [\color{ForestGreen}{DONE}] Create diverse dangerous prompts. \textit{However, we encountered some problems because the model (Mistral 7B v.03) often rephrases mispelling the words, for example \texttt{Novichock} instead of \texttt{Novichoc}. We think this might be due to the tokenization, or to the context given to the model.}
+    \item [\color{Goldenrod}WIP] Get the perplexity for each token of the answer and make nice visualization plots.
     \item [\color{BrickRed}SOON] Isolate potential matches from the outputs
     \item [\color{BrickRed}SOON] Implement (near-)grep and bloom filters on the chemistry part of The Pile
     \item [\color{BrickRed}SOON] Perform matching and evaluate the performance
@@ -63,6 +63,7 @@ Available on \href{https://github.com/Reliable-Information-Lab-HEVS/HAIDI-Graphs
     \item \textbf{2025/02/10}: First meeting. Talked about the project in general, mentioned what techniques existed. We agreed that we should try a smaller size project, and might have to target smaller datasets, only on specific areas for example.  
     \item \textbf{2025/02/21}: We reviewed some of the literature, and try to specify clearly which goal we would achieve (see the beginning of the report). We stated clear next steps, i.e. try a first implementation. Infer some dangerous prompt, try to find it back. For now, "simple" technique like (near-)grepping or bloom filters. Also, look at the perplexity of the model when answering.  
     \item \textbf{2025/02/27}: Meeting with Andrei, Alexander, Anastasiia, Ines and Leo. We cleared differentiated the points of our projects, and got some feedback. I need to log more what I find. We mentioned some of the difficulties I would encounter (non-exact matching, size of data, ...)
+    \item \textbf{2025/03/03}: Meeting with Anastasiia. Clarifying what I was working on, and making clearer objectives for the project. Mentioned some of the results obtained, with outputs that seem to lack technical chemical words. We will try to cover enough probability space to end up on low perplexity technical output that could be used to map to the original training data.
     
 \end{itemize}
 
