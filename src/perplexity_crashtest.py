@@ -3,6 +3,7 @@ import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 import numpy as np
 import os
+import json
 
 def generate_and_compute_perplexity(model, tokenizer, prompt, max_length, temperature, device):
     # Tokenize the prompt
@@ -64,28 +65,36 @@ def main():
     tokenizer = AutoTokenizer.from_pretrained(args.model_name)
     model = AutoModelForCausalLM.from_pretrained(args.model_name).to(device)
     
-    # Process multiple generations
-    for i in range(args.n_gen):
-        # Get output file name with index
-        base_name, ext = os.path.splitext(args.output_file)
-        current_output_file = f"{base_name}_{i}{ext}"
-        
-        print(f"Generating text {i+1}/{args.n_gen}...")
-        
-        # Generate text and compute perplexity
-        generated_text, token_perplexities = generate_and_compute_perplexity(
-            model, tokenizer, args.prompt, args.max_length, args.temp, device
-        )
-        
-        # Write results to file
-        with open(current_output_file, 'w', encoding='utf-8') as f:
-            f.write(f"Prompt: {args.prompt}\n\n")
-            f.write(f"Generated text:\n{generated_text}\n\n")
-            f.write("Token perplexities:\n")
-            for token, perplexity in token_perplexities:
-                f.write(f"{token}: {perplexity:.4f}\n")
-        
-        print(f"Results written to {current_output_file}")
+    # Check if the prompt argument is a .json file
+    if args.prompt.endswith('.json'):
+        with open(args.prompt, 'r', encoding='utf-8') as f:
+            prompt_data = json.load(f)
+            prompts = [prompt_data['prompt']] + prompt_data.get('variants', [])
+    else:
+        prompts = [args.prompt]
+    
+    for prompt in prompts:
+    
+        # Process multiple generations
+        for i in range(args.n_gen):
+            # Get output file name with index
+            base_name, ext = os.path.splitext(args.output_file)
+            current_output_file = f"{base_name}_{i}{ext}"
+            
+            # Generate text and compute perplexity
+            generated_text, token_perplexities = generate_and_compute_perplexity(
+                model, tokenizer, prompt, args.max_length, args.temp, device
+            )
+            
+            # Write results to file
+            with open(current_output_file, 'w', encoding='utf-8') as f:
+                f.write(f"Prompt: {args.prompt}\n\n")
+                f.write(f"Generated text:\n{generated_text}\n\n")
+                f.write("Token perplexities:\n")
+                for token, perplexity in token_perplexities:
+                    f.write(f"{token}: {perplexity:.4f}\n")
+            
+            print(f"Results written to {current_output_file}")
 
 if __name__ == "__main__":
     main()

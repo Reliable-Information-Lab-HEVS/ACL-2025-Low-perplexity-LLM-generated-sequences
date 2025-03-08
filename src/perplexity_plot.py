@@ -15,7 +15,7 @@ def visualize_token_perplexity(
     figsize=(16, 8),
     fontsize=14,
     title="Token Perplexity Visualization",
-    max_line_width=120,
+    max_line_width=300,
     line_spacing=2.2,
 ):
     """
@@ -208,8 +208,10 @@ if __name__ == "__main__":
 
     import glob
 
-    for path in glob.glob(args.input):
+    print(args.input)
 
+    for path in glob.glob(args.input):
+        print(path)
         tokens = []
         perplexities = []
         with open(path, "r", encoding="utf-8") as file:
@@ -226,12 +228,16 @@ if __name__ == "__main__":
 
         perplexities = np.log(perplexities)
         # Create visualization
-        fig, ax = visualize_token_perplexity(tokens, perplexities)
+        fig, ax = visualize_token_perplexity(tokens, perplexities, figsize=(36, 8))
 
         # Create visualization
         # fig, ax = visualize_token_perplexity(tokens, (perplexities > 0.5).astype(int))
 
         # Save figure (optional)
-        plt.savefig(f"{path[:-4]}.png", dpi=300, bbox_inches="tight")
+        plt.savefig(
+            f"{args.output}/{path.split('/')[-1][:-4]}.png",
+            dpi=100,
+            bbox_inches="tight",
+        )
 
         # plt.show()
