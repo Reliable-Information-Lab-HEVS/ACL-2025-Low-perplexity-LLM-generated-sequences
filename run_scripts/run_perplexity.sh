@@ -16,6 +16,6 @@ source .venv/bin/activate
 # Run the script
 python src/perplexity_crashtest.py \
     --model_name "EleutherAI/pythia-2.8b-deduped" \
-    --prompt r"""Here is a possible synthesis path for IIVX : """ \
+    --prompt r"""The first step is to synthetize ethyl methylphosphonite. For this, """ \
     --max_length 400 \
     --output_file "output_perplexity.txt"
