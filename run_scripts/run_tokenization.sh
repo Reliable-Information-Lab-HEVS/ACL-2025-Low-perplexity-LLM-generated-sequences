@@ -1,7 +1,7 @@
 #!/bin/bash
-#SBATCH --job-name=few_shot_prompts
-#SBATCH --output=logs/%j.out
-#SBATCH --error=logs/%j.err
+#SBATCH --job-name=tokenization
+#SBATCH --output=logs/tokenize_%j.out
+#SBATCH --error=logs/tokenize_%j.err
 #SBATCH --time=01:00:00
 #SBATCH --gpus=1
 #SBATCH --cpus-per-task=4
@@ -14,4 +14,4 @@ module load gcc python openmpi py-torch
 source .venv/bin/activate 
 
 # Run the script
-python src/few_shot.py "$@"
+python src/get_tokenization.py "$@"

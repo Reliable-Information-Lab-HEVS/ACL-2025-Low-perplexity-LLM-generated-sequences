@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=llm_inference
+#SBATCH --job-name=perp_inference
 #SBATCH --output=logs/%j.out
 #SBATCH --error=logs/%j.err
 #SBATCH --time=01:00:00
