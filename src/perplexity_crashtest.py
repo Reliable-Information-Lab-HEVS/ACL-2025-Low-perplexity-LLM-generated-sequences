@@ -84,8 +84,7 @@ def main():
     parser.add_argument('--temp', type=float, default=1.0, help='Temperature for sampling')
     parser.add_argument('--n_gen', type=int, default=1, help='Number of generations to perform')
     parser.add_argument('--output_file', type=str, default='output_perplexity.txt', help='Output file name')
-    parser.add_argument('--candidates', type=str, default='candidates.json', help='Candidate json file name')
-    parser.add_argument('--perplexity_threshold', type=float, default=5.0, 
+    parser.add_argument('--perplexity_threshold', type=float, default=1.0, 
                         help='Threshold for low perplexity in finding longest sequence')
     parser.add_argument('--json_output', type=str, default='perplexity_results.json', 
                         help='JSON file to store perplexity results')
