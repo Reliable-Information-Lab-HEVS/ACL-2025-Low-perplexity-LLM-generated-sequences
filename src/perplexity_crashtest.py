@@ -148,6 +148,7 @@ def main():
             
             # Extract just the perplexity values for the get_longest_low_perplexity function
             perplexity_values = [perp for _, perp in token_perplexities]
+            perplexity_values = np.log(perplexity_values)
             
             # Find longest sequence of low perplexity tokens
             longest_low_perp_indices = get_longest_low_perplexity(perplexity_values, args.perplexity_threshold)
