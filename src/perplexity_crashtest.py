@@ -46,13 +46,31 @@ def generate_and_compute_perplexity(model, tokenizer, prompt, max_length, temper
     
     return generated_text, token_perplexities, generated_tokens.tolist()
 
-def save_to_json(json_file, prompt, generated_text, token_perplexities, longest_sequence, raw_tokens):
+# This function is no longer needed as we're using get_longest_low_perplexity from utils
+
+def save_to_json(json_file, prompt, generated_text, token_perplexities, longest_low_perp_indices, raw_tokens):
+    # Extract perplexity values only from token_perplexities
+    perplexity_values = [perp for _, perp in token_perplexities]
+    
+    # Get the start and end indices of the longest low perplexity sequence
+    start_idx, end_idx = longest_low_perp_indices
+    
+    # Extract the longest sequence based on indices
+    longest_sequence = []
+    if end_idx >= start_idx:  # Make sure the indices are valid
+        longest_sequence = token_perplexities[start_idx:end_idx+1]
+    
     # Create dictionary with results
     result = {
         "prompt": prompt,
         "generated_text": generated_text,
         "token_perplexities": [(token, float(perplexity)) for token, perplexity in token_perplexities],
+        "longest_low_perplexity_indices": {
+            "start": start_idx,
+            "end": end_idx
+        },
         "longest_low_perplexity_sequence": [(token, float(perplexity)) for token, perplexity in longest_sequence],
+        "longest_low_perplexity_text": "".join([token for token, _ in longest_sequence]),
         "raw_tokens": raw_tokens
     }
     
@@ -84,7 +102,8 @@ def main():
     parser.add_argument('--temp', type=float, default=1.0, help='Temperature for sampling')
     parser.add_argument('--n_gen', type=int, default=1, help='Number of generations to perform')
     parser.add_argument('--output_file', type=str, default='output_perplexity.txt', help='Output file name')
-    parser.add_argument('--perplexity_threshold', type=float, default=1.0, 
+    parser.add_argument('--candidates', type=str, default='candidates.json', help='Candidate json file name')
+    parser.add_argument('--perplexity_threshold', type=float, default=5.0, 
                         help='Threshold for low perplexity in finding longest sequence')
     parser.add_argument('--json_output', type=str, default='perplexity_results.json', 
                         help='JSON file to store perplexity results')
@@ -130,10 +149,11 @@ def main():
                 model, tokenizer, prompt, args.max_length, args.temp, device
             )
             
-            log_perplexities = np.log([p for _, p in token_perplexities])
+            # Extract just the perplexity values for the get_longest_low_perplexity function
+            perplexity_values = np.log([perp for _, perp in token_perplexities])
             
             # Find longest sequence of low perplexity tokens
-            longest_sequence = get_longest_low_perplexity(log_perplexities, args.perplexity_threshold)
+            longest_low_perp_indices = get_longest_low_perplexity(perplexity_values, args.perplexity_threshold)
             
             # Write results to file
             with open(current_output_file, 'w', encoding='utf-8') as f:
@@ -143,9 +163,20 @@ def main():
                 for token, perplexity in token_perplexities:
                     f.write(f"{token}: {perplexity:.4f}\n")
                 
-                f.write("\nLongest sequence of low perplexity tokens (threshold: {}):\n".format(args.perplexity_threshold))
+                # Extract the longest sequence based on indices
+                start_idx, end_idx = longest_low_perp_indices
+                longest_sequence = []
+                if end_idx >= start_idx:  # Make sure the indices are valid
+                    longest_sequence = token_perplexities[start_idx:end_idx+1]
+                
+                f.write(f"\nLongest sequence of low perplexity tokens (threshold: {args.perplexity_threshold}):\n")
+                f.write(f"Indices: [{start_idx}, {end_idx}]\n")
                 for token, perplexity in longest_sequence:
                     f.write(f"{token}: {perplexity:.4f}\n")
+                
+                # Also print the combined text of the sequence
+                longest_sequence_text = "".join([token for token, _ in longest_sequence])
+                f.write(f"\nLongest low perplexity text: {longest_sequence_text}\n")
             
             # Save results to JSON
             save_to_json(
@@ -153,7 +184,7 @@ def main():
                 prompt,
                 generated_text,
                 token_perplexities,
-                longest_sequence,
+                longest_low_perp_indices,
                 raw_tokens
             )
             
