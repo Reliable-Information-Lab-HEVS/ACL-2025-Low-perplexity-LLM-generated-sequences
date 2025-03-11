@@ -49,9 +49,6 @@ def generate_and_compute_perplexity(model, tokenizer, prompt, max_length, temper
 # This function is no longer needed as we're using get_longest_low_perplexity from utils
 
 def save_to_json(json_file, prompt, generated_text, token_perplexities, longest_low_perp_indices, raw_tokens):
-    # Extract perplexity values only from token_perplexities
-    perplexity_values = [perp for _, perp in token_perplexities]
-    
     # Get the start and end indices of the longest low perplexity sequence
     start_idx, end_idx = longest_low_perp_indices
     
@@ -60,18 +57,18 @@ def save_to_json(json_file, prompt, generated_text, token_perplexities, longest_
     if end_idx >= start_idx:  # Make sure the indices are valid
         longest_sequence = token_perplexities[start_idx:end_idx+1]
     
-    # Create dictionary with results
+    # Create the longest sequence text as a single string
+    longest_sequence_text = "".join([token for token, _ in longest_sequence])
+    
+    # Count the number of tokens in the longest sequence
+    token_count = len(longest_sequence)
+    
+    # Create simplified dictionary with only the requested fields
     result = {
         "prompt": prompt,
         "generated_text": generated_text,
-        "token_perplexities": [(token, float(perplexity)) for token, perplexity in token_perplexities],
-        "longest_low_perplexity_indices": {
-            "start": start_idx,
-            "end": end_idx
-        },
-        "longest_low_perplexity_sequence": [(token, float(perplexity)) for token, perplexity in longest_sequence],
-        "longest_low_perplexity_text": "".join([token for token, _ in longest_sequence]),
-        "raw_tokens": raw_tokens
+        "longest_low_perplexity_text": longest_sequence_text,
+        "token_count": token_count
     }
     
     # Load existing results if file exists
@@ -150,7 +147,7 @@ def main():
             )
             
             # Extract just the perplexity values for the get_longest_low_perplexity function
-            perplexity_values = np.log([perp for _, perp in token_perplexities])
+            perplexity_values = [perp for _, perp in token_perplexities]
             
             # Find longest sequence of low perplexity tokens
             longest_low_perp_indices = get_longest_low_perplexity(perplexity_values, args.perplexity_threshold)
