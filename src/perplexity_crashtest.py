@@ -48,7 +48,7 @@ def generate_and_compute_perplexity(model, tokenizer, prompt, max_length, temper
 
 # This function is no longer needed as we're using get_longest_low_perplexity from utils
 
-def save_to_json(json_file, prompt, generated_text, token_perplexities, longest_low_perp_indices, raw_tokens):
+def save_to_json(json_file, prompt, generated_text, token_perplexities, longest_low_perp_indices, raw_tokens, filename):
     # Get the start and end indices of the longest low perplexity sequence
     start_idx, end_idx = longest_low_perp_indices
     
@@ -65,8 +65,9 @@ def save_to_json(json_file, prompt, generated_text, token_perplexities, longest_
     
     # Create simplified dictionary with only the requested fields
     result = {
-        "prompt": prompt,
-        "generated_text": generated_text,
+        # "prompt": prompt,
+        # "generated_text": generated_text,
+        "file": filename,
         "longest_low_perplexity_text": longest_sequence_text,
         "token_count": token_count
     }
@@ -183,7 +184,8 @@ def main():
                 generated_text,
                 token_perplexities,
                 longest_low_perp_indices,
-                raw_tokens
+                raw_tokens,
+                current_output_file
             )
             
             print(f"Results written to {current_output_file}")
