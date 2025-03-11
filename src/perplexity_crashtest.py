@@ -4,6 +4,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 import numpy as np
 import os
 import json
+from utils import get_longest_low_perplexity
 
 def generate_and_compute_perplexity(model, tokenizer, prompt, max_length, temperature, device):
     # Tokenize the prompt
@@ -43,7 +44,37 @@ def generate_and_compute_perplexity(model, tokenizer, prompt, max_length, temper
             token_perplexity = 1 / token_prob if token_prob > 0 else float('inf')
             token_perplexities.append((token_str, token_perplexity))
     
-    return generated_text, token_perplexities
+    return generated_text, token_perplexities, generated_tokens.tolist()
+
+def save_to_json(json_file, prompt, generated_text, token_perplexities, longest_sequence, raw_tokens):
+    # Create dictionary with results
+    result = {
+        "prompt": prompt,
+        "generated_text": generated_text,
+        "token_perplexities": [(token, float(perplexity)) for token, perplexity in token_perplexities],
+        "longest_low_perplexity_sequence": [(token, float(perplexity)) for token, perplexity in longest_sequence],
+        "raw_tokens": raw_tokens
+    }
+    
+    # Load existing results if file exists
+    existing_results = []
+    if os.path.exists(json_file):
+        try:
+            with open(json_file, 'r', encoding='utf-8') as f:
+                existing_results = json.load(f)
+        except json.JSONDecodeError:
+            # If file exists but is not valid JSON, start with empty list
+            existing_results = []
+    
+    # Append new result
+    if isinstance(existing_results, list):
+        existing_results.append(result)
+    else:
+        existing_results = [result]
+    
+    # Write updated results to file
+    with open(json_file, 'w', encoding='utf-8') as f:
+        json.dump(existing_results, f, indent=2, ensure_ascii=False)
 
 def main():
     parser = argparse.ArgumentParser(description='Generate text and compute perplexity per token')
@@ -53,6 +84,11 @@ def main():
     parser.add_argument('--temp', type=float, default=1.0, help='Temperature for sampling')
     parser.add_argument('--n_gen', type=int, default=1, help='Number of generations to perform')
     parser.add_argument('--output_file', type=str, default='output_perplexity.txt', help='Output file name')
+    parser.add_argument('--candidates', type=str, default='candidates.json', help='Candidate json file name')
+    parser.add_argument('--perplexity_threshold', type=float, default=5.0, 
+                        help='Threshold for low perplexity in finding longest sequence')
+    parser.add_argument('--json_output', type=str, default='perplexity_results.json', 
+                        help='JSON file to store perplexity results')
     
     args = parser.parse_args()
     
@@ -78,8 +114,12 @@ def main():
     if output_dir and not os.path.exists(output_dir):
         os.makedirs(output_dir)
     
-    for prompt in prompts:
+    # Ensure the JSON output directory exists
+    json_dir = os.path.dirname(args.json_output)
+    if json_dir and not os.path.exists(json_dir):
+        os.makedirs(json_dir)
     
+    for prompt in prompts:
         # Process multiple generations
         for i in range(args.n_gen):
             # Get output file name with index
@@ -87,9 +127,14 @@ def main():
             current_output_file = f"{base_name}_{i}{ext}"
             
             # Generate text and compute perplexity
-            generated_text, token_perplexities = generate_and_compute_perplexity(
+            generated_text, token_perplexities, raw_tokens = generate_and_compute_perplexity(
                 model, tokenizer, prompt, args.max_length, args.temp, device
             )
+            
+            token_perplexities = np.log(token_perplexities)
+            
+            # Find longest sequence of low perplexity tokens
+            longest_sequence = get_longest_low_perplexity(token_perplexities, args.perplexity_threshold)
             
             # Write results to file
             with open(current_output_file, 'w', encoding='utf-8') as f:
@@ -98,9 +143,23 @@ def main():
                 f.write("Token perplexities:\n")
                 for token, perplexity in token_perplexities:
                     f.write(f"{token}: {perplexity:.4f}\n")
+                
+                f.write("\nLongest sequence of low perplexity tokens (threshold: {}):\n".format(args.perplexity_threshold))
+                for token, perplexity in longest_sequence:
+                    f.write(f"{token}: {perplexity:.4f}\n")
+            
+            # Save results to JSON
+            save_to_json(
+                args.json_output,
+                prompt,
+                generated_text,
+                token_perplexities,
+                longest_sequence,
+                raw_tokens
+            )
             
             print(f"Results written to {current_output_file}")
+            print(f"JSON results appended to {args.json_output}")
 
 if __name__ == "__main__":
     main()
-
