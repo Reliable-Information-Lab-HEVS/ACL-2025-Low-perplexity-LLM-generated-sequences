@@ -134,12 +134,12 @@ def main():
     if json_dir and not os.path.exists(json_dir):
         os.makedirs(json_dir)
     
-    for prompt in prompts:
+    for i_prompt, prompt in enumerate(prompts):
         # Process multiple generations
         for i in range(args.n_gen):
             # Get output file name with index
             base_name, ext = os.path.splitext(args.output_file)
-            current_output_file = f"{base_name}_{i}{ext}"
+            current_output_file = f"{base_name}_P{i_prompt}_{i}{ext}"
             
             # Generate text and compute perplexity
             generated_text, token_perplexities, raw_tokens = generate_and_compute_perplexity(
