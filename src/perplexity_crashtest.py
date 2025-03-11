@@ -130,10 +130,10 @@ def main():
                 model, tokenizer, prompt, args.max_length, args.temp, device
             )
             
-            token_perplexities = np.log(token_perplexities)
+            log_perplexities = np.log([p for _, p in token_perplexities])
             
             # Find longest sequence of low perplexity tokens
-            longest_sequence = get_longest_low_perplexity(token_perplexities, args.perplexity_threshold)
+            longest_sequence = get_longest_low_perplexity(log_perplexities, args.perplexity_threshold)
             
             # Write results to file
             with open(current_output_file, 'w', encoding='utf-8') as f:
