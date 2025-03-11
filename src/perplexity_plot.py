@@ -10,13 +10,15 @@ from matplotlib.font_manager import FontProperties
 
 def visualize_token_perplexity(
     tokens,
+    prompt,
     perplexities,
     cmap="jet",
     figsize=(16, 8),
     fontsize=14,
     title="Token Perplexity Visualization",
-    max_line_width=300,
+    max_line_width=140,
     line_spacing=2.2,
+    highlight_sequence = None # if not None, displays some specific tokens higlighted, on the form (start_idx, end_idx)
 ):
     """
     Visualize word tokens with color highlighting based on their perplexity values.
@@ -88,13 +90,11 @@ def visualize_token_perplexity(
         lines.append((current_line, current_line_indices))
 
     # Calculate figure height based on number of lines
-    token_height = fontsize * 4
-    total_text_height = len(lines) * token_height * line_spacing
+    token_height = fontsize * 2
+    total_text_height = len(lines) * (token_height * line_spacing)
 
     # Create figure with proper spacing
-    fig_height = figsize[1] * max(
-        1, len(lines) / 3
-    )  # Adjust height based on number of lines
+    fig_height = figsize[1]  # Adjust height based on number of lines
     fig = plt.figure(figsize=(figsize[0], fig_height))
 
     # Create a layout with space for colorbar at bottom
@@ -105,6 +105,12 @@ def visualize_token_perplexity(
     # Turn off axis
     ax.axis("off")
 
+    # Find the index to higlight
+    highlight_from = len(tokens)
+    highlight_to = highlight_from + 1 
+    if highlight_sequence is not None:
+        highlight_from, highlight_to = highlight_sequence
+
     # Set y-limits to accommodate all lines
     y_min = -fontsize
     y_max = total_text_height  # + fontsize * 2
@@ -113,7 +119,7 @@ def visualize_token_perplexity(
     # Draw tokens line by line
     for line_idx, (line_tokens, line_indices) in enumerate(lines):
         x_position = fontsize * 0.5
-        y_position = y_max - (line_idx * token_height * line_spacing)
+        y_position = y_max - (line_idx * (token_height * 1 * line_spacing))
 
         for token, i in zip(line_tokens, line_indices):
             norm_perp = norm_perplexities[i]
@@ -125,9 +131,9 @@ def visualize_token_perplexity(
             # Create a box for the token
             token_width = len(token) * fontsize * 0.6
             rect = patches.Rectangle(
-                (x_position, y_position - 1.5 * fontsize),
+                (x_position, y_position - fontsize),
                 token_width,
-                token_height * 2,
+                token_height * 1.8,
                 facecolor=color,
                 edgecolor="none",
                 alpha=0.7,
@@ -141,6 +147,9 @@ def visualize_token_perplexity(
             )
             text_color = "black" if brightness > 0.6 else "white"
 
+            if highlight_from < i <= highlight_to:
+                text_color = (.6, 0., 0.) if brightness > 0.6 else "pink"
+            
             # Add the token text
             ax.text(
                 x_position + token_width / 2,
@@ -156,12 +165,13 @@ def visualize_token_perplexity(
             # Add perplexity value below
             ax.text(
                 x_position + token_width / 2,
-                y_position - fontsize * 0.3,
+                y_position - fontsize * 0.1,
                 f"{perp:.2f}",
                 ha="center",
                 va="center",
                 color=text_color,
                 fontsize=fontsize * 0.7,
+                fontweight="bold",
             )
 
             # Update x position for next token
@@ -172,7 +182,7 @@ def visualize_token_perplexity(
             ax.set_xlim(0, x_position + fontsize)
 
     # Set title
-    ax.set_title(title, fontsize=fontsize * 1.2, pad=20)
+    ax.set_title(prompt, fontsize=fontsize * 1.2, pad=20)
 
     # Add a horizontal colorbar at the bottom
     norm = plt.Normalize(min_perp, max_perp)
@@ -203,6 +213,12 @@ if __name__ == "__main__":
         required=True,
         help="path of the folder in which to put the figures",
     )
+    parser.add_argument(
+        "--show",
+        type=bool,
+        default=False,
+        help="Whether to display the pictures or not",
+    )
     args = parser.parse_args()
     # Sample data
 
@@ -210,13 +226,23 @@ if __name__ == "__main__":
 
     print(args.input)
 
+    prompt = ""
+    
+    lines = []
+
     for path in glob.glob(args.input):
         print(path)
+
         tokens = []
         perplexities = []
         with open(path, "r", encoding="utf-8") as file:
             b = False
+            
+            prompt = file.readline().split(': ')[1]
+
             for line in file:
+                if len(line) > 4:
+                    lines.append(line)
                 if b and ":" in line:
                     token, perp = line.split(": ")
                     perp = float(perp)
@@ -225,10 +251,16 @@ if __name__ == "__main__":
 
                 if "perplexities:" in line:
                     b = True
+                    break
+
+    print("".join(lines).replace('\n', ''))
+        
+def t():
+    while True:
 
         perplexities = np.log(perplexities)
         # Create visualization
-        fig, ax = visualize_token_perplexity(tokens, perplexities, figsize=(36, 8))
+        fig, ax = visualize_token_perplexity(tokens, prompt, perplexities, figsize=(16, 8), highlight_sequence=get_longest_low_perplexity(perplexities, 1))
 
         # Create visualization
         # fig, ax = visualize_token_perplexity(tokens, (perplexities > 0.5).astype(int))
@@ -240,4 +272,5 @@ if __name__ == "__main__":
             bbox_inches="tight",
         )
 
-        # plt.show()
+        if args.show:
+            plt.show()
