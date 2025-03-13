@@ -4,7 +4,7 @@ Trying to find harmful content in the training data of LLMs by looking at their 
 
 The code allows to run inference from models using the module `transformers`, and compute the perplexity of the output tokens. It can also generate visualization of the perplexity per token.
 
-
+![Image](images/sample_viz.png)
 
 ## Files
 
