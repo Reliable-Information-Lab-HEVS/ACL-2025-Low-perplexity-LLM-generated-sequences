@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Data Portraits</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="shortcut icon" href="static/favicon.ico">
+
+    <style>
+        .highlight-selected {
+          background-color:#f5ec42 !important;
+        }
+
+        .highlight-longest {
+          background-color:#4287f5;
+        }
+
+        .highlight-base {
+            background-color:#d9d9d4
+        }
+
+        html {overflow-y: scroll;}
+
+        #hash-row span {
+          font-size: 0.75em;
+        }
+
+    </style>
+
+  </head>
+
+  <body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-10 mt-5 pb-1 border-bottom">
+                <h1 class="display-3"> Data Portraits</h1>
+                <p>
+                    This portrait is a <span class="fst-italic">sketch</span> on the Pile. Enter a query to check if parts of your text appear in the Pile.
+                    Use a full document for best results.
+                </p>
+                <div class="btn-toolbar justify-content-between">
+                  <div class="btn-group my-1">
+                    <button type="button" class="btn btn-outline-primary" id="prefill-unicorn">Unicorn</button>
+                    <button type="button" class="btn btn-outline-primary" id="prefill-books">Books</button>
+                    <button type="button" class="btn btn-outline-primary" id="prefill-wmt">WMT20 EN-IU</button>
+                    <button type="button" class="btn btn-outline-primary" id="prefill-invsqrt">Fast Inv. Sqrt.</button>
+                  </div>
+                  <div class="btn-group my-1">
+                    <button type="button" class="btn btn-outline-secondary" onclick="save_link()">Copy Link</button>
+                    <button type="button" class="btn btn-outline-secondary" onclick="clear_text()">Clear Text</button>
+                  </div>
+                </div>
+                <div>
+                  <p class="my-1 text-muted" id="prefill-description">
+                    Enter your own text or use a prefill button.
+                  </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-10 mt-3">
+                <form>
+                    <div class="form-group">
+                        <textarea class="form-control" id="query-box" rows="6">Johns Hopkins University is divided into nine schools, five of which serve undergraduates. The Homewood Campus, one of the university’s four campuses in and around Baltimore, is the primary campus for undergraduates. Freshmen and sophomores are required to live on campus. More than 1,300 students participate in the Greek community. Hopkins also has additional campuses for its School of Advanced International Studies in Washington, D.C.; Bologna, Italy; and Nanjing, China. Hopkins’ graduate programs include the top-ranked Bloomberg School of Public Health and the highly ranked School of Education, Whiting School of Engineering, School of Medicine and the well-regarded Peabody Institute for music and dance. Johns Hopkins Hospital is a top-ranked hospital with highly ranked specialties. </textarea>
+                    </div>
+                </form>
+                <p class="my-1">
+                  <span id="status-message" class="text-muted small"></span>
+                  <span id="results-message" class="text-muted small"></span>
+                </p>
+                <!-- <p id="status-message" class="text-muted small"></p>
+                <p id="results-message" class="text-muted small"></p> -->
+
+                <!-- <span id="status-message" class="text-muted small"></span>
+                <span id="results-message" class="text-muted small"></span> -->
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-10">
+                <div class="my-1">
+                    <h5>Matching Text</h5>
+                    <p>Found spans are in grey. The longest span is in blue.
+                    Hovering over a character highlights the longest span that includes that character (there may be overlapping shorter spans).
+                    Clicking shows the component substrings below.
+                    </p>
+                    <div style="white-space: pre-line;" id="echo" class="p-3 mb-2 border border-light bg-light"></div>
+
+
+                    <div class="accordion my-3" id="accordionExample">
+                      <div class="accordion-item">
+
+                        <h2 class="accordion-header" id="headingOne">
+                          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                            <h5>Substring Hashes</h5>
+                          </button>
+                        </h2>
+
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne">
+                          <div class="accordion-body">
+                              <p> Hashes for each of these strings appears in the sketch. Click above to select a new span.
+                              <div class="container">
+                                <div class="row" id="hash-row">
+                                </div>
+                              </div>
+                          </div>
+                        </div>
+
+                      </div>
+
+                      <!-- next item -->
+                      <div class="accordion-item">
+
+                        <h2 class="accordion-header">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            <h5>Longest Chains</h5>
+                          </button>
+                        </h2>
+
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo">
+                          <div class="accordion-body">
+                            <p>The top 20 longest chained matches.</p>
+                            <div id="card-results">
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                      <!-- next item -->
+                    </div>
+                    <!-- accordion is done -->
+
+               </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-10 my-2 pb-1">
+                <h5>Questions?</h5>
+                <p><small class="text-muted">Matches are at least 50 characters. Resolution can be customized for specific usecases.
+                    Your name is probably too short to match, but try pasting a speaker bio to see if you are in the Pile.</small></p>
+                <p><small class="text-muted">By <a href="https://marcmarone.com/">Marc Marone</a> and <a href="https://www.cs.jhu.edu/~vandurme/">Ben Van Durme</a>. See our paper, project pitch, and other datasets back at <a href="https://dataportraits.org/">dataportraits.org</a></small> </p>
+            </div>
+        </div>
+    </div>
+
+    <!--<div class="d-block d-sm-none">xs</div>-->
+    <!--<div class="d-none d-sm-block d-md-none">sm</div>-->
+    <!--<div class="d-none d-md-block d-lg-none">md</div>-->
+    <!--<div class="d-none d-lg-block d-xl-none">lg</div>-->
+    <!--<div class="d-none d-xl-block">xl</div>-->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="static/lodash.throttle.js"></script>
+    <script src="static/prefill.js"></script>
+    <script src="static/demo.js"></script>
+
+  </body>
+</html>

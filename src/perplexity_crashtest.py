@@ -69,7 +69,9 @@ def save_to_json(json_file, prompt, generated_text, token_perplexities, longest_
         # "generated_text": generated_text,
         "file": filename,
         "longest_low_perplexity_text": longest_sequence_text,
-        "token_count": token_count
+        "longest_low_perplexity_length": len(longest_sequence),
+        "token_count": token_count,
+        "avg_perplexity": np.mean(token_perplexities)
     }
     
     # Load existing results if file exists
@@ -157,7 +159,6 @@ def main():
             # Write results to file
             with open(current_output_file, 'w', encoding='utf-8') as f:
                 f.write(f"Prompt: {prompt}\n\n")
-                f.write(f"Generated text:\n{generated_text}\n\n")
                 f.write("Token perplexities:\n")
                 for token, perplexity in token_perplexities:
                     f.write(f"{token}: {perplexity:.4f}\n")
@@ -176,6 +177,8 @@ def main():
                 # Also print the combined text of the sequence
                 longest_sequence_text = "".join([token for token, _ in longest_sequence])
                 f.write(f"\nLongest low perplexity text: {longest_sequence_text}\n")
+                
+                f.write(f"Generated text:\n{generated_text}\n\n")
             
             # Save results to JSON
             save_to_json(
