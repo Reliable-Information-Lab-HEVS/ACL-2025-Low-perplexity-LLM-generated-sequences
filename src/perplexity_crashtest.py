@@ -71,7 +71,7 @@ def save_to_json(json_file, prompt, generated_text, token_perplexities, longest_
         "longest_low_perplexity_text": longest_sequence_text,
         "longest_low_perplexity_length": len(longest_sequence),
         "token_count": token_count,
-        "avg_perplexity": np.mean(token_perplexities)
+        "avg_perplexity": np.mean([perp for _, perp in token_perplexities])
     }
     
     # Load existing results if file exists
