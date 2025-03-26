@@ -7,6 +7,8 @@ import numpy as np
 from matplotlib.colors import LinearSegmentedColormap
 from matplotlib.font_manager import FontProperties
 
+from utils import get_longest_low_perplexity
+
 
 def visualize_token_perplexity(
     tokens,
@@ -241,6 +243,8 @@ if __name__ == "__main__":
             prompt = file.readline().split(': ')[1]
 
             for line in file:
+                if "Longest sequence of low perplexity tokens" in line:
+                    break
                 if len(line) > 4:
                     lines.append(line)
                 if b and ":" in line:
@@ -251,12 +255,6 @@ if __name__ == "__main__":
 
                 if "perplexities:" in line:
                     b = True
-                    break
-
-    print("".join(lines).replace('\n', ''))
-        
-def t():
-    while True:
 
         perplexities = np.log(perplexities)
         # Create visualization
@@ -272,5 +270,4 @@ def t():
             bbox_inches="tight",
         )
 
-        if args.show:
-            plt.show()
+        plt.show()

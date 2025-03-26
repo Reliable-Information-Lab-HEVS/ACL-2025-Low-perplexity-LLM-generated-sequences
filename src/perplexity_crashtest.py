@@ -110,6 +110,8 @@ def main():
     
     args = parser.parse_args()
     
+    
+    
     # Set device
     device = "cuda" if torch.cuda.is_available() else "cpu"
     print(f"Using device: {device}")
