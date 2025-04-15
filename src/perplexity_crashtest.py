@@ -10,7 +10,7 @@ from utils import get_longest_low_perplexity
 
 
 def generate_and_compute_perplexity(
-    model, tokenizer, prompt, max_length, temperature, device
+    model, tokenizer, prompt, max_length, temperature, top_k, top_p, device
 ):
     # Tokenize the prompt
     input_ids = tokenizer.encode(prompt, return_tensors="pt").to(device)
@@ -24,6 +24,8 @@ def generate_and_compute_perplexity(
             temperature=temperature,
             return_dict_in_generate=True,
             output_scores=True,
+            top_k=top_k,
+            top_p=top_p
         )
 
         # Get generated tokens and scores
@@ -135,7 +137,13 @@ def main():
         "--max_length", type=int, default=100, help="Maximum length of generated text"
     )
     parser.add_argument(
-        "--temp", type=float, default=1.0, help="Temperature for sampling"
+        "--temp", type=float, default=0.4, help="Temperature for sampling"
+    )
+    parser.add_argument(
+        "--top_k", type=int, default=20, help="top_k for sampling"
+    )
+    parser.add_argument(
+        "--top_p", type=float, default=0.8, help="top_p for sampling"
     )
     parser.add_argument(
         "--n_gen", type=int, default=1, help="Number of generations to perform"
@@ -204,7 +212,7 @@ def main():
             # Generate text and compute perplexity
             generated_text, token_perplexities, raw_tokens = (
                 generate_and_compute_perplexity(
-                    model, tokenizer, prompt, args.max_length, args.temp, device
+                    model, tokenizer, prompt, args.max_length, args.temp, args.top_k, args.top_p, device
                 )
             )
 

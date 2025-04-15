@@ -1,0 +1,44 @@
+[
+  {
+    "file": "output_perplexity_P0_0.txt",
+    "longest_low_perplexity_text": "ness\" of",
+    "longest_low_perplexity_length": 3,
+    "token_count": 3,
+    "avg_perplexity": 36.746321368102564
+  },
+  {
+    "file": "output_perplexity_P0_0.txt",
+    "longest_low_perplexity_text": " or \"I'm a Witch",
+    "longest_low_perplexity_length": 6,
+    "token_count": 6,
+    "avg_perplexity": 36.23752987360671
+  },
+  {
+    "file": "output_perplexity_P0_0.txt",
+    "longest_low_perplexity_text": ".\n\n",
+    "longest_low_perplexity_length": 3,
+    "token_count": 3,
+    "avg_perplexity": 54.42158196739827
+  },
+  {
+    "file": "output_perplexity_P0_0.txt",
+    "longest_low_perplexity_text": " in the world are",
+    "longest_low_perplexity_length": 4,
+    "token_count": 4,
+    "avg_perplexity": 56.051947032269126
+  },
+  {
+    "file": "output_perplexity_P0_0.txt",
+    "longest_low_perplexity_text": " than that.\n\n",
+    "longest_low_perplexity_length": 5,
+    "token_count": 5,
+    "avg_perplexity": 39.327865401329454
+  },
+  {
+    "file": "output_perplexity_P0_0.txt",
+    "longest_low_perplexity_text": " hesitantly. 'I",
+    "longest_low_perplexity_length": 5,
+    "token_count": 5,
+    "avg_perplexity": 70.4932873402232
+  }
+]
