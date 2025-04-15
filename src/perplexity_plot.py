@@ -7,18 +7,20 @@ import numpy as np
 from matplotlib.colors import LinearSegmentedColormap
 from matplotlib.font_manager import FontProperties
 
+from utils import get_longest_low_perplexity
+
 
 def visualize_token_perplexity(
     tokens,
     prompt,
     perplexities,
     cmap="jet",
-    figsize=(16, 8),
+    figsize=(8, 8),
     fontsize=14,
     title="Token Perplexity Visualization",
-    max_line_width=140,
+    max_line_width=1500,
     line_spacing=2.2,
-    highlight_sequence = None # if not None, displays some specific tokens higlighted, on the form (start_idx, end_idx)
+    highlight_sequence=None,  # if not None, displays some specific tokens higlighted, on the form (start_idx, end_idx)
 ):
     """
     Visualize word tokens with color highlighting based on their perplexity values.
@@ -55,6 +57,8 @@ def visualize_token_perplexity(
     if isinstance(cmap, str):
         cmap = plt.get_cmap(cmap)
 
+    fig_width, fig_height = figsize
+
     # Normalize perplexity values to range [0, 1]
     min_perp = min(perplexities)
     max_perp = max(perplexities)
@@ -64,18 +68,18 @@ def visualize_token_perplexity(
     ]
 
     # Calculate token widths and determine line breaks
-    token_widths = [len(token) * fontsize * 0.6 for token in tokens]
-    token_spacing = fontsize * 0.5
-
+    token_widths = {token: max(50, len(token) * fig_width) for token in tokens}
+    token_spacing = 10  # Spacing between two tokens
+    print(token_widths, max_line_width)
     # Determine line breaks
     lines = []
     current_line = []
     current_line_width = 0
     current_line_indices = []
 
-    for i, (token, width) in enumerate(zip(tokens, token_widths)):
+    for i, (token, width) in enumerate(zip(tokens, token_widths.values())):
         # If adding this token would exceed max line width, start a new line
-        if current_line_width + width + token_spacing > max_line_width * fontsize * 0.6:
+        if current_line_width + width + token_spacing > width * 30:
             lines.append((current_line, current_line_indices))
             current_line = [token]
             current_line_indices = [i]
@@ -94,8 +98,7 @@ def visualize_token_perplexity(
     total_text_height = len(lines) * (token_height * line_spacing)
 
     # Create figure with proper spacing
-    fig_height = figsize[1]  # Adjust height based on number of lines
-    fig = plt.figure(figsize=(figsize[0], fig_height))
+    fig = plt.figure(figsize=(fig_width, fig_height))
 
     # Create a layout with space for colorbar at bottom
     gs = gridspec.GridSpec(2, 1, height_ratios=[max(len(lines) * 2, 3), 1])
@@ -107,7 +110,7 @@ def visualize_token_perplexity(
 
     # Find the index to higlight
     highlight_from = len(tokens)
-    highlight_to = highlight_from + 1 
+    highlight_to = highlight_from + 1
     if highlight_sequence is not None:
         highlight_from, highlight_to = highlight_sequence
 
@@ -129,7 +132,7 @@ def visualize_token_perplexity(
             color = cmap(norm_perp)
 
             # Create a box for the token
-            token_width = len(token) * fontsize * 0.6
+            token_width = token_widths[token]
             rect = patches.Rectangle(
                 (x_position, y_position - fontsize),
                 token_width,
@@ -148,8 +151,8 @@ def visualize_token_perplexity(
             text_color = "black" if brightness > 0.6 else "white"
 
             if highlight_from < i <= highlight_to:
-                text_color = (.6, 0., 0.) if brightness > 0.6 else "pink"
-            
+                text_color = (0.6, 0.0, 0.0) if brightness > 0.6 else "pink"
+
             # Add the token text
             ax.text(
                 x_position + token_width / 2,
@@ -158,6 +161,7 @@ def visualize_token_perplexity(
                 ha="center",
                 va="center",
                 color=text_color,
+                family="monospace",
                 fontsize=fontsize,
                 fontweight="bold",
             )
@@ -181,6 +185,7 @@ def visualize_token_perplexity(
         if line_idx == 0:
             ax.set_xlim(0, x_position + fontsize)
 
+    ax.set_aspect(0.7)
     # Set title
     ax.set_title(prompt, fontsize=fontsize * 1.2, pad=20)
 
@@ -189,9 +194,8 @@ def visualize_token_perplexity(
     sm = plt.cm.ScalarMappable(cmap=cmap, norm=norm)
     sm.set_array([])
     cbar = fig.colorbar(sm, cax=cbar_ax, orientation="horizontal")
-    cbar.set_label("Perplexity", fontsize=fontsize)
+    cbar.set_label(r"log(Perplexity)", fontsize=fontsize)
     cbar_ax.tick_params(labelsize=fontsize * 0.8)
-
     plt.tight_layout()
     return fig, ax
 
@@ -227,7 +231,7 @@ if __name__ == "__main__":
     print(args.input)
 
     prompt = ""
-    
+
     lines = []
 
     for path in glob.glob(args.input):
@@ -237,10 +241,12 @@ if __name__ == "__main__":
         perplexities = []
         with open(path, "r", encoding="utf-8") as file:
             b = False
-            
-            prompt = file.readline().split(': ')[1]
+
+            prompt = file.readline().split(": ")[1]
 
             for line in file:
+                if "Longest sequence of low perplexity tokens" in line:
+                    break
                 if len(line) > 4:
                     lines.append(line)
                 if b and ":" in line:
@@ -251,16 +257,16 @@ if __name__ == "__main__":
 
                 if "perplexities:" in line:
                     b = True
-                    break
-
-    print("".join(lines).replace('\n', ''))
-        
-def t():
-    while True:
 
         perplexities = np.log(perplexities)
         # Create visualization
-        fig, ax = visualize_token_perplexity(tokens, prompt, perplexities, figsize=(16, 8), highlight_sequence=get_longest_low_perplexity(perplexities, 1))
+        fig, ax = visualize_token_perplexity(
+            tokens,
+            prompt,
+            perplexities,
+            figsize=(16, 8),
+            highlight_sequence=get_longest_low_perplexity(perplexities, 1),
+        )
 
         # Create visualization
         # fig, ax = visualize_token_perplexity(tokens, (perplexities > 0.5).astype(int))
@@ -272,5 +278,4 @@ def t():
             bbox_inches="tight",
         )
 
-        if args.show:
-            plt.show()
+        plt.show()

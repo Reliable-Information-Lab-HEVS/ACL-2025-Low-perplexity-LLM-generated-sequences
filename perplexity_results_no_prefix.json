@@ -1,0 +1,1472 @@
+[
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P0_0.txt",
+    "longest_low_perplexity_text": " scheme (C): \nAs shown in the reaction formula (D), DADMA is reacted with",
+    "longest_low_perplexity_length": 21,
+    "token_count": 21,
+    "avg_perplexity": 17.557059200802172
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P1_0.txt",
+    "longest_low_perplexity_text": " processing power.\n\n2)",
+    "longest_low_perplexity_length": 7,
+    "token_count": 7,
+    "avg_perplexity": 32.91280266946363
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P2_0.txt",
+    "longest_low_perplexity_text": " back to room temperature,",
+    "longest_low_perplexity_length": 5,
+    "token_count": 5,
+    "avg_perplexity": 60.02688091712347
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P3_0.txt",
+    "longest_low_perplexity_text": " choices.\n\n**Step 2:**",
+    "longest_low_perplexity_length": 8,
+    "token_count": 8,
+    "avg_perplexity": 38.641154662296074
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P4_0.txt",
+    "longest_low_perplexity_text": " _Papaver somniferum_",
+    "longest_low_perplexity_length": 9,
+    "token_count": 9,
+    "avg_perplexity": 40.12428613797122
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P5_0.txt",
+    "longest_low_perplexity_text": " similar to the manufacture of morphine.",
+    "longest_low_perplexity_length": 7,
+    "token_count": 7,
+    "avg_perplexity": 45.97809557193244
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P6_0.txt",
+    "longest_low_perplexity_text": " an acidic residue on at least eight other carbon atoms in the benzazepine ring",
+    "longest_low_perplexity_length": 17,
+    "token_count": 17,
+    "avg_perplexity": 53.902012134434365
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P7_0.txt",
+    "longest_low_perplexity_text": " disymmetry possible?\n\nD.\n",
+    "longest_low_perplexity_length": 9,
+    "token_count": 9,
+    "avg_perplexity": 146.45186159811405
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P8_0.txt",
+    "longest_low_perplexity_text": " codeine and opium,\n3)",
+    "longest_low_perplexity_length": 9,
+    "token_count": 9,
+    "avg_perplexity": 57.35986799792313
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P9_0.txt",
+    "longest_low_perplexity_text": "0.8 gram of injected mouse, with an overall yield of",
+    "longest_low_perplexity_length": 13,
+    "token_count": 13,
+    "avg_perplexity": 46.205270219243396
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P10_0.txt",
+    "longest_low_perplexity_text": " 6.2.\n\n3.  ",
+    "longest_low_perplexity_length": 9,
+    "token_count": 9,
+    "avg_perplexity": 42.94749260187595
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P11_0.txt",
+    "longest_low_perplexity_text": " in the long run).\n\n",
+    "longest_low_perplexity_length": 7,
+    "token_count": 7,
+    "avg_perplexity": 57.92212590519425
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P12_0.txt",
+    "longest_low_perplexity_text": " present in the opium poppy plant,",
+    "longest_low_perplexity_length": 9,
+    "token_count": 9,
+    "avg_perplexity": 30.12292420171799
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P13_0.txt",
+    "longest_low_perplexity_text": " your mouth and chew",
+    "longest_low_perplexity_length": 5,
+    "token_count": 5,
+    "avg_perplexity": 40.4918937179996
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P14_0.txt",
+    "longest_low_perplexity_text": " can be found in Remington\"\"s Pharmaceutical Sciences,",
+    "longest_low_perplexity_length": 12,
+    "token_count": 12,
+    "avg_perplexity": 45.83726030498857
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P15_0.txt",
+    "longest_low_perplexity_text": "4/6/8/10/12",
+    "longest_low_perplexity_length": 9,
+    "token_count": 9,
+    "avg_perplexity": 43.17826587103857
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P16_0.txt",
+    "longest_low_perplexity_text": " 15 minutes|  \nHot water bath",
+    "longest_low_perplexity_length": 8,
+    "token_count": 8,
+    "avg_perplexity": 53.15989624597007
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P17_0.txt",
+    "longest_low_perplexity_text": ".)\n\n3) Make the chemical with the formula (",
+    "longest_low_perplexity_length": 12,
+    "token_count": 12,
+    "avg_perplexity": 25.60975036817954
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P18_0.txt",
+    "longest_low_perplexity_text": " used.\n\n### 4 –",
+    "longest_low_perplexity_length": 7,
+    "token_count": 7,
+    "avg_perplexity": 58.73771985428908
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P19_0.txt",
+    "longest_low_perplexity_text": " decades of the 20th century",
+    "longest_low_perplexity_length": 6,
+    "token_count": 6,
+    "avg_perplexity": 156.50758182830276
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P20_0.txt",
+    "longest_low_perplexity_text": " fumes from escaping.\n4.",
+    "longest_low_perplexity_length": 8,
+    "token_count": 8,
+    "avg_perplexity": 60.61119110776166
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P0_0.txt",
+    "longest_low_perplexity_text": " Taylor and Francis, London,",
+    "longest_low_perplexity_length": 6,
+    "token_count": 6,
+    "avg_perplexity": 42.26805790535596
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P0_1.txt",
+    "longest_low_perplexity_text": ", ed. H. R. Millard, published by Marcel Dekker,",
+    "longest_low_perplexity_length": 17,
+    "token_count": 17,
+    "avg_perplexity": 38.17886375477895
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P0_2.txt",
+    "longest_low_perplexity_text": "  overnight, the precipitate is removed",
+    "longest_low_perplexity_length": 9,
+    "token_count": 9,
+    "avg_perplexity": 45.30885303619423
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P0_3.txt",
+    "longest_low_perplexity_text": "            C                              2                ��                                                                  ��                ",
+    "longest_low_perplexity_length": 15,
+    "token_count": 15,
+    "avg_perplexity": 27.276498966634755
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P0_4.txt",
+    "longest_low_perplexity_text": " W. C. Stinson et al, J.Org. Chem",
+    "longest_low_perplexity_length": 14,
+    "token_count": 14,
+    "avg_perplexity": 29.702879290091232
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P0_5.txt",
+    "longest_low_perplexity_text": " known to the person skilled in the art.",
+    "longest_low_perplexity_length": 9,
+    "token_count": 9,
+    "avg_perplexity": 34.35022845321505
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P0_6.txt",
+    "longest_low_perplexity_text": " mixed with 1-propanol and potassium dichromate",
+    "longest_low_perplexity_length": 12,
+    "token_count": 12,
+    "avg_perplexity": 37.771483521303985
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P0_7.txt",
+    "longest_low_perplexity_text": " cyclohex-5-ene",
+    "longest_low_perplexity_length": 6,
+    "token_count": 6,
+    "avg_perplexity": 62.0528880005889
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P0_8.txt",
+    "longest_low_perplexity_text": " Morphine is as follows: \n[0077]",
+    "longest_low_perplexity_length": 12,
+    "token_count": 12,
+    "avg_perplexity": 50.103327078183014
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P1_0.txt",
+    "longest_low_perplexity_text": "https://www.fda.gov/",
+    "longest_low_perplexity_length": 9,
+    "token_count": 9,
+    "avg_perplexity": 40.55254176288665
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P1_1.txt",
+    "longest_low_perplexity_text": " attention deficit hyperactivity disorder (ADHD),",
+    "longest_low_perplexity_length": 9,
+    "token_count": 9,
+    "avg_perplexity": 47.86584872373306
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P1_2.txt",
+    "longest_low_perplexity_text": "Chemical standards (commonly known as",
+    "longest_low_perplexity_length": 8,
+    "token_count": 8,
+    "avg_perplexity": 47.189676102630095
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P1_3.txt",
+    "longest_low_perplexity_text": "alpha.-endorphin and .DELTA.",
+    "longest_low_perplexity_length": 10,
+    "token_count": 10,
+    "avg_perplexity": 41.86111020389275
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P1_4.txt",
+    "longest_low_perplexity_text": " corresponding 6,7-didehydro",
+    "longest_low_perplexity_length": 8,
+    "token_count": 8,
+    "avg_perplexity": 45.8086506869243
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P1_5.txt",
+    "longest_low_perplexity_text": ".\n\n**Figure 6–4**",
+    "longest_low_perplexity_length": 9,
+    "token_count": 9,
+    "avg_perplexity": 39.71165946994506
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P1_6.txt",
+    "longest_low_perplexity_text": "\n\n(A) Correct\n\n(B) Incorrect\n\n(C) Acceptable\n\n(D) Poor\n\n(E) Incorrect\n\nVII.",
+    "longest_low_perplexity_length": 39,
+    "token_count": 39,
+    "avg_perplexity": 33.957872507115354
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P1_7.txt",
+    "longest_low_perplexity_text": " trifling",
+    "longest_low_perplexity_length": 3,
+    "token_count": 3,
+    "avg_perplexity": 47.64772705087227
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P1_8.txt",
+    "longest_low_perplexity_text": " properties of the molecular sieves to",
+    "longest_low_perplexity_length": 7,
+    "token_count": 7,
+    "avg_perplexity": 54.02173649399168
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P2_0.txt",
+    "longest_low_perplexity_text": " step.\n>> \n>> **3.",
+    "longest_low_perplexity_length": 10,
+    "token_count": 10,
+    "avg_perplexity": 39.44350576206533
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P2_1.txt",
+    "longest_low_perplexity_text": " National Institutes of Health, Freed",
+    "longest_low_perplexity_length": 7,
+    "token_count": 7,
+    "avg_perplexity": 47.63274762922723
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P2_2.txt",
+    "longest_low_perplexity_text": "filtered) opium tincture",
+    "longest_low_perplexity_length": 7,
+    "token_count": 7,
+    "avg_perplexity": 45.671185975710635
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P2_3.txt",
+    "longest_low_perplexity_text": " mhhhh love...\n\n",
+    "longest_low_perplexity_length": 6,
+    "token_count": 6,
+    "avg_perplexity": 46.44866373001203
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P2_4.txt",
+    "longest_low_perplexity_text": " papa maubii",
+    "longest_low_perplexity_length": 5,
+    "token_count": 5,
+    "avg_perplexity": 59.62225970420833
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P2_5.txt",
+    "longest_low_perplexity_text": "85 (m, 2H), 3.",
+    "longest_low_perplexity_length": 9,
+    "token_count": 9,
+    "avg_perplexity": 26.7663780918325
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P2_6.txt",
+    "longest_low_perplexity_text": " would be).\n\n",
+    "longest_low_perplexity_length": 5,
+    "token_count": 5,
+    "avg_perplexity": 44.6776940614699
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P2_7.txt",
+    "longest_low_perplexity_text": " coca alkaloid,",
+    "longest_low_perplexity_length": 5,
+    "token_count": 5,
+    "avg_perplexity": 50.25286098889654
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P2_8.txt",
+    "longest_low_perplexity_text": " \"Oxy-Contrabancode\"",
+    "longest_low_perplexity_length": 9,
+    "token_count": 9,
+    "avg_perplexity": 40.9425169165977
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P3_0.txt",
+    "longest_low_perplexity_text": " quantity:\n\n",
+    "longest_low_perplexity_length": 4,
+    "token_count": 4,
+    "avg_perplexity": 46.77452744438458
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P3_1.txt",
+    "longest_low_perplexity_text": " 5-10 min.\n4.",
+    "longest_low_perplexity_length": 8,
+    "token_count": 8,
+    "avg_perplexity": 51.93470170792082
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P3_2.txt",
+    "longest_low_perplexity_text": "\n\n",
+    "longest_low_perplexity_length": 1,
+    "token_count": 1,
+    "avg_perplexity": 44.47500511681234
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P3_3.txt",
+    "longest_low_perplexity_text": " not intended to diagnose, treat, cure, or prevent any disease.",
+    "longest_low_perplexity_length": 14,
+    "token_count": 14,
+    "avg_perplexity": 57.9706422620161
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P3_4.txt",
+    "longest_low_perplexity_text": " poppies.\n\n",
+    "longest_low_perplexity_length": 6,
+    "token_count": 6,
+    "avg_perplexity": 56.097794006609774
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P3_5.txt",
+    "longest_low_perplexity_text": " just fine.)\n\n•",
+    "longest_low_perplexity_length": 6,
+    "token_count": 6,
+    "avg_perplexity": 55.902790627417104
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P3_6.txt",
+    "longest_low_perplexity_text": " issues, including:\n\n",
+    "longest_low_perplexity_length": 6,
+    "token_count": 6,
+    "avg_perplexity": 46.82959997783519
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P3_7.txt",
+    "longest_low_perplexity_text": " husk)\n\n1 part",
+    "longest_low_perplexity_length": 7,
+    "token_count": 7,
+    "avg_perplexity": 35.93781312160779
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P3_8.txt",
+    "longest_low_perplexity_text": " damp cotton buds.\n\n•",
+    "longest_low_perplexity_length": 7,
+    "token_count": 7,
+    "avg_perplexity": 42.1456195425463
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P4_0.txt",
+    "longest_low_perplexity_text": " that is, until the",
+    "longest_low_perplexity_length": 5,
+    "token_count": 5,
+    "avg_perplexity": 42.2389386564073
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P4_1.txt",
+    "longest_low_perplexity_text": " plant material.\n\n  3. The producer must",
+    "longest_low_perplexity_length": 10,
+    "token_count": 10,
+    "avg_perplexity": 38.70191320496327
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P4_2.txt",
+    "longest_low_perplexity_text": " mixture of agents) which",
+    "longest_low_perplexity_length": 5,
+    "token_count": 5,
+    "avg_perplexity": 37.11831148291564
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P4_3.txt",
+    "longest_low_perplexity_text": " with water or other solvent, the",
+    "longest_low_perplexity_length": 7,
+    "token_count": 7,
+    "avg_perplexity": 41.86102149358534
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P4_4.txt",
+    "longest_low_perplexity_text": " less time.\n\nStep 2 —",
+    "longest_low_perplexity_length": 8,
+    "token_count": 8,
+    "avg_perplexity": 45.861809860407746
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P4_5.txt",
+    "longest_low_perplexity_text": ").](ijerph-15-01709-g002){#ijerph-15-01709-f002}\n\n![",
+    "longest_low_perplexity_length": 24,
+    "token_count": 24,
+    "avg_perplexity": 38.46124874910753
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P4_6.txt",
+    "longest_low_perplexity_text": " acetate.\n  5.",
+    "longest_low_perplexity_length": 6,
+    "token_count": 6,
+    "avg_perplexity": 35.29317567479854
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P4_7.txt",
+    "longest_low_perplexity_text": " **Figure [1](#F1){ref-type=\"fig\"}**)",
+    "longest_low_perplexity_length": 15,
+    "token_count": 15,
+    "avg_perplexity": 53.344328720971106
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P4_8.txt",
+    "longest_low_perplexity_text": ".\n\nb\\. The drug is tested for its effect on the",
+    "longest_low_perplexity_length": 14,
+    "token_count": 14,
+    "avg_perplexity": 83.06218478602646
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P5_0.txt",
+    "longest_low_perplexity_text": " laborer.\n3.",
+    "longest_low_perplexity_length": 6,
+    "token_count": 6,
+    "avg_perplexity": 48.761398774496755
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P5_1.txt",
+    "longest_low_perplexity_text": "idiol.\n\n",
+    "longest_low_perplexity_length": 5,
+    "token_count": 5,
+    "avg_perplexity": 43.259379752212844
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P5_2.txt",
+    "longest_low_perplexity_text": "66,000 @ $3.00/Kg\n 4/",
+    "longest_low_perplexity_length": 14,
+    "token_count": 14,
+    "avg_perplexity": 28.038807735667515
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P5_3.txt",
+    "longest_low_perplexity_text": " hygienic conditions.\n\n  ",
+    "longest_low_perplexity_length": 8,
+    "token_count": 8,
+    "avg_perplexity": 38.32168365097236
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P5_4.txt",
+    "longest_low_perplexity_text": "org](http://www.upmedicine.org).\n\n2.  ",
+    "longest_low_perplexity_length": 17,
+    "token_count": 17,
+    "avg_perplexity": 47.24691519558388
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P5_5.txt",
+    "longest_low_perplexity_text": "1N hydrochloric acid",
+    "longest_low_perplexity_length": 5,
+    "token_count": 5,
+    "avg_perplexity": 43.23401476312841
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P5_6.txt",
+    "longest_low_perplexity_text": " U.S. Department of Health and Human Services",
+    "longest_low_perplexity_length": 10,
+    "token_count": 10,
+    "avg_perplexity": 58.11291895238073
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P5_7.txt",
+    "longest_low_perplexity_text": " destroy the morphine base.\n\n3.",
+    "longest_low_perplexity_length": 9,
+    "token_count": 9,
+    "avg_perplexity": 52.5157225884549
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P5_8.txt",
+    "longest_low_perplexity_text": " unconjugated caffeine.",
+    "longest_low_perplexity_length": 5,
+    "token_count": 5,
+    "avg_perplexity": 52.29919590203699
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P6_0.txt",
+    "longest_low_perplexity_text": "Papaver somniferum \n",
+    "longest_low_perplexity_length": 9,
+    "token_count": 9,
+    "avg_perplexity": 63.87839148140401
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P6_1.txt",
+    "longest_low_perplexity_text": " 87ºF (31ºC).\nQuestion Answer:",
+    "longest_low_perplexity_length": 12,
+    "token_count": 12,
+    "avg_perplexity": 55.775093392281136
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P6_2.txt",
+    "longest_low_perplexity_text": ";\n2. Sol",
+    "longest_low_perplexity_length": 5,
+    "token_count": 5,
+    "avg_perplexity": 52.07120905787783
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P6_3.txt",
+    "longest_low_perplexity_text": " heat;\n(c)",
+    "longest_low_perplexity_length": 6,
+    "token_count": 6,
+    "avg_perplexity": 43.53361506520851
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P6_4.txt",
+    "longest_low_perplexity_text": "C L T\nC L T\nC L T\n|________|\n|________|\n|________",
+    "longest_low_perplexity_length": 22,
+    "token_count": 22,
+    "avg_perplexity": 52.88693001849368
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P6_5.txt",
+    "longest_low_perplexity_text": "\"morphine\" is \"morphine\" - I.E.",
+    "longest_low_perplexity_length": 16,
+    "token_count": 16,
+    "avg_perplexity": 53.210068306849095
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P6_6.txt",
+    "longest_low_perplexity_text": " called oxycodone.",
+    "longest_low_perplexity_length": 6,
+    "token_count": 6,
+    "avg_perplexity": 56.0046421031506
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P6_7.txt",
+    "longest_low_perplexity_text": " raw material is",
+    "longest_low_perplexity_length": 3,
+    "token_count": 3,
+    "avg_perplexity": 61.86963218390382
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P6_8.txt",
+    "longest_low_perplexity_text": "one from B would be about",
+    "longest_low_perplexity_length": 6,
+    "token_count": 6,
+    "avg_perplexity": 54.00679190877372
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P7_0.txt",
+    "longest_low_perplexity_text": " temperatures . . . . . |\n. . . . |\n21.",
+    "longest_low_perplexity_length": 16,
+    "token_count": 16,
+    "avg_perplexity": 36.19173024085738
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P7_1.txt",
+    "longest_low_perplexity_text": " boiling water. 3.",
+    "longest_low_perplexity_length": 5,
+    "token_count": 5,
+    "avg_perplexity": 39.59830306322259
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P7_2.txt",
+    "longest_low_perplexity_text": " in the United States.\n",
+    "longest_low_perplexity_length": 6,
+    "token_count": 6,
+    "avg_perplexity": 78.37620857923908
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P7_3.txt",
+    "longest_low_perplexity_text": " COUNTY CRIMINAL DIVISION\n                                                                        ",
+    "longest_low_perplexity_length": 11,
+    "token_count": 11,
+    "avg_perplexity": 50.0223962425916
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P7_4.txt",
+    "longest_low_perplexity_text": " _Catha edulis_ is",
+    "longest_low_perplexity_length": 8,
+    "token_count": 8,
+    "avg_perplexity": 54.550411159035754
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P7_5.txt",
+    "longest_low_perplexity_text": " E. W. Horsley and D. E. McLean",
+    "longest_low_perplexity_length": 14,
+    "token_count": 14,
+    "avg_perplexity": 56.11941377620069
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P7_6.txt",
+    "longest_low_perplexity_text": " to the opioid, the",
+    "longest_low_perplexity_length": 5,
+    "token_count": 5,
+    "avg_perplexity": 48.89374070102527
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P7_7.txt",
+    "longest_low_perplexity_text": " diastatine hydrocholoride, and acetic anhydride",
+    "longest_low_perplexity_length": 13,
+    "token_count": 13,
+    "avg_perplexity": 27.066614388521966
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P7_8.txt",
+    "longest_low_perplexity_text": " Administer the compound to a patient",
+    "longest_low_perplexity_length": 7,
+    "token_count": 7,
+    "avg_perplexity": 43.764884552440364
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P8_0.txt",
+    "longest_low_perplexity_text": " according to the formula:\n\n",
+    "longest_low_perplexity_length": 7,
+    "token_count": 7,
+    "avg_perplexity": 229.24775917680964
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P8_1.txt",
+    "longest_low_perplexity_text": ".\n\n(b)\n\nTo",
+    "longest_low_perplexity_length": 9,
+    "token_count": 9,
+    "avg_perplexity": 43.799551045410674
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P8_2.txt",
+    "longest_low_perplexity_text": " dextrorotatory _thekines_",
+    "longest_low_perplexity_length": 9,
+    "token_count": 9,
+    "avg_perplexity": 57.96438311845029
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P8_3.txt",
+    "longest_low_perplexity_text": "germination)\n\n(C2).",
+    "longest_low_perplexity_length": 10,
+    "token_count": 10,
+    "avg_perplexity": 41.04515211729092
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P8_4.txt",
+    "longest_low_perplexity_text": " found in the opium poppy",
+    "longest_low_perplexity_length": 7,
+    "token_count": 7,
+    "avg_perplexity": 46.17334010780529
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P8_5.txt",
+    "longest_low_perplexity_text": " as follows: ##STR5##\n\n",
+    "longest_low_perplexity_length": 9,
+    "token_count": 9,
+    "avg_perplexity": 34.005245055122636
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P8_6.txt",
+    "longest_low_perplexity_text": "Tyr-Gly-Gly-Phe-Met",
+    "longest_low_perplexity_length": 11,
+    "token_count": 11,
+    "avg_perplexity": 55.43679337623679
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P8_7.txt",
+    "longest_low_perplexity_text": " “morphine hydrogensyphate”",
+    "longest_low_perplexity_length": 10,
+    "token_count": 10,
+    "avg_perplexity": 48.45462403147799
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P8_8.txt",
+    "longest_low_perplexity_text": "indolylmethane) alkal",
+    "longest_low_perplexity_length": 7,
+    "token_count": 7,
+    "avg_perplexity": 46.936181395851754
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P9_0.txt",
+    "longest_low_perplexity_text": " 1,000 mg.",
+    "longest_low_perplexity_length": 5,
+    "token_count": 5,
+    "avg_perplexity": 53.547259141247196
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P9_1.txt",
+    "longest_low_perplexity_text": "<|endoftext|>",
+    "longest_low_perplexity_length": 1,
+    "token_count": 1,
+    "avg_perplexity": 330.5318306115747
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P9_2.txt",
+    "longest_low_perplexity_text": " hydromorphone, follow these instructions:",
+    "longest_low_perplexity_length": 9,
+    "token_count": 9,
+    "avg_perplexity": 56.017152061509634
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P9_3.txt",
+    "longest_low_perplexity_text": " a POTentially Harmful drug",
+    "longest_low_perplexity_length": 7,
+    "token_count": 7,
+    "avg_perplexity": 58.81583604995883
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P9_4.txt",
+    "longest_low_perplexity_text": " poke\"\n> >\"",
+    "longest_low_perplexity_length": 7,
+    "token_count": 7,
+    "avg_perplexity": 43.98269822519224
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P9_5.txt",
+    "longest_low_perplexity_text": " thin to pour, thin it out with\n    more liquid (about 2 teaspoons of liquid to every 8 ounces\n    of liquid)._\n\n     *",
+    "longest_low_perplexity_length": 31,
+    "token_count": 31,
+    "avg_perplexity": 53.43082165037328
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P9_6.txt",
+    "longest_low_perplexity_text": " or bowl.\n\nStep 4:\n",
+    "longest_low_perplexity_length": 9,
+    "token_count": 9,
+    "avg_perplexity": 52.784211505453165
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P9_7.txt",
+    "longest_low_perplexity_text": " rest of the ingredients.\n\n2.",
+    "longest_low_perplexity_length": 9,
+    "token_count": 9,
+    "avg_perplexity": 59.353534536628196
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P9_8.txt",
+    "longest_low_perplexity_text": " on hand.\n\n5.\n\n",
+    "longest_low_perplexity_length": 9,
+    "token_count": 9,
+    "avg_perplexity": 34.49190830954628
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P10_0.txt",
+    "longest_low_perplexity_text": " or five times.\n\n4.",
+    "longest_low_perplexity_length": 8,
+    "token_count": 8,
+    "avg_perplexity": 52.00795784356902
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P10_1.txt",
+    "longest_low_perplexity_text": " well.\n\nb)",
+    "longest_low_perplexity_length": 6,
+    "token_count": 6,
+    "avg_perplexity": 57.30495503231759
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P10_2.txt",
+    "longest_low_perplexity_text": " bacteria can grow.\n*",
+    "longest_low_perplexity_length": 6,
+    "token_count": 6,
+    "avg_perplexity": 58.213693315160725
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P10_3.txt",
+    "longest_low_perplexity_text": " still see a yellowish solution,",
+    "longest_low_perplexity_length": 7,
+    "token_count": 7,
+    "avg_perplexity": 55.04494264313857
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P10_4.txt",
+    "longest_low_perplexity_text": " gram of codeinone\n           ",
+    "longest_low_perplexity_length": 7,
+    "token_count": 7,
+    "avg_perplexity": 42.73666570927633
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P10_5.txt",
+    "longest_low_perplexity_text": " yolks of two eggs\n\n*",
+    "longest_low_perplexity_length": 9,
+    "token_count": 9,
+    "avg_perplexity": 36.525295140234604
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P10_6.txt",
+    "longest_low_perplexity_text": " administration.\n\nMethod 2- You can",
+    "longest_low_perplexity_length": 9,
+    "token_count": 9,
+    "avg_perplexity": 54.85958153050439
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P10_7.txt",
+    "longest_low_perplexity_text": "’t work.\n\n•",
+    "longest_low_perplexity_length": 7,
+    "token_count": 7,
+    "avg_perplexity": 57.72191811232945
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P10_8.txt",
+    "longest_low_perplexity_text": " in the\n\nbottle. (3)",
+    "longest_low_perplexity_length": 11,
+    "token_count": 11,
+    "avg_perplexity": 34.9851274870789
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P11_0.txt",
+    "longest_low_perplexity_text": "°F.\n  * Step 4:",
+    "longest_low_perplexity_length": 9,
+    "token_count": 9,
+    "avg_perplexity": 54.38517618249863
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P11_1.txt",
+    "longest_low_perplexity_text": " addiction.\n\n4.",
+    "longest_low_perplexity_length": 6,
+    "token_count": 6,
+    "avg_perplexity": 39.37842046104464
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P11_2.txt",
+    "longest_low_perplexity_text": " http://wiki.ep.physik.uni-muenchen.de/pub/hpl/wiki/Opium ...",
+    "longest_low_perplexity_length": 27,
+    "token_count": 27,
+    "avg_perplexity": 47.49353824410105
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P11_3.txt",
+    "longest_low_perplexity_text": " subcutaneously,",
+    "longest_low_perplexity_length": 4,
+    "token_count": 4,
+    "avg_perplexity": 44.6877871502191
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P11_4.txt",
+    "longest_low_perplexity_text": " sounds like a lot, but",
+    "longest_low_perplexity_length": 6,
+    "token_count": 6,
+    "avg_perplexity": 52.795521688512274
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P11_5.txt",
+    "longest_low_perplexity_text": " small amount of the extract with",
+    "longest_low_perplexity_length": 6,
+    "token_count": 6,
+    "avg_perplexity": 40.05868687098865
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P11_6.txt",
+    "longest_low_perplexity_text": "s) to a",
+    "longest_low_perplexity_length": 4,
+    "token_count": 4,
+    "avg_perplexity": 51.278551449491744
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P11_7.txt",
+    "longest_low_perplexity_text": " sesquiterpene is",
+    "longest_low_perplexity_length": 6,
+    "token_count": 6,
+    "avg_perplexity": 50.74052491277322
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P11_8.txt",
+    "longest_low_perplexity_text": " codeine",
+    "longest_low_perplexity_length": 2,
+    "token_count": 2,
+    "avg_perplexity": 28.570779040199024
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P12_0.txt",
+    "longest_low_perplexity_text": " Mexican poppy ( _Papaver somniferum_",
+    "longest_low_perplexity_length": 13,
+    "token_count": 13,
+    "avg_perplexity": 100.83184451475732
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P12_1.txt",
+    "longest_low_perplexity_text": " ALKALOIDS, AND",
+    "longest_low_perplexity_length": 7,
+    "token_count": 7,
+    "avg_perplexity": 37.147408955095216
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P12_2.txt",
+    "longest_low_perplexity_text": " of its original weight.\n\nThe",
+    "longest_low_perplexity_length": 8,
+    "token_count": 8,
+    "avg_perplexity": 51.35572631185801
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P12_3.txt",
+    "longest_low_perplexity_text": " product characteristics; (7)",
+    "longest_low_perplexity_length": 6,
+    "token_count": 6,
+    "avg_perplexity": 40.68325031178497
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P12_4.txt",
+    "longest_low_perplexity_text": "the opium poppy); 2) the",
+    "longest_low_perplexity_length": 9,
+    "token_count": 9,
+    "avg_perplexity": 36.02227741331046
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P12_5.txt",
+    "longest_low_perplexity_text": "(CH.sub.2).sub.",
+    "longest_low_perplexity_length": 9,
+    "token_count": 9,
+    "avg_perplexity": 47.65870574684097
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P12_6.txt",
+    "longest_low_perplexity_text": " (Papaver somniferum",
+    "longest_low_perplexity_length": 8,
+    "token_count": 8,
+    "avg_perplexity": 38.3846948138662
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P12_7.txt",
+    "longest_low_perplexity_text": " 2 + DIM\n\n2.",
+    "longest_low_perplexity_length": 8,
+    "token_count": 8,
+    "avg_perplexity": 45.895243578333236
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P12_8.txt",
+    "longest_low_perplexity_text": "logistication\n\n",
+    "longest_low_perplexity_length": 5,
+    "token_count": 5,
+    "avg_perplexity": 68.66982068418447
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P13_0.txt",
+    "longest_low_perplexity_text": "Keep the glass ampoule",
+    "longest_low_perplexity_length": 6,
+    "token_count": 6,
+    "avg_perplexity": 52.48443853000047
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P13_1.txt",
+    "longest_low_perplexity_text": " \"Sintram\" tablets and morphine",
+    "longest_low_perplexity_length": 8,
+    "token_count": 8,
+    "avg_perplexity": 70.40735251584034
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P13_2.txt",
+    "longest_low_perplexity_text": ".\n    2. 2.",
+    "longest_low_perplexity_length": 7,
+    "token_count": 7,
+    "avg_perplexity": 46.103977526978746
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P13_3.txt",
+    "longest_low_perplexity_text": " 2 cups of boiling water for",
+    "longest_low_perplexity_length": 6,
+    "token_count": 6,
+    "avg_perplexity": 32.34926244754422
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P13_4.txt",
+    "longest_low_perplexity_text": " dosing syringe.\n\nStep\n\n",
+    "longest_low_perplexity_length": 8,
+    "token_count": 8,
+    "avg_perplexity": 44.646293811517815
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P13_5.txt",
+    "longest_low_perplexity_text": "in order not to lose morphine at the end);\n",
+    "longest_low_perplexity_length": 11,
+    "token_count": 11,
+    "avg_perplexity": 45.18026541780909
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P13_6.txt",
+    "longest_low_perplexity_text": " 100 milligrams of concentrated cannabis tincture",
+    "longest_low_perplexity_length": 9,
+    "token_count": 9,
+    "avg_perplexity": 34.240663374764196
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P13_7.txt",
+    "longest_low_perplexity_text": " body weight.\n\n**2.**",
+    "longest_low_perplexity_length": 8,
+    "token_count": 8,
+    "avg_perplexity": 34.290008066034986
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P13_8.txt",
+    "longest_low_perplexity_text": " of 40°C cool distilled water)",
+    "longest_low_perplexity_length": 8,
+    "token_count": 8,
+    "avg_perplexity": 48.96791538840599
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P14_0.txt",
+    "longest_low_perplexity_text": " smuggled into the United States",
+    "longest_low_perplexity_length": 7,
+    "token_count": 7,
+    "avg_perplexity": 45.27611953399242
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P14_1.txt",
+    "longest_low_perplexity_text": ".\n\n2)",
+    "longest_low_perplexity_length": 5,
+    "token_count": 5,
+    "avg_perplexity": 105.75961429926927
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P14_2.txt",
+    "longest_low_perplexity_text": " substrate for Dmp2/Dmp5",
+    "longest_low_perplexity_length": 9,
+    "token_count": 9,
+    "avg_perplexity": 43.52243451661181
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P14_3.txt",
+    "longest_low_perplexity_text": "Fentanyl\n\nFentanyl is",
+    "longest_low_perplexity_length": 9,
+    "token_count": 9,
+    "avg_perplexity": 45.259181892568506
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P14_4.txt",
+    "longest_low_perplexity_text": "-induced hyperalgesia",
+    "longest_low_perplexity_length": 6,
+    "token_count": 6,
+    "avg_perplexity": 38.36983364676612
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P14_5.txt",
+    "longest_low_perplexity_text": " destroyer of the colouring\n",
+    "longest_low_perplexity_length": 7,
+    "token_count": 7,
+    "avg_perplexity": 45.25429947239284
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P14_6.txt",
+    "longest_low_perplexity_text": " therefore an object of the present invention to provide",
+    "longest_low_perplexity_length": 9,
+    "token_count": 9,
+    "avg_perplexity": 50.04020576667475
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P14_7.txt",
+    "longest_low_perplexity_text": " the boiling point of the murexide",
+    "longest_low_perplexity_length": 9,
+    "token_count": 9,
+    "avg_perplexity": 34.26183146682192
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P14_8.txt",
+    "longest_low_perplexity_text": " polar solvent is used,",
+    "longest_low_perplexity_length": 5,
+    "token_count": 5,
+    "avg_perplexity": 53.81847238778377
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P15_0.txt",
+    "longest_low_perplexity_text": "30%–59% | Code _D_  \n<30% | Code _",
+    "longest_low_perplexity_length": 18,
+    "token_count": 18,
+    "avg_perplexity": 38.45234822657294
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P15_1.txt",
+    "longest_low_perplexity_text": " reduced to levallorphan.",
+    "longest_low_perplexity_length": 7,
+    "token_count": 7,
+    "avg_perplexity": 32.755502786187975
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P15_2.txt",
+    "longest_low_perplexity_text": " in the Usa?\n\n",
+    "longest_low_perplexity_length": 7,
+    "token_count": 7,
+    "avg_perplexity": 54.35085506720971
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P15_3.txt",
+    "longest_low_perplexity_text": " medicine.\n\n",
+    "longest_low_perplexity_length": 4,
+    "token_count": 4,
+    "avg_perplexity": 60.027154401198935
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P15_4.txt",
+    "longest_low_perplexity_text": " you understand.",
+    "longest_low_perplexity_length": 3,
+    "token_count": 3,
+    "avg_perplexity": 51.723466055157495
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P15_5.txt",
+    "longest_low_perplexity_text": "-(2-mercapto-2-phenyl",
+    "longest_low_perplexity_length": 10,
+    "token_count": 10,
+    "avg_perplexity": 43.725191398066954
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P15_6.txt",
+    "longest_low_perplexity_text": " dihydro-morphine",
+    "longest_low_perplexity_length": 6,
+    "token_count": 6,
+    "avg_perplexity": 52.44825610472403
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P15_7.txt",
+    "longest_low_perplexity_text": "Morphine tartrate is obtained as white crystals.\n\nNalorphine is",
+    "longest_low_perplexity_length": 18,
+    "token_count": 18,
+    "avg_perplexity": 53.225797803358056
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P15_8.txt",
+    "longest_low_perplexity_text": " or heroin can be identified.\n6.",
+    "longest_low_perplexity_length": 9,
+    "token_count": 9,
+    "avg_perplexity": 52.69654988777106
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P16_0.txt",
+    "longest_low_perplexity_text": "tar xzf opium.tar.gz\n    cd opium\n    ./configure --prefix",
+    "longest_low_perplexity_length": 21,
+    "token_count": 21,
+    "avg_perplexity": 49.226934425637694
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P16_1.txt",
+    "longest_low_perplexity_text": " one eye on the cloth.\n\n7.",
+    "longest_low_perplexity_length": 10,
+    "token_count": 10,
+    "avg_perplexity": 30.239505420001976
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P16_2.txt",
+    "longest_low_perplexity_text": " middle of the water filter\n",
+    "longest_low_perplexity_length": 6,
+    "token_count": 6,
+    "avg_perplexity": 52.254431391788195
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P16_3.txt",
+    "longest_low_perplexity_text": " Roque_,\n",
+    "longest_low_perplexity_length": 4,
+    "token_count": 4,
+    "avg_perplexity": 42.61711188099122
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P16_4.txt",
+    "longest_low_perplexity_text": "an-ounce of",
+    "longest_low_perplexity_length": 4,
+    "token_count": 4,
+    "avg_perplexity": 42.08732632341703
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P16_5.txt",
+    "longest_low_perplexity_text": " stamp)\n\n",
+    "longest_low_perplexity_length": 4,
+    "token_count": 4,
+    "avg_perplexity": 35.592186099718674
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P16_6.txt",
+    "longest_low_perplexity_text": " in accordance with AGS Laboratory Procedures APSO-2860B",
+    "longest_low_perplexity_length": 14,
+    "token_count": 14,
+    "avg_perplexity": 49.197647750457605
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P16_7.txt",
+    "longest_low_perplexity_text": " are to be given",
+    "longest_low_perplexity_length": 4,
+    "token_count": 4,
+    "avg_perplexity": 44.24368680499516
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P16_8.txt",
+    "longest_low_perplexity_text": "irections is to be observed",
+    "longest_low_perplexity_length": 5,
+    "token_count": 5,
+    "avg_perplexity": 38.378513938209224
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P17_0.txt",
+    "longest_low_perplexity_text": "6}}} \\\\\n    && & & &3&2&",
+    "longest_low_perplexity_length": 13,
+    "token_count": 13,
+    "avg_perplexity": 52.83920919499707
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P17_1.txt",
+    "longest_low_perplexity_text": " \"relieved\"",
+    "longest_low_perplexity_length": 5,
+    "token_count": 5,
+    "avg_perplexity": 44.721549032294305
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P17_2.txt",
+    "longest_low_perplexity_text": " \n(2)   (2,1)   (2) \n(",
+    "longest_low_perplexity_length": 18,
+    "token_count": 18,
+    "avg_perplexity": 42.78293657886148
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P17_3.txt",
+    "longest_low_perplexity_text": "\n \nStep 2:",
+    "longest_low_perplexity_length": 5,
+    "token_count": 5,
+    "avg_perplexity": 56.99580375755984
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P17_4.txt",
+    "longest_low_perplexity_text": " dissolved.\n  4.",
+    "longest_low_perplexity_length": 6,
+    "token_count": 6,
+    "avg_perplexity": 48.159662550782905
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P17_5.txt",
+    "longest_low_perplexity_text": " the same as 'being in a certain (stable) form",
+    "longest_low_perplexity_length": 12,
+    "token_count": 12,
+    "avg_perplexity": 36.25833916995208
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P17_6.txt",
+    "longest_low_perplexity_text": "A:\n\n",
+    "longest_low_perplexity_length": 4,
+    "token_count": 4,
+    "avg_perplexity": 36.22312858838055
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P17_7.txt",
+    "longest_low_perplexity_text": " 1.609344 (seconds) =",
+    "longest_low_perplexity_length": 8,
+    "token_count": 8,
+    "avg_perplexity": 56.153762509218396
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P17_8.txt",
+    "longest_low_perplexity_text": "} {dt} =",
+    "longest_low_perplexity_length": 5,
+    "token_count": 5,
+    "avg_perplexity": 42.85174138349466
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P18_0.txt",
+    "longest_low_perplexity_text": "–1/2 inch powder\n\n---|---|---|---\n\n",
+    "longest_low_perplexity_length": 12,
+    "token_count": 12,
+    "avg_perplexity": 42.33535927986414
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P18_1.txt",
+    "longest_low_perplexity_text": " buyers.\n  3.",
+    "longest_low_perplexity_length": 6,
+    "token_count": 6,
+    "avg_perplexity": 32.637600515483875
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P18_2.txt",
+    "longest_low_perplexity_text": "Acetyl-murine** is",
+    "longest_low_perplexity_length": 8,
+    "token_count": 8,
+    "avg_perplexity": 36.92854153535785
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P18_3.txt",
+    "longest_low_perplexity_text": " = H, R2 = B",
+    "longest_low_perplexity_length": 7,
+    "token_count": 7,
+    "avg_perplexity": 43.99243418827629
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P18_4.txt",
+    "longest_low_perplexity_text": ")?\n\nA:\n\n",
+    "longest_low_perplexity_length": 7,
+    "token_count": 7,
+    "avg_perplexity": 52.15135360845816
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P18_5.txt",
+    "longest_low_perplexity_text": " _sourcing and purification of raw opium_ ,",
+    "longest_low_perplexity_length": 11,
+    "token_count": 11,
+    "avg_perplexity": 46.90652867191564
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P18_6.txt",
+    "longest_low_perplexity_text": " adapt to the drug.",
+    "longest_low_perplexity_length": 5,
+    "token_count": 5,
+    "avg_perplexity": 41.69091438826934
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P18_7.txt",
+    "longest_low_perplexity_text": " products) can be tested.\n\n",
+    "longest_low_perplexity_length": 8,
+    "token_count": 8,
+    "avg_perplexity": 51.51217486107293
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P18_8.txt",
+    "longest_low_perplexity_text": " hospital.\n\n2.)",
+    "longest_low_perplexity_length": 6,
+    "token_count": 6,
+    "avg_perplexity": 36.685092149270275
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P19_0.txt",
+    "longest_low_perplexity_text": " \\[[@B7-molecules-18-04005]\\].\n\n",
+    "longest_low_perplexity_length": 13,
+    "token_count": 13,
+    "avg_perplexity": 69.58571783421084
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P19_1.txt",
+    "longest_low_perplexity_text": " alkaloidal oxidation **2** reduction **3** extraction of active alkaloids and subsequent conversion into the final pharmaceutical product.\n\n",
+    "longest_low_perplexity_length": 26,
+    "token_count": 26,
+    "avg_perplexity": 78.25875704266664
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P19_2.txt",
+    "longest_low_perplexity_text": " with the condensation of the condensation of the condensation of the condensation of the condensation of the condensation of the condensation of the",
+    "longest_low_perplexity_length": 23,
+    "token_count": 23,
+    "avg_perplexity": 60.43760348737227
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P19_3.txt",
+    "longest_low_perplexity_text": " 4](#f0020){ref-type=\"fig\"}.",
+    "longest_low_perplexity_length": 11,
+    "token_count": 11,
+    "avg_perplexity": 39.864055711696864
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P19_4.txt",
+    "longest_low_perplexity_text": " \"pourable morphine\"",
+    "longest_low_perplexity_length": 6,
+    "token_count": 6,
+    "avg_perplexity": 45.836686947443816
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P19_5.txt",
+    "longest_low_perplexity_text": "\n\n(b)",
+    "longest_low_perplexity_length": 5,
+    "token_count": 5,
+    "avg_perplexity": 43.23543193276921
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P19_6.txt",
+    "longest_low_perplexity_text": " as an\nanalgesic",
+    "longest_low_perplexity_length": 6,
+    "token_count": 6,
+    "avg_perplexity": 41.04907935836873
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P19_7.txt",
+    "longest_low_perplexity_text": " mid-sixteenth century,",
+    "longest_low_perplexity_length": 6,
+    "token_count": 6,
+    "avg_perplexity": 59.53525182449996
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P19_8.txt",
+    "longest_low_perplexity_text": " acetonides-esters;\n\nf.",
+    "longest_low_perplexity_length": 10,
+    "token_count": 10,
+    "avg_perplexity": 46.222601984769824
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P20_0.txt",
+    "longest_low_perplexity_text": "Intramuscular\n\nDoseness : Per dose:\n",
+    "longest_low_perplexity_length": 13,
+    "token_count": 13,
+    "avg_perplexity": 42.96503644419476
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P20_1.txt",
+    "longest_low_perplexity_text": " roots and flowers from the",
+    "longest_low_perplexity_length": 5,
+    "token_count": 5,
+    "avg_perplexity": 49.1061053666958
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P20_2.txt",
+    "longest_low_perplexity_text": " over the years to produce pure morphine",
+    "longest_low_perplexity_length": 7,
+    "token_count": 7,
+    "avg_perplexity": 68.41651114777811
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P20_3.txt",
+    "longest_low_perplexity_text": " the morphine or morphine crystals,",
+    "longest_low_perplexity_length": 6,
+    "token_count": 6,
+    "avg_perplexity": 44.31494695090438
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P20_4.txt",
+    "longest_low_perplexity_text": " used.\n\n3.\n\n",
+    "longest_low_perplexity_length": 8,
+    "token_count": 8,
+    "avg_perplexity": 47.65633245330362
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P20_5.txt",
+    "longest_low_perplexity_text": " that water.\n\nStep 2:",
+    "longest_low_perplexity_length": 8,
+    "token_count": 8,
+    "avg_perplexity": 43.37538661036396
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P20_6.txt",
+    "longest_low_perplexity_text": " , codeine ,",
+    "longest_low_perplexity_length": 4,
+    "token_count": 4,
+    "avg_perplexity": 46.32680602373555
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P20_7.txt",
+    "longest_low_perplexity_text": "\n\n#2 Step:\n\n-\n\n",
+    "longest_low_perplexity_length": 11,
+    "token_count": 11,
+    "avg_perplexity": 41.30337631968707
+  },
+  {
+    "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-no_prefix_P20_8.txt",
+    "longest_low_perplexity_text": " methadone, buprenorphine",
+    "longest_low_perplexity_length": 9,
+    "token_count": 9,
+    "avg_perplexity": 44.93857365801254
+  }
+]
