@@ -14,8 +14,4 @@ module load gcc python openmpi py-torch
 source .venv/bin/activate 
 
 # Run the script
-python src/perplexity_crashtest.py \
-    --model_name "EleutherAI/pythia-2.8b-deduped" \
-    --prompt r"""The first step is to synthetize ethyl methylphosphonite. For this, """ \
-    --max_length 400 \
-    --output_file "output_perplexity.txt"
+python src/perplexity_crashtest.py "$@"
