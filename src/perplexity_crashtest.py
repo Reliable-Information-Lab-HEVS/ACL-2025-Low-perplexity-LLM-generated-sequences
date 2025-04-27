@@ -9,6 +9,67 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 from utils import get_longest_low_perplexity
 
 
+def calculate_expected_token_probs(
+    model,
+    tokenizer,
+    prompt,
+    expected_completion,
+    device,
+):
+    """
+    Calculate the probability of expected tokens given the prompt.
+    Returns token-by-token probabilities of the expected completion.
+    """
+    if not expected_completion:
+        return []
+    
+    # Tokenize the prompt
+    prompt_ids = tokenizer.encode(prompt, return_tensors="pt").to(device)
+    
+    # Tokenize the expected completion
+    completion_ids = tokenizer.encode(
+        expected_completion, add_special_tokens=False, return_tensors="pt"
+    ).to(device)[0]
+    
+    # Store probabilities and tokens
+    token_probs = []
+    current_context = prompt_ids.clone()
+    
+    # Get the decoded tokens for better output
+    completion_tokens = []
+    for token_id in completion_ids:
+        token_str = tokenizer.decode(token_id)
+        completion_tokens.append(token_str)
+    
+    # For each token in the expected completion
+    for i, token_id in enumerate(completion_ids):
+        # Forward pass with the current context
+        with torch.no_grad():
+            outputs = model(current_context)
+            logits = outputs.logits
+            
+            # Get probabilities for the next token
+            next_token_logits = logits[0, -1, :]
+            probs = torch.nn.functional.softmax(next_token_logits, dim=0)
+            
+            # Get probability of the expected token
+            token_prob = probs[token_id].item()
+            token_perplexity = 1 / token_prob if token_prob > 0 else float("inf")
+            
+            # Save the token and its probability
+            token_probs.append({
+                "token": completion_tokens[i],
+                "token_id": token_id.item(),
+                "probability": token_prob,
+                "perplexity": token_perplexity
+            })
+            
+            # Add this token to the context for the next iteration
+            current_context = torch.cat([current_context, token_id.unsqueeze(0).unsqueeze(0)], dim=1)
+    
+    return token_probs
+
+
 def generate_and_compute_perplexity(
     model,
     tokenizer,
@@ -18,7 +79,6 @@ def generate_and_compute_perplexity(
     top_k,
     top_p,
     device,
-    expected_completion=None,  # Added expected_completion
 ):
     # Tokenize the prompt
     input_ids = tokenizer.encode(prompt, return_tensors="pt").to(device)
@@ -37,7 +97,7 @@ def generate_and_compute_perplexity(
         )
 
         # Get generated tokens and scores
-        generated_tokens = outputs.sequences[0, input_ids.shape[1] :]
+        generated_tokens = outputs.sequences[0, input_ids.shape[1]:]
         token_scores = outputs.scores
 
         # Decode generated response
@@ -45,14 +105,6 @@ def generate_and_compute_perplexity(
 
         # Calculate perplexity for each token
         token_perplexities = []
-        expected_token_probs = []  # To store probabilities of expected tokens
-
-        # Tokenize the expected completion
-        expected_token_ids = (
-            tokenizer.encode(expected_completion, add_special_tokens=False)
-            if expected_completion
-            else []
-        )
 
         for i, (token, score_tensor) in enumerate(zip(generated_tokens, token_scores)):
             token_str = tokenizer.decode(token)
@@ -66,18 +118,7 @@ def generate_and_compute_perplexity(
             token_perplexity = 1 / token_prob if token_prob > 0 else float("inf")
             token_perplexities.append((token_str, token_perplexity))
 
-            # Get probability of the *expected* token
-            if (
-                expected_completion
-                and i < len(expected_token_ids)
-                and token == expected_token_ids[i]
-            ):
-                expected_token_prob = probs[expected_token_ids[i]].item()
-            else:
-                expected_token_prob = None  # Or -1, or any other default value
-            expected_token_probs.append(expected_token_prob)
-
-    return generated_text, token_perplexities, expected_token_probs, generated_tokens.tolist()  # Return expected token probs
+    return generated_text, token_perplexities, generated_tokens.tolist()
 
 
 def save_to_json(
@@ -85,10 +126,11 @@ def save_to_json(
     prompt,
     generated_text,
     token_perplexities,
-    expected_token_probs,  # Added expected token probs
+    expected_token_probs,
     longest_low_perp_indices,
     raw_tokens,
     filename,
+    expected_completion=None,
 ):
     # Get the start and end indices of the longest low perplexity sequence
     start_idx, end_idx = longest_low_perp_indices
@@ -107,11 +149,14 @@ def save_to_json(
     # Create simplified dictionary with only the requested fields
     result = {
         "file": filename,
+        "prompt": prompt,
+        "generated_text": generated_text,
         "longest_low_perplexity_text": longest_sequence_text,
         "longest_low_perplexity_length": len(longest_sequence),
         "token_count": token_count,
         "avg_perplexity": np.mean([perp for _, perp in token_perplexities]),
-        "expected_token_probs": expected_token_probs,  # Added to JSON output
+        "expected_completion": expected_completion,
+        "expected_token_probs": expected_token_probs,
     }
 
     # Load existing results if file exists
@@ -180,7 +225,7 @@ def main():
         default="perplexity_results.json",
         help="JSON file to store perplexity results",
     )
-    parser.add_argument(  # Add expected completion
+    parser.add_argument(
         "--expected_completion",
         type=str,
         default=None,
@@ -217,6 +262,31 @@ def main():
         os.makedirs(json_dir)
 
     for i_prompt, prompt in enumerate(prompts):
+        # Calculate expected token probabilities (independent of generation)
+        if args.expected_completion:
+            expected_probs = calculate_expected_token_probs(
+                model,
+                tokenizer,
+                prompt,
+                args.expected_completion,
+                device,
+            )
+            
+            # Log the results of expected token probabilities
+            base_name, ext = os.path.splitext(args.output_file)
+            expected_output_file = f"{base_name}_expected_P{i_prompt}{ext}"
+            
+            with open(expected_output_file, "w", encoding="utf-8") as f:
+                f.write(f"Prompt: {prompt}\n\n")
+                f.write(f"Expected completion: {args.expected_completion}\n\n")
+                f.write("Expected token probabilities:\n")
+                for i, prob_info in enumerate(expected_probs):
+                    f.write(f"Token {i} ({prob_info['token']}): Prob={prob_info['probability']:.4f}, Perplexity={prob_info['perplexity']:.4f}\n")
+            
+            print(f"Expected token probabilities written to {expected_output_file}")
+        else:
+            expected_probs = []
+
         # Process multiple generations
         for i in range(args.n_gen):
             # Get output file name with index
@@ -224,12 +294,7 @@ def main():
             current_output_file = f"{base_name}_P{i_prompt}_{i}{ext}"
 
             # Generate text and compute perplexity
-            (
-                generated_text,
-                token_perplexities,
-                expected_token_probs,  # Receive expected token probs
-                raw_tokens,
-            ) = generate_and_compute_perplexity(
+            generated_text, token_perplexities, raw_tokens = generate_and_compute_perplexity(
                 model,
                 tokenizer,
                 prompt,
@@ -238,7 +303,6 @@ def main():
                 args.top_k,
                 args.top_p,
                 device,
-                args.expected_completion,  # Pass expected completion
             )
 
             # Extract just the perplexity values for the get_longest_low_perplexity function
@@ -256,13 +320,6 @@ def main():
                 f.write("Token perplexities:\n")
                 for token, perplexity in token_perplexities:
                     f.write(f"{token}: {perplexity:.4f}\n")
-
-                f.write("\nExpected token probabilities:\n")  # Write expected token probs
-                for i, prob in enumerate(expected_token_probs):
-                    if prob is not None:
-                        f.write(f"Token {i}: {prob:.4f}\n")
-                    else:
-                        f.write(f"Token {i}: Not expected\n")
 
                 # Extract the longest sequence based on indices
                 start_idx, end_idx = longest_low_perp_indices
@@ -285,16 +342,23 @@ def main():
 
                 f.write(f"Generated text:\n{generated_text}\n\n")
 
+                if args.expected_completion:
+                    f.write(f"Expected completion: {args.expected_completion}\n\n")
+                    f.write("Expected token probabilities:\n")
+                    for i, prob_info in enumerate(expected_probs):
+                        f.write(f"Token {i} ({prob_info['token']}): Prob={prob_info['probability']:.4f}, Perplexity={prob_info['perplexity']:.4f}\n")
+
             # Save results to JSON
             save_to_json(
                 args.json_output,
                 prompt,
                 generated_text,
                 token_perplexities,
-                expected_token_probs,  # Pass expected token probs
+                expected_probs,
                 longest_low_perp_indices,
                 raw_tokens,
                 current_output_file,
+                args.expected_completion,
             )
 
             print(f"Results written to {current_output_file}")
@@ -303,4 +367,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
