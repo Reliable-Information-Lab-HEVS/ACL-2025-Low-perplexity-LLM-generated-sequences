@@ -265,32 +265,33 @@ def main():
     if json_dir and not os.path.exists(json_dir):
         os.makedirs(json_dir)
 
-    # Calculate expected token probabilities (independent of generation)
-    if args.expected_completion:
-        expected_probs = calculate_expected_token_probs(
-            model,
-            tokenizer,
-            prompt,
-            args.expected_completion,
-            device,
-        )
-        
-        # Log the results of expected token probabilities
-        base_name, ext = os.path.splitext(args.output_file)
-        expected_output_file = f"{base_name}_expected_P{i_prompt}{ext}"
-        
-        with open(expected_output_file, "w", encoding="utf-8") as f:
-            f.write(f"Prompt: {prompt}\n\n")
-            f.write(f"Expected completion: {args.expected_completion}\n\n")
-            f.write("Expected token probabilities:\n")
-            for i, prob_info in enumerate(expected_probs):
-                f.write(f"Token {i} ({prob_info['token']}): Prob={prob_info['probability']:.4f}, Perplexity={prob_info['perplexity']:.4f}\n")
-        
-        print(f"Expected token probabilities written to {expected_output_file}")
-    else:
-        expected_probs = []
     
     for i_prompt, prompt in enumerate(prompts):
+    
+        # Calculate expected token probabilities (just once per prompt)
+        if args.expected_completion:
+            expected_probs = calculate_expected_token_probs(
+                model,
+                tokenizer,
+                prompt,
+                args.expected_completion,
+                device,
+            )
+            
+            # Log the results of expected token probabilities
+            base_name, ext = os.path.splitext(args.output_file)
+            expected_output_file = f"{base_name}_expected_P{i_prompt}{ext}"
+            
+            with open(expected_output_file, "w", encoding="utf-8") as f:
+                f.write(f"Prompt: {prompt}\n\n")
+                f.write(f"Expected completion: {args.expected_completion}\n\n")
+                f.write("Expected token probabilities:\n")
+                for i, prob_info in enumerate(expected_probs):
+                    f.write(f"Token {i} ({prob_info['token']}): Prob={prob_info['probability']:.4f}, Perplexity={prob_info['perplexity']:.4f}\n")
+            
+            print(f"Expected token probabilities written to {expected_output_file}")
+        else:
+            expected_probs = []
 
         # Process multiple generations
         for i in range(args.n_gen):
