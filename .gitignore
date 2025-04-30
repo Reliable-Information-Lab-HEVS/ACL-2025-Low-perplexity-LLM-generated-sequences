@@ -4,3 +4,5 @@ outputs/*
 output*.txt
 prompts.*
 images/*
+*.json
+**/*.txt

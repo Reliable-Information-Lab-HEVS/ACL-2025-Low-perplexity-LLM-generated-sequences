@@ -57,10 +57,15 @@ def query_infinigram(text, index="v4_piletrain_llama", max_retries=5, initial_ba
             # Exponential backoff with jitter
             backoff = min(backoff * 2, 30)  # Cap at 30 seconds
 
-def process_entry(entry, index, max_retries=5, initial_backoff=1.0):
-    """Process a single entry with the API"""
+def process_entry(entry, index, max_retries=5, initial_backoff=1.0, remove_first_word=False):
+    """Process a single entry with the API    
+    """
     if 'longest_low_perplexity_text' in entry and entry['longest_low_perplexity_text']:
         # Query the API
+        
+        if remove_first_word and len(entry['longest_low_perplexity_text'].split()) > 1:
+            entry['longest_low_perplexity_text'] = ' '.join(entry['longest_low_perplexity_text'].split()[1:])
+        
         result = query_infinigram(entry['longest_low_perplexity_text'], index, max_retries, initial_backoff)
         
         if result and 'error' not in result:
@@ -77,7 +82,7 @@ def process_entry(entry, index, max_retries=5, initial_backoff=1.0):
     return entry
 
 def process_json_file(input_file, output_file=None, index="v4_piletrain_llama", 
-                     max_workers=10, max_retries=5, initial_backoff=1.0):
+                     max_workers=10, max_retries=5, initial_backoff=1.0, remove_first_word=False):
     """
     Process a JSON file with perplexity data and add infinigram counts
     
@@ -88,6 +93,7 @@ def process_json_file(input_file, output_file=None, index="v4_piletrain_llama",
         max_workers (int): Maximum number of concurrent requests
         max_retries (int): Maximum retry attempts per request
         initial_backoff (float): Initial backoff time in seconds
+        remove_first_word (bool): Whether to remove the first token, such that infinigram can match successfully (recommended)
     """
     if output_file is None:
         # Create output filename based on input if not provided
@@ -102,7 +108,7 @@ def process_json_file(input_file, output_file=None, index="v4_piletrain_llama",
         print(f"Processing {len(data)} entries with up to {max_workers} concurrent requests...")
         
         # Create a partial function with the index parameter
-        process_func = partial(process_entry, index=index, max_retries=max_retries, initial_backoff=initial_backoff)
+        process_func = partial(process_entry, index=index, max_retries=max_retries, initial_backoff=initial_backoff, remove_first_word=remove_first_word)
         
         # Use ThreadPoolExecutor for I/O-bound tasks like API calls
         with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
@@ -139,9 +145,12 @@ def main():
     parser.add_argument('--backoff', '-b', type=float, default=1.0,
                         help='Initial backoff time in seconds for retries (default: 1.0)')
     
+    parser.add_argument('--remove-first-word', type=bool, default=True, help='If True, remove the first word from the text to match infinigram (default: True)') 
+    # This is because sometimes infinigram will give a different answer for " A" and "A", so removing the first token will counter this effect !
+    
     args = parser.parse_args()
     
-    process_json_file(args.input_file, args.output, args.index, args.workers, args.retries, args.backoff)
+    process_json_file(args.input_file, args.output, args.index, args.workers, args.retries, args.backoff, args.remove_first_word)
 
 if __name__ == "__main__":
     main()
