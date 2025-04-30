@@ -1,0 +1,352 @@
+
+Prompt: Law is a set of rules that are created and are enforceable by social or governmental institutions to regulate 
+Generated text: 
+the behavior of individuals.
+
+Law is a system of rules that are created and are enforceable by social or governmental institutions to regulate the behavior of individuals.
+
+Law is a system of rules that are created and are enforceable by social or governmental institutions to regulate the behavior of individuals.
+
+Law is a system of rules that are created and are enforceable by social or governmental institutions to regulate the behavior of individuals.
+
+Law is a system of rules that are created and are enforceable by social
+Token-by-token perplexity:
+Token 1: '
+' - Probability: 0.802679
+Token 2: 'the' - Probability: 0.073372
+Token 3: ' behavior' - Probability: 0.476836
+Token 4: ' of' - Probability: 0.932986
+Token 5: ' individuals' - Probability: 0.385314
+Token 6: '.' - Probability: 0.245523
+Token 7: '
+' - Probability: 0.238493
+Token 8: '
+' - Probability: 0.594425
+Token 9: 'Law' - Probability: 0.178657
+Token 10: ' is' - Probability: 0.364891
+Token 11: ' a' - Probability: 0.204913
+Token 12: ' system' - Probability: 0.120289
+Token 13: ' of' - Probability: 0.840043
+Token 14: ' rules' - Probability: 0.524392
+Token 15: ' that' - Probability: 0.275891
+Token 16: ' are' - Probability: 0.233660
+Token 17: ' created' - Probability: 0.389013
+Token 18: ' and' - Probability: 0.588397
+Token 19: ' are' - Probability: 0.464842
+Token 20: ' enforceable' - Probability: 0.540610
+Token 21: ' by' - Probability: 0.921399
+Token 22: ' social' - Probability: 0.538040
+Token 23: ' or' - Probability: 0.865985
+Token 24: ' governmental' - Probability: 0.960967
+Token 25: ' institutions' - Probability: 0.957259
+Token 26: ' to' - Probability: 0.668566
+Token 27: ' regulate' - Probability: 0.886274
+Token 28: ' the' - Probability: 0.734603
+Token 29: ' behavior' - Probability: 0.952014
+Token 30: ' of' - Probability: 0.981706
+Token 31: ' individuals' - Probability: 0.913674
+Token 32: '.' - Probability: 0.760459
+Token 33: '
+' - Probability: 0.325349
+Token 34: '
+' - Probability: 0.904215
+Token 35: 'Law' - Probability: 0.317731
+Token 36: ' is' - Probability: 0.734852
+Token 37: ' a' - Probability: 0.713920
+Token 38: ' system' - Probability: 0.423777
+Token 39: ' of' - Probability: 0.954949
+Token 40: ' rules' - Probability: 0.953451
+Token 41: ' that' - Probability: 0.820871
+Token 42: ' are' - Probability: 0.947603
+Token 43: ' created' - Probability: 0.975872
+Token 44: ' and' - Probability: 0.966472
+Token 45: ' are' - Probability: 0.981220
+Token 46: ' enforceable' - Probability: 0.956561
+Token 47: ' by' - Probability: 0.985843
+Token 48: ' social' - Probability: 0.982317
+Token 49: ' or' - Probability: 0.992099
+Token 50: ' governmental' - Probability: 0.984115
+Token 51: ' institutions' - Probability: 0.976066
+Token 52: ' to' - Probability: 0.960934
+Token 53: ' regulate' - Probability: 0.989520
+Token 54: ' the' - Probability: 0.982872
+Token 55: ' behavior' - Probability: 0.975130
+Token 56: ' of' - Probability: 0.994388
+Token 57: ' individuals' - Probability: 0.969664
+Token 58: '.' - Probability: 0.968780
+Token 59: '
+' - Probability: 0.864821
+Token 60: '
+' - Probability: 0.982537
+Token 61: 'Law' - Probability: 0.456840
+Token 62: ' is' - Probability: 0.903280
+Token 63: ' a' - Probability: 0.936373
+Token 64: ' system' - Probability: 0.625371
+Token 65: ' of' - Probability: 0.994959
+Token 66: ' rules' - Probability: 0.996830
+Token 67: ' that' - Probability: 0.993605
+Token 68: ' are' - Probability: 0.998114
+Token 69: ' created' - Probability: 0.998416
+Token 70: ' and' - Probability: 0.996604
+Token 71: ' are' - Probability: 0.998118
+Token 72: ' enforceable' - Probability: 0.994728
+Token 73: ' by' - Probability: 0.997427
+Token 74: ' social' - Probability: 0.998636
+Token 75: ' or' - Probability: 0.998794
+Token 76: ' governmental' - Probability: 0.996894
+Token 77: ' institutions' - Probability: 0.995966
+Token 78: ' to' - Probability: 0.991346
+Token 79: ' regulate' - Probability: 0.996454
+Token 80: ' the' - Probability: 0.995381
+Token 81: ' behavior' - Probability: 0.989944
+Token 82: ' of' - Probability: 0.998144
+Token 83: ' individuals' - Probability: 0.989096
+Token 84: '.' - Probability: 0.992374
+Token 85: '
+' - Probability: 0.933365
+Token 86: '
+' - Probability: 0.990872
+Token 87: 'Law' - Probability: 0.574115
+Token 88: ' is' - Probability: 0.949605
+Token 89: ' a' - Probability: 0.969159
+Token 90: ' system' - Probability: 0.810900
+Token 91: ' of' - Probability: 0.997911
+Token 92: ' rules' - Probability: 0.998914
+Token 93: ' that' - Probability: 0.998606
+Token 94: ' are' - Probability: 0.999330
+Token 95: ' created' - Probability: 0.999547
+Token 96: ' and' - Probability: 0.998972
+Token 97: ' are' - Probability: 0.999577
+Token 98: ' enforceable' - Probability: 0.998502
+Token 99: ' by' - Probability: 0.999257
+Token 100: ' social' - Probability: 0.999434
+
+Overall perplexity: 1.3524
+
+==================================================
+
+Prompt: A capital city, or just capital, is the municipality holding primary status in a country, state, province, department, or other subnational division, usually as its seat of the government. A capital is typically a
+Generated text:  city with a population of at least 100,000, although some countries have a capital city with a population of less than 100,000.
+
+Capitals are often the most populous city in the country, state, province, or other subnational division, and are often the largest city in the region. In some countries, the capital is not the largest city, but the most important city in the country.
+
+Capitals are often the most important city in the country, state,
+Token-by-token perplexity:
+Token 1: ' city' - Probability: 0.431315
+Token 2: ' with' - Probability: 0.251068
+Token 3: ' a' - Probability: 0.630169
+Token 4: ' population' - Probability: 0.198347
+Token 5: ' of' - Probability: 0.655919
+Token 6: ' at' - Probability: 0.545627
+Token 7: ' least' - Probability: 0.999619
+Token 8: ' 100' - Probability: 0.459738
+Token 9: ',' - Probability: 0.995041
+Token 10: '000' - Probability: 0.998674
+Token 11: ',' - Probability: 0.243120
+Token 12: ' although' - Probability: 0.220991
+Token 13: ' some' - Probability: 0.163660
+Token 14: ' countries' - Probability: 0.286478
+Token 15: ' have' - Probability: 0.321846
+Token 16: ' a' - Probability: 0.170993
+Token 17: ' capital' - Probability: 0.590582
+Token 18: ' city' - Probability: 0.403637
+Token 19: ' with' - Probability: 0.627942
+Token 20: ' a' - Probability: 0.771027
+Token 21: ' population' - Probability: 0.394251
+Token 22: ' of' - Probability: 0.623535
+Token 23: ' less' - Probability: 0.561823
+Token 24: ' than' - Probability: 0.997173
+Token 25: ' 100' - Probability: 0.728096
+Token 26: ',' - Probability: 0.997504
+Token 27: '000' - Probability: 0.998846
+Token 28: '.' - Probability: 0.562778
+Token 29: '
+' - Probability: 0.172853
+Token 30: '
+' - Probability: 0.882766
+Token 31: 'Cap' - Probability: 0.216141
+Token 32: 'itals' - Probability: 0.574937
+Token 33: ' are' - Probability: 0.402812
+Token 34: ' often' - Probability: 0.217248
+Token 35: ' the' - Probability: 0.167592
+Token 36: ' most' - Probability: 0.239114
+Token 37: ' pop' - Probability: 0.494256
+Token 38: 'ulous' - Probability: 0.999992
+Token 39: ' city' - Probability: 0.229392
+Token 40: ' in' - Probability: 0.530390
+Token 41: ' the' - Probability: 0.396514
+Token 42: ' country' - Probability: 0.498322
+Token 43: ',' - Probability: 0.457725
+Token 44: ' state' - Probability: 0.273786
+Token 45: ',' - Probability: 0.892656
+Token 46: ' province' - Probability: 0.490247
+Token 47: ',' - Probability: 0.898622
+Token 48: ' or' - Probability: 0.513361
+Token 49: ' other' - Probability: 0.559205
+Token 50: ' sub' - Probability: 0.298982
+Token 51: 'national' - Probability: 0.948457
+Token 52: ' division' - Probability: 0.914224
+Token 53: ',' - Probability: 0.340845
+Token 54: ' and' - Probability: 0.354489
+Token 55: ' are' - Probability: 0.139681
+Token 56: ' often' - Probability: 0.320219
+Token 57: ' the' - Probability: 0.442325
+Token 58: ' largest' - Probability: 0.265053
+Token 59: ' city' - Probability: 0.547826
+Token 60: ' in' - Probability: 0.568073
+Token 61: ' the' - Probability: 0.660911
+Token 62: ' region' - Probability: 0.288585
+Token 63: '.' - Probability: 0.548533
+Token 64: ' In' - Probability: 0.116958
+Token 65: ' some' - Probability: 0.329377
+Token 66: ' countries' - Probability: 0.459823
+Token 67: ',' - Probability: 0.716135
+Token 68: ' the' - Probability: 0.290437
+Token 69: ' capital' - Probability: 0.636546
+Token 70: ' is' - Probability: 0.406660
+Token 71: ' not' - Probability: 0.294393
+Token 72: ' the' - Probability: 0.707109
+Token 73: ' largest' - Probability: 0.618748
+Token 74: ' city' - Probability: 0.849862
+Token 75: ',' - Probability: 0.305830
+Token 76: ' but' - Probability: 0.371720
+Token 77: ' the' - Probability: 0.228232
+Token 78: ' most' - Probability: 0.188242
+Token 79: ' important' - Probability: 0.507427
+Token 80: ' city' - Probability: 0.166018
+Token 81: ' in' - Probability: 0.237345
+Token 82: ' the' - Probability: 0.579387
+Token 83: ' country' - Probability: 0.519351
+Token 84: '.' - Probability: 0.301996
+Token 85: '
+' - Probability: 0.191353
+Token 86: '
+' - Probability: 0.974984
+Token 87: 'Cap' - Probability: 0.142684
+Token 88: 'itals' - Probability: 0.642809
+Token 89: ' are' - Probability: 0.374638
+Token 90: ' often' - Probability: 0.344568
+Token 91: ' the' - Probability: 0.361446
+Token 92: ' most' - Probability: 0.292960
+Token 93: ' important' - Probability: 0.292276
+Token 94: ' city' - Probability: 0.187360
+Token 95: ' in' - Probability: 0.767713
+Token 96: ' the' - Probability: 0.537224
+Token 97: ' country' - Probability: 0.491718
+Token 98: ',' - Probability: 0.773574
+Token 99: ' state' - Probability: 0.741616
+Token 100: ',' - Probability: 0.983550
+
+Overall perplexity: 2.3330
+
+==================================================
+
+Prompt: Paris is home to several United Nations organizations including UNESCO, as well as other international organizations such as the OECD, the OECD Development Centre, the International Bureau of Weights and Measures, the International Energy Agency, the International Federation for Human Rights, along with European bodies such as the European Space 
+Generated text: 
+(ESA) Agency, the European Organization for Nuclear Research (CERN), the European Organization for the Exploitation of Meteorological Satellites (EUMETSAT), the European Agency for the Management of Operational Cooperation at the External Borders of the Member States of the European Union (FRONTEX), the European Bank for Reconstruction and Development (EBRD), the European Investment Bank (EIB), the European Investment Fund (EIF), the European Investment Bank
+Token-by-token perplexity:
+Token 1: '
+' - Probability: 0.665939
+Token 2: '(' - Probability: 0.033356
+Token 3: 'ES' - Probability: 0.629812
+Token 4: 'A' - Probability: 0.997484
+Token 5: ')' - Probability: 0.472334
+Token 6: ' Agency' - Probability: 0.420659
+Token 7: ',' - Probability: 0.508505
+Token 8: ' the' - Probability: 0.699053
+Token 9: ' European' - Probability: 0.573101
+Token 10: ' Organization' - Probability: 0.121396
+Token 11: ' for' - Probability: 0.984035
+Token 12: ' Nuclear' - Probability: 0.956190
+Token 13: ' Research' - Probability: 0.997276
+Token 14: ' (' - Probability: 0.789800
+Token 15: 'C' - Probability: 0.985526
+Token 16: 'ERN' - Probability: 0.997035
+Token 17: '),' - Probability: 0.652857
+Token 18: ' the' - Probability: 0.606066
+Token 19: ' European' - Probability: 0.597341
+Token 20: ' Organization' - Probability: 0.113597
+Token 21: ' for' - Probability: 0.982895
+Token 22: ' the' - Probability: 0.398731
+Token 23: ' Expl' - Probability: 0.564223
+Token 24: 'o' - Probability: 0.921432
+Token 25: 'itation' - Probability: 0.999792
+Token 26: ' of' - Probability: 0.977448
+Token 27: ' Met' - Probability: 0.979736
+Token 28: 'eor' - Probability: 0.955761
+Token 29: 'ological' - Probability: 0.984176
+Token 30: ' Sat' - Probability: 0.983229
+Token 31: 'ell' - Probability: 0.995072
+Token 32: 'ites' - Probability: 0.994769
+Token 33: ' (' - Probability: 0.922006
+Token 34: 'E' - Probability: 0.930733
+Token 35: 'UM' - Probability: 0.964302
+Token 36: 'ETS' - Probability: 0.973787
+Token 37: 'AT' - Probability: 0.999434
+Token 38: '),' - Probability: 0.752092
+Token 39: ' the' - Probability: 0.628604
+Token 40: ' European' - Probability: 0.616845
+Token 41: ' Agency' - Probability: 0.091786
+Token 42: ' for' - Probability: 0.979056
+Token 43: ' the' - Probability: 0.466417
+Token 44: ' Management' - Probability: 0.660895
+Token 45: ' of' - Probability: 0.989896
+Token 46: ' Oper' - Probability: 0.921784
+Token 47: 'ational' - Probability: 0.995992
+Token 48: ' Cooper' - Probability: 0.835007
+Token 49: 'ation' - Probability: 0.978107
+Token 50: ' at' - Probability: 0.844694
+Token 51: ' the' - Probability: 0.814436
+Token 52: ' External' - Probability: 0.804647
+Token 53: ' B' - Probability: 0.993626
+Token 54: 'orders' - Probability: 0.999382
+Token 55: ' of' - Probability: 0.530668
+Token 56: ' the' - Probability: 0.960083
+Token 57: ' Member' - Probability: 0.940848
+Token 58: ' States' - Probability: 0.990381
+Token 59: ' of' - Probability: 0.908806
+Token 60: ' the' - Probability: 0.926043
+Token 61: ' European' - Probability: 0.898001
+Token 62: ' Union' - Probability: 0.980084
+Token 63: ' (' - Probability: 0.896171
+Token 64: 'FR' - Probability: 0.507047
+Token 65: 'ONT' - Probability: 0.998179
+Token 66: 'EX' - Probability: 0.999983
+Token 67: '),' - Probability: 0.789853
+Token 68: ' the' - Probability: 0.673258
+Token 69: ' European' - Probability: 0.671598
+Token 70: ' Bank' - Probability: 0.117513
+Token 71: ' for' - Probability: 0.964151
+Token 72: ' Re' - Probability: 0.998813
+Token 73: 'construction' - Probability: 0.998763
+Token 74: ' and' - Probability: 0.992093
+Token 75: ' Development' - Probability: 0.991855
+Token 76: ' (' - Probability: 0.535928
+Token 77: 'E' - Probability: 0.972376
+Token 78: 'BR' - Probability: 0.998909
+Token 79: 'D' - Probability: 0.999895
+Token 80: '),' - Probability: 0.852590
+Token 81: ' the' - Probability: 0.729954
+Token 82: ' European' - Probability: 0.710419
+Token 83: ' Investment' - Probability: 0.188654
+Token 84: ' Bank' - Probability: 0.990346
+Token 85: ' (' - Probability: 0.938108
+Token 86: 'E' - Probability: 0.997457
+Token 87: 'IB' - Probability: 0.999481
+Token 88: '),' - Probability: 0.809321
+Token 89: ' the' - Probability: 0.789251
+Token 90: ' European' - Probability: 0.777036
+Token 91: ' Investment' - Probability: 0.115842
+Token 92: ' Fund' - Probability: 0.929329
+Token 93: ' (' - Probability: 0.916349
+Token 94: 'E' - Probability: 0.985101
+Token 95: 'IF' - Probability: 0.999198
+Token 96: '),' - Probability: 0.828310
+Token 97: ' the' - Probability: 0.812686
+Token 98: ' European' - Probability: 0.824124
+Token 99: ' Investment' - Probability: 0.133686
+Token 100: ' Bank' - Probability: 0.614058
+
+Overall perplexity: 1.4272
+
+==================================================

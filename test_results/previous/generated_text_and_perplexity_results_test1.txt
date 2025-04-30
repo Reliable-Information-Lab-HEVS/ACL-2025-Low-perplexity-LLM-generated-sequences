@@ -1,0 +1,237 @@
+
+Prompt: born Fabio Chigi, was head of the Catholic Church and ruler of the Papal States from 
+Generated text: 
+1846 to 1849.
+
+The Chigi family was a prominent Roman family, and the family's coat of arms was a golden eagle with a red field.
+
+The family was descended from the noble Roman family of the Chigi, which had been ennobled by the Emperor Augustus. The family was originally from the town of Chieri, in the province of Piedmont, and had been ennobled by the Emperor Frederick II.
+
+The family was related to
+Token-by-token perplexity:
+Token 1: '
+' - Probability: 0.829192
+Token 2: '18' - Probability: 0.141020
+Token 3: '46' - Probability: 0.077666
+Token 4: ' to' - Probability: 0.641840
+Token 5: ' 18' - Probability: 0.483741
+Token 6: '49' - Probability: 0.621166
+Token 7: '.' - Probability: 0.738983
+Token 8: '
+' - Probability: 0.315483
+Token 9: '
+' - Probability: 0.818384
+Token 10: 'The' - Probability: 0.119542
+Token 11: ' Ch' - Probability: 0.035899
+Token 12: 'igi' - Probability: 0.992845
+Token 13: ' family' - Probability: 0.427358
+Token 14: ' was' - Probability: 0.164448
+Token 15: ' a' - Probability: 0.137580
+Token 16: ' prominent' - Probability: 0.146077
+Token 17: ' Roman' - Probability: 0.273130
+Token 18: ' family' - Probability: 0.398052
+Token 19: ',' - Probability: 0.234843
+Token 20: ' and' - Probability: 0.101937
+Token 21: ' the' - Probability: 0.121169
+Token 22: ' family' - Probability: 0.084186
+Token 23: ''s' - Probability: 0.133443
+Token 24: ' coat' - Probability: 0.096306
+Token 25: ' of' - Probability: 0.945574
+Token 26: ' arms' - Probability: 0.997322
+Token 27: ' was' - Probability: 0.190686
+Token 28: ' a' - Probability: 0.104621
+Token 29: ' golden' - Probability: 0.108114
+Token 30: ' eagle' - Probability: 0.248915
+Token 31: ' with' - Probability: 0.228962
+Token 32: ' a' - Probability: 0.453271
+Token 33: ' red' - Probability: 0.078094
+Token 34: ' field' - Probability: 0.105417
+Token 35: '.' - Probability: 0.496487
+Token 36: '
+' - Probability: 0.302675
+Token 37: '
+' - Probability: 0.888578
+Token 38: 'The' - Probability: 0.199979
+Token 39: ' family' - Probability: 0.277655
+Token 40: ' was' - Probability: 0.178543
+Token 41: ' descended' - Probability: 0.077727
+Token 42: ' from' - Probability: 0.956848
+Token 43: ' the' - Probability: 0.309566
+Token 44: ' noble' - Probability: 0.075992
+Token 45: ' Roman' - Probability: 0.173722
+Token 46: ' family' - Probability: 0.653163
+Token 47: ' of' - Probability: 0.735000
+Token 48: ' the' - Probability: 0.664340
+Token 49: ' Ch' - Probability: 0.440651
+Token 50: 'igi' - Probability: 0.988552
+Token 51: ',' - Probability: 0.540949
+Token 52: ' which' - Probability: 0.221945
+Token 53: ' had' - Probability: 0.264525
+Token 54: ' been' - Probability: 0.271314
+Token 55: ' en' - Probability: 0.127841
+Token 56: 'nob' - Probability: 0.950086
+Token 57: 'led' - Probability: 0.999684
+Token 58: ' by' - Probability: 0.531089
+Token 59: ' the' - Probability: 0.306496
+Token 60: ' Emperor' - Probability: 0.182791
+Token 61: ' Augustus' - Probability: 0.212067
+Token 62: '.' - Probability: 0.412651
+Token 63: ' The' - Probability: 0.262552
+Token 64: ' family' - Probability: 0.468309
+Token 65: ' was' - Probability: 0.173207
+Token 66: ' originally' - Probability: 0.099036
+Token 67: ' from' - Probability: 0.450197
+Token 68: ' the' - Probability: 0.197504
+Token 69: ' town' - Probability: 0.181575
+Token 70: ' of' - Probability: 0.987051
+Token 71: ' Ch' - Probability: 0.406202
+Token 72: 'ieri' - Probability: 0.287183
+Token 73: ',' - Probability: 0.498538
+Token 74: ' in' - Probability: 0.509793
+Token 75: ' the' - Probability: 0.750115
+Token 76: ' province' - Probability: 0.288283
+Token 77: ' of' - Probability: 0.997526
+Token 78: ' P' - Probability: 0.350883
+Token 79: 'ied' - Probability: 0.462858
+Token 80: 'mont' - Probability: 0.998970
+Token 81: ',' - Probability: 0.443109
+Token 82: ' and' - Probability: 0.225330
+Token 83: ' had' - Probability: 0.139264
+Token 84: ' been' - Probability: 0.184584
+Token 85: ' en' - Probability: 0.157454
+Token 86: 'nob' - Probability: 0.991965
+Token 87: 'led' - Probability: 0.999227
+Token 88: ' by' - Probability: 0.638317
+Token 89: ' the' - Probability: 0.343887
+Token 90: ' Emperor' - Probability: 0.403362
+Token 91: ' Frederick' - Probability: 0.244569
+Token 92: ' II' - Probability: 0.618521
+Token 93: '.' - Probability: 0.404560
+Token 94: '
+' - Probability: 0.293420
+Token 95: '
+' - Probability: 0.945905
+Token 96: 'The' - Probability: 0.317199
+Token 97: ' family' - Probability: 0.370618
+Token 98: ' was' - Probability: 0.164600
+Token 99: ' related' - Probability: 0.075671
+Token 100: ' to' - Probability: 0.863899
+
+Overall perplexity: 3.2300
+
+==================================================
+
+Prompt: is a senior member of the clergy of the Catholic Church. As titular members of the clergy of the Diocese of Rome, they serve as advisors to the
+Generated text:  Pope.
+
+The title of cardinal was created by Pope Paul VI in the consistory of 21 November 1969.
+
+The current Cardinal-Deacons are:
+
+Cardinal-Deacons of the Holy Roman Church
+
+See also
+
+References
+
+External links
+
+Category:Titles of the Holy See
+Category:Lists of cardinals
+Token-by-token perplexity:
+Token 1: ' Pope' - Probability: 0.256254
+Token 2: '.' - Probability: 0.273218
+Token 3: '
+' - Probability: 0.361071
+Token 4: '
+' - Probability: 0.962418
+Token 5: 'The' - Probability: 0.229991
+Token 6: ' title' - Probability: 0.082788
+Token 7: ' of' - Probability: 0.343558
+Token 8: ' cardinal' - Probability: 0.443074
+Token 9: ' was' - Probability: 0.242267
+Token 10: ' created' - Probability: 0.211163
+Token 11: ' by' - Probability: 0.408258
+Token 12: ' Pope' - Probability: 0.759595
+Token 13: ' Paul' - Probability: 0.158141
+Token 14: ' VI' - Probability: 0.627640
+Token 15: ' in' - Probability: 0.506491
+Token 16: ' the' - Probability: 0.516305
+Token 17: ' consist' - Probability: 0.608796
+Token 18: 'ory' - Probability: 0.999346
+Token 19: ' of' - Probability: 0.996002
+Token 20: ' 21' - Probability: 0.128663
+Token 21: ' November' - Probability: 0.264577
+Token 22: ' 1969' - Probability: 0.240031
+Token 23: '.' - Probability: 0.309527
+Token 24: '
+' - Probability: 0.209334
+Token 25: '
+' - Probability: 0.968243
+Token 26: 'The' - Probability: 0.161084
+Token 27: ' current' - Probability: 0.147654
+Token 28: ' Cardinal' - Probability: 0.458779
+Token 29: '-' - Probability: 0.250299
+Token 30: 'De' - Probability: 0.555440
+Token 31: 'ac' - Probability: 0.705650
+Token 32: 'ons' - Probability: 0.999993
+Token 33: ' are' - Probability: 0.637000
+Token 34: ':' - Probability: 0.629929
+Token 35: '
+' - Probability: 0.739110
+Token 36: '
+' - Probability: 0.281983
+Token 37: 'Card' - Probability: 0.116140
+Token 38: 'inal' - Probability: 0.925556
+Token 39: '-' - Probability: 0.764411
+Token 40: 'De' - Probability: 0.761958
+Token 41: 'ac' - Probability: 0.956558
+Token 42: 'ons' - Probability: 0.999962
+Token 43: ' of' - Probability: 0.381168
+Token 44: ' the' - Probability: 0.359609
+Token 45: ' Holy' - Probability: 0.811271
+Token 46: ' Roman' - Probability: 0.891329
+Token 47: ' Church' - Probability: 0.995375
+Token 48: '
+' - Probability: 0.597843
+Token 49: '
+' - Probability: 0.195420
+Token 50: 'See' - Probability: 0.135683
+Token 51: ' also' - Probability: 0.995830
+Token 52: '
+' - Probability: 0.734512
+Token 53: '
+' - Probability: 0.236040
+Token 54: 'References' - Probability: 0.251517
+Token 55: '
+' - Probability: 0.808383
+Token 56: '
+' - Probability: 0.977548
+Token 57: 'External' - Probability: 0.314452
+Token 58: ' links' - Probability: 0.995448
+Token 59: '
+' - Probability: 0.720648
+Token 60: '
+' - Probability: 0.154858
+Token 61: 'Category' - Probability: 0.226669
+Token 62: ':' - Probability: 0.999908
+Token 63: 'T' - Probability: 0.287722
+Token 64: 'it' - Probability: 0.999887
+Token 65: 'les' - Probability: 0.852507
+Token 66: ' of' - Probability: 0.803775
+Token 67: ' the' - Probability: 0.933858
+Token 68: ' Holy' - Probability: 0.272753
+Token 69: ' See' - Probability: 0.572413
+Token 70: '
+' - Probability: 0.573007
+Token 71: 'Category' - Probability: 0.823695
+Token 72: ':' - Probability: 0.999944
+Token 73: 'Lists' - Probability: 0.336119
+Token 74: ' of' - Probability: 0.999893
+Token 75: ' card' - Probability: 0.351424
+Token 76: 'inals' - Probability: 0.999985
+Token 77: '<|endoftext|>' - Probability: 0.458123
+
+Overall perplexity: 2.1644
+
+==================================================
