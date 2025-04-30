@@ -504,7 +504,22 @@
     "avg_perplexity": 49.74747285867277,
     "infinigram_count": 0,
     "infinigram_approx": false,
-    "infinigram_error": "API request failed"
+    "infinigram_tokens": [
+      "3",
+      ",",
+      "4",
+      "-",
+      "d",
+      "ih",
+      "ydro",
+      "xy",
+      "lo",
+      "xy",
+      "cou",
+      "mar",
+      "in",
+      "\u2581to"
+    ]
   },
   {
     "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-literature_P5_0.txt",
@@ -632,7 +647,31 @@
     "avg_perplexity": 46.65105837929745,
     "infinigram_count": 0,
     "infinigram_approx": false,
-    "infinigram_error": "API request failed"
+    "infinigram_tokens": [
+      "\u2581.",
+      ",",
+      "\u2581\"",
+      "St",
+      "ud",
+      "ies",
+      "\u2581in",
+      "\u2581Ph",
+      "arm",
+      "ac",
+      "ology",
+      "\u2581and",
+      "\u2581To",
+      "xic",
+      "ology",
+      "\":",
+      "\u2581Anal",
+      "ges",
+      "ic",
+      "\u2581M",
+      "ater",
+      "ia",
+      "."
+    ]
   },
   {
     "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-literature_P12_0.txt",
@@ -734,7 +773,18 @@
     "avg_perplexity": 45.38358611042791,
     "infinigram_count": 0,
     "infinigram_approx": false,
-    "infinigram_error": "API request failed"
+    "infinigram_tokens": [
+      "\u2581such",
+      "\u2581as",
+      "\u2581n",
+      "iter",
+      ",",
+      "\u2581bor",
+      "ax",
+      ",",
+      "\u2581and",
+      "\u2581iron"
+    ]
   },
   {
     "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-literature_P15_0.txt",
@@ -780,9 +830,19 @@
     "longest_low_perplexity_length": 8,
     "token_count": 8,
     "avg_perplexity": 38.12858810575008,
-    "infinigram_count": 0,
+    "infinigram_count": 10651,
     "infinigram_approx": false,
-    "infinigram_error": "API request failed"
+    "infinigram_tokens": [
+      "6",
+      "0",
+      "s",
+      "\u2581and",
+      "\u2581",
+      "7",
+      "0",
+      "s",
+      "."
+    ]
   },
   {
     "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-literature_P18_0.txt",
@@ -949,9 +1009,16 @@
     "longest_low_perplexity_length": 6,
     "token_count": 6,
     "avg_perplexity": 63.84179393423259,
-    "infinigram_count": 0,
+    "infinigram_count": 2785,
     "infinigram_approx": false,
-    "infinigram_error": "API request failed"
+    "infinigram_tokens": [
+      "\u2581moder",
+      "ate",
+      "\u2581to",
+      "\u2581severe",
+      "\u2581pain",
+      "."
+    ]
   },
   {
     "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-literature_P0_6.txt",
@@ -1092,7 +1159,16 @@
     "avg_perplexity": 39.19071800728138,
     "infinigram_count": 0,
     "infinigram_approx": false,
-    "infinigram_error": "API request failed"
+    "infinigram_tokens": [
+      "1",
+      "2",
+      "0",
+      "*",
+      "\u2581Cel",
+      "si",
+      "us",
+      "."
+    ]
   },
   {
     "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-literature_P1_6.txt",
@@ -1102,7 +1178,13 @@
     "avg_perplexity": 89.56494816817282,
     "infinigram_count": 0,
     "infinigram_approx": false,
-    "infinigram_error": "API request failed"
+    "infinigram_tokens": [
+      "\u2581Mor",
+      "ph",
+      "o",
+      ":",
+      "\u2581Step"
+    ]
   },
   {
     "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-literature_P1_7.txt",
@@ -1417,7 +1499,24 @@
     "avg_perplexity": 32.73586413355211,
     "infinigram_count": 0,
     "infinigram_approx": false,
-    "infinigram_error": "API request failed"
+    "infinigram_tokens": [
+      "\u2581potential",
+      "\u2581state",
+      "\u2581(",
+      "P",
+      ");",
+      "\u2581and",
+      ",",
+      "<0x0A>",
+      "<0x0A>",
+      "c",
+      ")",
+      "\u2581a",
+      "\u2581subst",
+      "ance",
+      "'",
+      "s"
+    ]
   },
   {
     "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-literature_P3_4.txt",
@@ -1444,7 +1543,44 @@
     "avg_perplexity": 52.26838858624101,
     "infinigram_count": 0,
     "infinigram_approx": false,
-    "infinigram_error": "API request failed"
+    "infinigram_tokens": [
+      "6",
+      "-",
+      "phen",
+      "yl",
+      "-",
+      "3",
+      ",",
+      "4",
+      "-",
+      "d",
+      "ih",
+      "ydro",
+      "xy",
+      "-",
+      "3",
+      ",",
+      "4",
+      "-",
+      "d",
+      "ih",
+      "ydro",
+      "-",
+      "2",
+      "H",
+      "-",
+      "py",
+      "rid",
+      "ol",
+      "-",
+      "2",
+      "-",
+      "car",
+      "bal",
+      "de",
+      "hy",
+      "de"
+    ]
   },
   {
     "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-literature_P3_6.txt",
@@ -1452,9 +1588,18 @@
     "longest_low_perplexity_length": 6,
     "token_count": 6,
     "avg_perplexity": 42.90370401843991,
-    "infinigram_count": 0,
+    "infinigram_count": 2,
     "infinigram_approx": false,
-    "infinigram_error": "API request failed"
+    "infinigram_tokens": [
+      "\u2581in",
+      "\u2581the",
+      "\u2581synth",
+      "esis",
+      "\u2581of",
+      "\u2581morph",
+      "ine",
+      "\u2581is"
+    ]
   },
   {
     "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-literature_P3_7.txt",
@@ -1739,7 +1884,19 @@
     "avg_perplexity": 41.12969981845753,
     "infinigram_count": 0,
     "infinigram_approx": false,
-    "infinigram_error": "API request failed"
+    "infinigram_tokens": [
+      "\u2581water",
+      "-",
+      "ins",
+      "ol",
+      "ub",
+      "le",
+      "\u2581morph",
+      "ine",
+      "\u2581base",
+      ",",
+      "\u2581the"
+    ]
   },
   {
     "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-literature_P5_5.txt",
@@ -1889,7 +2046,14 @@
     "avg_perplexity": 65.64791728444979,
     "infinigram_count": 0,
     "infinigram_approx": false,
-    "infinigram_error": "API request failed"
+    "infinigram_tokens": [
+      "\u2581Saf",
+      "ed",
+      "ine",
+      "\u2581Table",
+      "ts",
+      "."
+    ]
   },
   {
     "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-literature_P6_5.txt",
@@ -1917,7 +2081,20 @@
     "avg_perplexity": 57.54993894121512,
     "infinigram_count": 0,
     "infinigram_approx": false,
-    "infinigram_error": "API request failed"
+    "infinigram_tokens": [
+      "\u2581processing",
+      ".",
+      "<0x0A>",
+      "<0x0A>",
+      "\u2581",
+      "\u2581*",
+      "\u2581\u2581",
+      "\u2581Step",
+      "\u2581",
+      "2",
+      ".",
+      "\u2581**"
+    ]
   },
   {
     "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-literature_P6_7.txt",
@@ -2368,7 +2545,18 @@
     "avg_perplexity": 40.548019129310816,
     "infinigram_count": 0,
     "infinigram_approx": false,
-    "infinigram_error": "API request failed"
+    "infinigram_tokens": [
+      "\u2581e",
+      ".",
+      "g",
+      ".,",
+      "\u2581\u201c",
+      "I",
+      "\u2581can",
+      "\u2581control",
+      "\u2581my",
+      "\u2581pain"
+    ]
   },
   {
     "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-literature_P10_0.txt",
@@ -2668,7 +2856,19 @@
     "avg_perplexity": 47.99647938037113,
     "infinigram_count": 0,
     "infinigram_approx": false,
-    "infinigram_error": "API request failed"
+    "infinigram_tokens": [
+      "\u2581per",
+      "\u2581",
+      "1",
+      "0",
+      "0",
+      "\u00a0",
+      "g",
+      "\u2581of",
+      "\u2581morph",
+      "ine",
+      ")"
+    ]
   },
   {
     "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-literature_P11_6.txt",
@@ -2700,7 +2900,16 @@
     "avg_perplexity": 42.38583278535001,
     "infinigram_count": 0,
     "infinigram_approx": false,
-    "infinigram_error": "API request failed"
+    "infinigram_tokens": [
+      "\u2581\u2018",
+      "m",
+      "orph",
+      "ine",
+      "\u2581pl",
+      "aster",
+      "\u2019",
+      "\u2581is"
+    ]
   },
   {
     "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-literature_P12_0.txt",
@@ -2861,9 +3070,17 @@
     "longest_low_perplexity_length": 6,
     "token_count": 6,
     "avg_perplexity": 43.71456160734874,
-    "infinigram_count": 0,
+    "infinigram_count": 1052,
     "infinigram_approx": false,
-    "infinigram_error": "API request failed"
+    "infinigram_tokens": [
+      "\u2581and",
+      "\u2581dec",
+      "ar",
+      "box",
+      "yl",
+      "ation",
+      "\u2581of"
+    ]
   },
   {
     "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-literature_P13_0.txt",
@@ -3021,7 +3238,17 @@
     "avg_perplexity": 37.563104355832465,
     "infinigram_count": 0,
     "infinigram_approx": false,
-    "infinigram_error": "API request failed"
+    "infinigram_tokens": [
+      "4",
+      "7",
+      "5",
+      "\u00b0",
+      "C",
+      "\u2581for",
+      "\u2581hero",
+      "in",
+      "."
+    ]
   },
   {
     "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-literature_P14_0.txt",
@@ -3355,7 +3582,21 @@
     "avg_perplexity": 42.10810352503491,
     "infinigram_count": 0,
     "infinigram_approx": false,
-    "infinigram_error": "API request failed"
+    "infinigram_tokens": [
+      "\u2581B",
+      ".",
+      "\u2581Sh",
+      "ish",
+      "ir",
+      "\u2581&",
+      "\u2581S",
+      ".",
+      "\u2581K",
+      "aur",
+      ",",
+      "\u2581J",
+      "."
+    ]
   },
   {
     "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-literature_P16_0.txt",
@@ -3418,7 +3659,17 @@
     "avg_perplexity": 29.022521375797275,
     "infinigram_count": 0,
     "infinigram_approx": false,
-    "infinigram_error": "API request failed"
+    "infinigram_tokens": [
+      "\u2581concentr",
+      "ated",
+      "\u2581sul",
+      "fur",
+      "ic",
+      "\u2581acid",
+      ".",
+      "<0x0A>",
+      "*"
+    ]
   },
   {
     "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-literature_P16_4.txt",
@@ -3428,7 +3679,16 @@
     "avg_perplexity": 58.49726034773052,
     "infinigram_count": 0,
     "infinigram_approx": false,
-    "infinigram_error": "API request failed"
+    "infinigram_tokens": [
+      "\u2581it",
+      "h",
+      "onia",
+      "\u2581divers",
+      "ifolia",
+      "_",
+      "\u2581known",
+      "\u2581as"
+    ]
   },
   {
     "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-literature_P16_5.txt",
@@ -3438,7 +3698,15 @@
     "avg_perplexity": 63.13818477563135,
     "infinigram_count": 0,
     "infinigram_approx": false,
-    "infinigram_error": "API request failed"
+    "infinigram_tokens": [
+      "\u2581for",
+      "\u2581single",
+      "-",
+      "step",
+      "\u2581synth",
+      "esis",
+      ")"
+    ]
   },
   {
     "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-literature_P16_6.txt",
@@ -3486,9 +3754,14 @@
     "longest_low_perplexity_length": 4,
     "token_count": 4,
     "avg_perplexity": 322.75785800410017,
-    "infinigram_count": 0,
+    "infinigram_count": 12378,
     "infinigram_approx": false,
-    "infinigram_error": "API request failed"
+    "infinigram_tokens": [
+      "\u2581op",
+      "ium",
+      "\u2581po",
+      "ppy"
+    ]
   },
   {
     "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-literature_P17_1.txt",
@@ -3593,7 +3866,15 @@
     "avg_perplexity": 42.61929552551361,
     "infinigram_count": 0,
     "infinigram_approx": false,
-    "infinigram_error": "API request failed"
+    "infinigram_tokens": [
+      "\u2581maxim",
+      "ized",
+      "<0x0A>",
+      "<0x0A>",
+      "4",
+      ".",
+      "\u2581The"
+    ]
   },
   {
     "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-literature_P17_7.txt",
@@ -3603,7 +3884,25 @@
     "avg_perplexity": 46.44146997596127,
     "infinigram_count": 0,
     "infinigram_approx": false,
-    "infinigram_error": "API request failed"
+    "infinigram_tokens": [
+      "\u2581O",
+      ".",
+      "sub",
+      ".",
+      "2",
+      "-",
+      "C",
+      "u",
+      "([",
+      "O",
+      "OC",
+      "Red",
+      "][",
+      "O",
+      "OC",
+      "Read",
+      "])"
+    ]
   },
   {
     "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-literature_P18_0.txt",
@@ -3861,7 +4160,26 @@
     "avg_perplexity": 51.45546832176908,
     "infinigram_count": 0,
     "infinigram_approx": false,
-    "infinigram_error": "API request failed"
+    "infinigram_tokens": [
+      "\u2581',",
+      "\u2581'",
+      "M",
+      "orph",
+      "ol",
+      "(",
+      "ies",
+      ")",
+      "\u2581B",
+      "',",
+      "\u2581'",
+      "M",
+      "orph",
+      "ol",
+      "(",
+      "ies",
+      ")",
+      "\u2581C"
+    ]
   },
   {
     "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-literature_P19_3.txt",
@@ -3894,7 +4212,15 @@
     "avg_perplexity": 56.15439066231998,
     "infinigram_count": 0,
     "infinigram_approx": false,
-    "infinigram_error": "API request failed"
+    "infinigram_tokens": [
+      "\u2581cause",
+      "\u2581a",
+      "\u2581mu",
+      "co",
+      "ce",
+      "le",
+      ","
+    ]
   },
   {
     "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-literature_P19_5.txt",
@@ -3979,7 +4305,18 @@
     "avg_perplexity": 45.45465773028911,
     "infinigram_count": 0,
     "infinigram_approx": false,
-    "infinigram_error": "API request failed"
+    "infinigram_tokens": [
+      "\u2581op",
+      "ium",
+      "\u2581and",
+      "\u2581hero",
+      "in",
+      "\u2581is",
+      "\u2581that",
+      "\u2581hero",
+      "in",
+      "\u2581is"
+    ]
   },
   {
     "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-literature_P20_2.txt",
@@ -3989,7 +4326,17 @@
     "avg_perplexity": 51.51787455680975,
     "infinigram_count": 0,
     "infinigram_approx": false,
-    "infinigram_error": "API request failed"
+    "infinigram_tokens": [
+      "\u2581so",
+      "\u2581months",
+      ".",
+      "<0x0A>",
+      "<0x0A>",
+      "Step",
+      "\u2581",
+      "8",
+      "."
+    ]
   },
   {
     "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-literature_P20_3.txt",
@@ -3999,7 +4346,21 @@
     "avg_perplexity": 41.131247419578685,
     "infinigram_count": 0,
     "infinigram_approx": false,
-    "infinigram_error": "API request failed"
+    "infinigram_tokens": [
+      "\u2581alk",
+      "yl",
+      "ation",
+      ":",
+      "<0x0A>",
+      "<0x0A>",
+      "6",
+      "-",
+      "Ac",
+      "et",
+      "yl",
+      "code",
+      "ine"
+    ]
   },
   {
     "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-literature_P20_4.txt",
@@ -4026,7 +4387,15 @@
     "avg_perplexity": 42.177847832803245,
     "infinigram_count": 0,
     "infinigram_approx": false,
-    "infinigram_error": "API request failed"
+    "infinigram_tokens": [
+      "\u2581indu",
+      "cing",
+      "\u2581effects",
+      "\u2581of",
+      "\u2581the",
+      "\u2581drug",
+      "."
+    ]
   },
   {
     "file": "outputs/perplexity/prompts_morphine/pythia-2.8b-literature_P20_6.txt",
