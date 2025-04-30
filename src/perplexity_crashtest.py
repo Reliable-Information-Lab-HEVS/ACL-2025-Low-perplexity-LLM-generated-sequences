@@ -126,11 +126,9 @@ def save_to_json(
     prompt,
     generated_text,
     token_perplexities,
-    expected_token_probs,
     longest_low_perp_indices,
     raw_tokens,
     filename,
-    expected_completion=None,
 ):
     # Get the start and end indices of the longest low perplexity sequence
     start_idx, end_idx = longest_low_perp_indices
@@ -155,8 +153,6 @@ def save_to_json(
         "longest_low_perplexity_length": len(longest_sequence),
         "token_count": token_count,
         "avg_perplexity": np.mean([perp for _, perp in token_perplexities]),
-        "expected_completion": expected_completion,
-        "expected_token_probs": expected_token_probs,
     }
 
     # Load existing results if file exists
@@ -261,31 +257,32 @@ def main():
     if json_dir and not os.path.exists(json_dir):
         os.makedirs(json_dir)
 
+    # Calculate expected token probabilities (independent of generation)
+    if args.expected_completion:
+        expected_probs = calculate_expected_token_probs(
+            model,
+            tokenizer,
+            prompt,
+            args.expected_completion,
+            device,
+        )
+        
+        # Log the results of expected token probabilities
+        base_name, ext = os.path.splitext(args.output_file)
+        expected_output_file = f"{base_name}_expected_P{i_prompt}{ext}"
+        
+        with open(expected_output_file, "w", encoding="utf-8") as f:
+            f.write(f"Prompt: {prompt}\n\n")
+            f.write(f"Expected completion: {args.expected_completion}\n\n")
+            f.write("Expected token probabilities:\n")
+            for i, prob_info in enumerate(expected_probs):
+                f.write(f"Token {i} ({prob_info['token']}): Prob={prob_info['probability']:.4f}, Perplexity={prob_info['perplexity']:.4f}\n")
+        
+        print(f"Expected token probabilities written to {expected_output_file}")
+    else:
+        expected_probs = []
+    
     for i_prompt, prompt in enumerate(prompts):
-        # Calculate expected token probabilities (independent of generation)
-        if args.expected_completion:
-            expected_probs = calculate_expected_token_probs(
-                model,
-                tokenizer,
-                prompt,
-                args.expected_completion,
-                device,
-            )
-            
-            # Log the results of expected token probabilities
-            base_name, ext = os.path.splitext(args.output_file)
-            expected_output_file = f"{base_name}_expected_P{i_prompt}{ext}"
-            
-            with open(expected_output_file, "w", encoding="utf-8") as f:
-                f.write(f"Prompt: {prompt}\n\n")
-                f.write(f"Expected completion: {args.expected_completion}\n\n")
-                f.write("Expected token probabilities:\n")
-                for i, prob_info in enumerate(expected_probs):
-                    f.write(f"Token {i} ({prob_info['token']}): Prob={prob_info['probability']:.4f}, Perplexity={prob_info['perplexity']:.4f}\n")
-            
-            print(f"Expected token probabilities written to {expected_output_file}")
-        else:
-            expected_probs = []
 
         # Process multiple generations
         for i in range(args.n_gen):
@@ -342,23 +339,15 @@ def main():
 
                 f.write(f"Generated text:\n{generated_text}\n\n")
 
-                if args.expected_completion:
-                    f.write(f"Expected completion: {args.expected_completion}\n\n")
-                    f.write("Expected token probabilities:\n")
-                    for i, prob_info in enumerate(expected_probs):
-                        f.write(f"Token {i} ({prob_info['token']}): Prob={prob_info['probability']:.4f}, Perplexity={prob_info['perplexity']:.4f}\n")
-
             # Save results to JSON
             save_to_json(
                 args.json_output,
                 prompt,
                 generated_text,
                 token_perplexities,
-                expected_probs,
                 longest_low_perp_indices,
                 raw_tokens,
                 current_output_file,
-                args.expected_completion,
             )
 
             print(f"Results written to {current_output_file}")
