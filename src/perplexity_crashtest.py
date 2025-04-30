@@ -52,6 +52,12 @@ def calculate_expected_token_probs(
             next_token_logits = logits[0, -1, :]
             probs = torch.nn.functional.softmax(next_token_logits, dim=0)
             
+            #get 3 most probable tokens
+            top_k_probs, top_k_indices = torch.topk(probs, 3)
+            top_k_tokens = [tokenizer.decode(idx) for idx in top_k_indices]
+            top_k_probs = top_k_probs.tolist()
+            top_k_probs = [round(prob, 4) for prob in top_k_probs]
+            
             # Get probability of the expected token
             token_prob = probs[token_id].item()
             token_perplexity = 1 / token_prob if token_prob > 0 else float("inf")
@@ -61,7 +67,9 @@ def calculate_expected_token_probs(
                 "token": completion_tokens[i],
                 "token_id": token_id.item(),
                 "probability": token_prob,
-                "perplexity": token_perplexity
+                "perplexity": token_perplexity,
+                "top_k_tokens": top_k_tokens,
+                "top_k_probs": top_k_probs,
             })
             
             # Add this token to the context for the next iteration
