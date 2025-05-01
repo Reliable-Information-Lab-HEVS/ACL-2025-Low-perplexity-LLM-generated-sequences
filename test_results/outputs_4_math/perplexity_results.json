@@ -1,0 +1,212 @@
+[
+  {
+    "file": "output_perplexity_P0_0.txt",
+    "longest_low_perplexity_text": "1,1,2,3,5,8,13,21,34,55,89,144,233",
+    "longest_low_perplexity_length": 25,
+    "token_count": 25,
+    "avg_perplexity": 26.76574330763309
+  },
+  {
+    "file": "output_perplexity_P1_0.txt",
+    "longest_low_perplexity_text": " covering\" or \"finite covering space\".\n\n",
+    "longest_low_perplexity_length": 10,
+    "token_count": 10,
+    "avg_perplexity": 34.378606512707215
+  },
+  {
+    "file": "output_perplexity_P2_0.txt",
+    "longest_low_perplexity_text": " metric space either contains every point of the space, or else it encloses a",
+    "longest_low_perplexity_length": 16,
+    "token_count": 16,
+    "avg_perplexity": 34.547116223174555
+  },
+  {
+    "file": "output_perplexity_P3_0.txt",
+    "longest_low_perplexity_text": "  and Turing's proofs diverge.)\n\n",
+    "longest_low_perplexity_length": 11,
+    "token_count": 11,
+    "avg_perplexity": 58.778052368249206
+  },
+  {
+    "file": "output_perplexity_P4_0.txt",
+    "longest_low_perplexity_text": "Theoretical Computer Science Department\\\n    Faculty of Mathematics and Computer Science\\\n    Jagiellonian University\\\n    ul.",
+    "longest_low_perplexity_length": 28,
+    "token_count": 28,
+    "avg_perplexity": 24.919558614477754
+  },
+  {
+    "file": "output_perplexity_P5_0.txt",
+    "longest_low_perplexity_text": "loss.get_",
+    "longest_low_perplexity_length": 4,
+    "token_count": 4,
+    "avg_perplexity": 7.583352946340195
+  },
+  {
+    "file": "output_perplexity_P6_0.txt",
+    "longest_low_perplexity_text": "\nA:\n\n",
+    "longest_low_perplexity_length": 5,
+    "token_count": 5,
+    "avg_perplexity": 66.29483188434246
+  },
+  {
+    "file": "output_perplexity_P7_0.txt",
+    "longest_low_perplexity_text": "check_bit( bit_array.get(x) )\n\n",
+    "longest_low_perplexity_length": 15,
+    "token_count": 15,
+    "avg_perplexity": 15.107208745901064
+  },
+  {
+    "file": "output_perplexity_P8_0.txt",
+    "longest_low_perplexity_text": "ackage.haskell.org/package/",
+    "longest_low_perplexity_length": 9,
+    "token_count": 9,
+    "avg_perplexity": 81.54700215179352
+  },
+  {
+    "file": "output_perplexity_P9_0.txt",
+    "longest_low_perplexity_text": " private_a, 2)\npublic_b = pow(2, 2**17, public_key)\npriv_b = ((priv_b * public_b) % prime)\n\n",
+    "longest_low_perplexity_length": 42,
+    "token_count": 42,
+    "avg_perplexity": 33.502700871449896
+  },
+  {
+    "file": "output_perplexity_P0_0.txt",
+    "longest_low_perplexity_text": " such, the Yoneda lemma is",
+    "longest_low_perplexity_length": 8,
+    "token_count": 8,
+    "avg_perplexity": 56.990788935255296
+  },
+  {
+    "file": "output_perplexity_P1_0.txt",
+    "longest_low_perplexity_text": " the Lebesgue measure on the interval [−1, 1],",
+    "longest_low_perplexity_length": 15,
+    "token_count": 15,
+    "avg_perplexity": 20.73380298790372
+  },
+  {
+    "file": "output_perplexity_P2_0.txt",
+    "longest_low_perplexity_text": " {0, 1, 2, ...}.",
+    "longest_low_perplexity_length": 9,
+    "token_count": 9,
+    "avg_perplexity": 58.26723578698481
+  },
+  {
+    "file": "output_perplexity_P3_0.txt",
+    "longest_low_perplexity_text": " statement about the curvature of a Riemannian manifold.\n\n",
+    "longest_low_perplexity_length": 11,
+    "token_count": 11,
+    "avg_perplexity": 23.955137084996004
+  },
+  {
+    "file": "output_perplexity_P4_0.txt",
+    "longest_low_perplexity_text": " quotients of a",
+    "longest_low_perplexity_length": 4,
+    "token_count": 4,
+    "avg_perplexity": 33.76545030732607
+  },
+  {
+    "file": "output_perplexity_P5_0.txt",
+    "longest_low_perplexity_text": "A, D(A), f, g) is",
+    "longest_low_perplexity_length": 11,
+    "token_count": 11,
+    "avg_perplexity": 40.404398799332746
+  },
+  {
+    "file": "output_perplexity_P0_0.txt",
+    "longest_low_perplexity_text": "An injection is a function that establishes a one-to-one correspondence between the elements of two sets, the domain and range of an injection .\n\n",
+    "longest_low_perplexity_length": 31,
+    "token_count": 31,
+    "avg_perplexity": 36.37530200332994
+  },
+  {
+    "file": "output_perplexity_P1_0.txt",
+    "longest_low_perplexity_text": " 1, 2, 3, 4, 5, 6,",
+    "longest_low_perplexity_length": 12,
+    "token_count": 12,
+    "avg_perplexity": 37.261796906641074
+  },
+  {
+    "file": "output_perplexity_P2_0.txt",
+    "longest_low_perplexity_text": " normal distribution with mean x and standard deviation σ.",
+    "longest_low_perplexity_length": 10,
+    "token_count": 10,
+    "avg_perplexity": 46.15494314866955
+  },
+  {
+    "file": "output_perplexity_P3_0.txt",
+    "longest_low_perplexity_text": "1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233,",
+    "longest_low_perplexity_length": 26,
+    "token_count": 26,
+    "avg_perplexity": 141.0916463319591
+  },
+  {
+    "file": "output_perplexity_P4_0.txt",
+    "longest_low_perplexity_text": "), negative (downward-pointing),",
+    "longest_low_perplexity_length": 9,
+    "token_count": 9,
+    "avg_perplexity": 37.35257747169162
+  },
+  {
+    "file": "output_perplexity_P5_0.txt",
+    "longest_low_perplexity_text": " [n] = {0, 1,",
+    "longest_low_perplexity_length": 9,
+    "token_count": 9,
+    "avg_perplexity": 91.18985105721178
+  },
+  {
+    "file": "output_perplexity_P6_0.txt",
+    "longest_low_perplexity_text": " Thus 4 is a prime divisor of 10.\n\n",
+    "longest_low_perplexity_length": 11,
+    "token_count": 11,
+    "avg_perplexity": 26.316565686238963
+  },
+  {
+    "file": "output_perplexity_P7_0.txt",
+    "longest_low_perplexity_text": " ��� D = (A ��� B) ��� (A ��� C) ��� D",
+    "longest_low_perplexity_length": 26,
+    "token_count": 26,
+    "avg_perplexity": 155.30849660823216
+  },
+  {
+    "file": "output_perplexity_P8_0.txt",
+    "longest_low_perplexity_text": " Hilbert’s Nullstellensatz.\n\n",
+    "longest_low_perplexity_length": 11,
+    "token_count": 11,
+    "avg_perplexity": 43.11051401480468
+  },
+  {
+    "file": "output_perplexity_P9_0.txt",
+    "longest_low_perplexity_text": " if and only if its derivative is continuous.\n\n",
+    "longest_low_perplexity_length": 11,
+    "token_count": 11,
+    "avg_perplexity": 22.64594253920071
+  },
+  {
+    "file": "output_perplexity_P10_0.txt",
+    "longest_low_perplexity_text": " all data elements of a factor are associated with at least one",
+    "longest_low_perplexity_length": 12,
+    "token_count": 12,
+    "avg_perplexity": 74.61931593463267
+  },
+  {
+    "file": "output_perplexity_P11_0.txt",
+    "longest_low_perplexity_text": " value and half their values to the right of it",
+    "longest_low_perplexity_length": 10,
+    "token_count": 10,
+    "avg_perplexity": 63.919648474765836
+  },
+  {
+    "file": "output_perplexity_P12_0.txt",
+    "longest_low_perplexity_text": ", the expected value of a random variable is the",
+    "longest_low_perplexity_length": 10,
+    "token_count": 10,
+    "avg_perplexity": 50.747006120477664
+  },
+  {
+    "file": "output_perplexity_P13_0.txt",
+    "longest_low_perplexity_text": " transitive, and reflexive.\n\n",
+    "longest_low_perplexity_length": 9,
+    "token_count": 9,
+    "avg_perplexity": 38.65019367230602
+  }
+]

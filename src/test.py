@@ -3,7 +3,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 import numpy as np
 
 # Load model and tokenizer
-model_name = "EleutherAI/pythia-70m"  # A small Pythia model
+model_name = "EleutherAI/pythia-1b"  # A small Pythia model
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForCausalLM.from_pretrained(model_name)
 
@@ -12,7 +12,7 @@ device = "cuda" if torch.cuda.is_available() else "cpu"
 model = model.to(device)
 
 # Input prompt
-prompt = "Explain quantum computing in simple terms:"
+prompt = "should have received a copy of the GNU General "
 input_ids = tokenizer.encode(prompt, return_tensors="pt").to(device)
 
 # Generate response with output_scores=True
@@ -20,7 +20,7 @@ with torch.no_grad():
     # Generate text - this part is correct
     outputs = model.generate(
         input_ids, 
-        max_new_tokens=50,
+        max_new_tokens=20,
         return_dict_in_generate=True,
         output_scores=True
     )
