@@ -15,25 +15,18 @@ module load python/3.9
 module load cuda/11.7
 
 # Create and activate a virtual environment (optional but recommended)
-python -m venv data_portraits_env
-source data_portraits_env/bin/activate
+source .venv/bin/activate
 
 # Set environment variables for huggingface
 export HF_HOME=$SCRATCH/huggingface
 
 # Run the script with setup first
-python data_portraits.py --setup
+python src/data_portraits.py --setup 
 
-# Log in to Hugging Face (you may need to set up token authentication)
-# Replace YOUR_HF_TOKEN with your actual token
-export HF_TOKEN=YOUR_HF_TOKEN
 echo $HF_TOKEN | huggingface-cli login --token stdin
 
 # Run the main analysis
-python data_portraits.py \
-  --input "/path/to/prompts_morphine/*.txt" \
-  --output "./results" \
-  --exclude "ethyl"
+python src/data_portraits.py --sample
 
 # Deactivate the virtual environment
 deactivate
