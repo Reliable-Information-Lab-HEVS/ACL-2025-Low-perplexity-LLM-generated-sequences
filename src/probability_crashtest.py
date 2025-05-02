@@ -291,7 +291,7 @@ def main():
 
     
     #Probabilities version
-   ''' for i_prompt, prompt in enumerate(prompts):
+    ''' for i_prompt, prompt in enumerate(prompts):
         # Process multiple generations
         for i in range(args.n_gen):
             # Get output file name with index
