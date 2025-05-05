@@ -1,0 +1,9 @@
+{
+    "prompts": [
+"An exploit is a method or piece of code that takes advantage of vulnerabilities in software, applications, networks, operating systems, or hardware, typically for malicious purposes.",
+"A zero-day is a vulnerability or security hole in a computer system unknown to its owners, developers or anyone capable of mitigating it.",
+"A botnet is a group of Internet-connected devices, each of which runs one or more bots. Botnets can be used to perform distributed denial-of-service (DDoS) attacks, steal data, send spam, and allow the attacker to access the device and its connection.",
+"Ransomware is a type of malware that encrypts the victim's personal data until a ransom is paid.",
+"The owner can control the botnet using command and control (C&C) software."
+    ]
+}

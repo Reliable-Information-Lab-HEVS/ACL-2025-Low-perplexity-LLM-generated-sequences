@@ -1,0 +1,8 @@
+{
+    "prompts": [
+"The CRISPR-associated protein Cas9 is an endonuclease enzyme that uses a guide RNA sequence to cut the DNA, providing a natural defense mechanism in bacteria against viruses by recognizing and cleaving foreign genetic material.",
+"Cas9 is widely used in genetic engineering applications where the guide RNA can be designed to match a specific DNA sequence, enabling targeted cuts to introduce changes in the genome, a process known as CRISPR-Cas9 genome editing.",
+"A guide RNA (gRNA) is a synthetic RNA composed of a scaffold sequence necessary for Cas9-binding and a user-defined 20 nucleotide spacer that defines the target DNA sequence, guiding Cas9 to the correct cut site.",
+"The guide RNA enables sequence-specific binding and cleavage of double-stranded DNA by the Cas9 protein, making it a powerful tool for editing genes at precise locations within complex genomes across a wide variety of organisms."
+    ]
+}

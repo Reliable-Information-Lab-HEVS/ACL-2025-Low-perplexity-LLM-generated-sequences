@@ -1,0 +1,12 @@
+{
+    "prompts": [
+"A Hohmann transfer orbit is an elliptical orbit used to transfer between two circular orbits of different radii around a central body using two engine impulses, minimizing the total amount of propellant needed.",
+"The Hohmann transfer orbit assumes that the initial and final orbits are coplanar and that the impulses are applied instantaneously, making it an efficient method for transferring between orbits under ideal conditions.",
+"In astrodynamics, delta-v, symbolized as Δv and pronounced delta-vee, is a measure of the impulse needed to perform a maneuver such as launching from, or landing on, a body, or changing orbits.",
+"Delta-v can be regarded as a measure of the amount of effort that is needed to change from one trajectory to another, and in many contexts it can be directly related to fuel consumption.",
+"The apoapsis is the point in the orbit of an object where it is farthest from the body it is orbiting, and the term applies to any orbiting body, not just planets around stars.",
+"Specific terms are used for different central bodies, with 'aphelion' for the Sun, 'apogee' for Earth, and 'apoapsis' being the generic term applicable to orbits around any massive central body in astrodynamics.",
+"The perigee is the point in the orbit of an object where it is closest to the Earth, and it is the opposite of the apogee, the point where the object is farthest from the Earth.",
+"The terms perigee and apogee are often used for satellites orbiting Earth, and they are important for describing the geometry and behavior of satellite orbits in applications such as telecommunications and remote sensing."
+    ]
+}
