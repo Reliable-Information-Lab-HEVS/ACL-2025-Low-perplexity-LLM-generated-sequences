@@ -295,23 +295,25 @@ def main():
             
             # Extract just the perplexity values for the get_longest_low_perplexity function
             perplexity_values = [perp for _, perp in token_perplexities]
-            perplexity_values = np.log(perplexity_values)
+            perplexity_values = list(np.log(perplexity_values))
             
             # Find longest sequence of low perplexity tokens
             longest_low_perp_indices = get_longest_low_perplexity(perplexity_values, args.perplexity_threshold)
+            
+            perplexity_values = [(token, perp) for perp, (token, _) in zip(perplexity_values, token_perplexities)]
             
             # Write results to file
             with open(current_output_file, 'w', encoding='utf-8') as f:
                 f.write(f"Prompt: {prompt}\n\n")
                 f.write("Token perplexities:\n")
-                for token, perplexity in token_perplexities:
-                    f.write(f"{token}: {perplexity:.4f}\n")
+                for token, perplexity in perplexity_values:
+                    f.write(f"{token:<12}: {perplexity:<6.4f} (Probability: {np.exp(-perplexity):.4f})\n")
                 
                 # Extract the longest sequence based on indices
                 start_idx, end_idx = longest_low_perp_indices
                 longest_sequence = []
                 if end_idx >= start_idx:  # Make sure the indices are valid
-                    longest_sequence = token_perplexities[start_idx:end_idx+1]
+                    longest_sequence = perplexity_values[start_idx:end_idx+1]
                 
                 f.write(f"\nLongest sequence of low perplexity tokens (threshold: {args.perplexity_threshold}):\n")
                 f.write(f"Indices: [{start_idx}, {end_idx}]\n")
@@ -329,7 +331,7 @@ def main():
                 args.json_output,
                 prompt,
                 generated_text,
-                token_perplexities,
+                perplexity_values,
                 longest_low_perp_indices,
                 raw_tokens,
                 current_output_file
