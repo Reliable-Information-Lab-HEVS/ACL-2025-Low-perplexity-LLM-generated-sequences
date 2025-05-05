@@ -14,4 +14,4 @@ module load gcc python openmpi py-torch
 source .venv/bin/activate 
 
 # Run the script
-python src/perplexity_crashtest.py "$@"
+python src/probability_crashtest.py "$@"

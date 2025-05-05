@@ -11,8 +11,7 @@
 #SBATCH --gres=gpu:1
 
 # Load any necessary modules (adjust as needed for your cluster)
-module load python/3.9
-module load cuda/11.7
+module load gcc python openmpi py-torch
 
 # Create and activate a virtual environment (optional but recommended)
 source .venv/bin/activate
@@ -23,7 +22,7 @@ export HF_HOME=$SCRATCH/huggingface
 # Run the script with setup first
 python src/data_portraits.py --setup 
 
-echo $HF_TOKEN | huggingface-cli login --token stdin
+# echo $HF_TOKEN | huggingface-cli login --token stdin
 
 # Run the main analysis
 python src/data_portraits.py --sample
