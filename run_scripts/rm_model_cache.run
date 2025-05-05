@@ -1,0 +1,9 @@
+#!/bin/bash -l
+#SBATCH --job-name=prepro-baseline
+#SBATCH --time=00:30:00
+#SBATCH --output prepro-baseline-log-%J.out
+#SBATCH --gres=gpu:1
+
+
+# Run with the arguments
+rm -rf ~/.cache/huggingface/hub/models--mistralai--Mistral-7B-Instruct-v0.1/

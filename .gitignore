@@ -7,3 +7,4 @@ prompts.*
 images/*
 *.json
 **/*.txt
+**/__pycache__/*
