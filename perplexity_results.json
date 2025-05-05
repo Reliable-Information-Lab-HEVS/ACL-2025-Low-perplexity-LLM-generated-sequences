@@ -40,5 +40,47 @@
     "longest_low_perplexity_length": 5,
     "token_count": 5,
     "avg_perplexity": 70.4932873402232
+  },
+  {
+    "file": "output_perplexity_P0_0.txt",
+    "longest_low_perplexity_text": "American people of origin\nCategory:American people of origin\nCategory:American people of origin\nCategory:American people of origin\nCategory:American people of origin\nCategory:American people of origin\nCategory:American people of origin\nCategory:American people of origin\nCategory:American people of origin\nCategory:American",
+    "longest_low_perplexity_length": 64,
+    "token_count": 64,
+    "avg_perplexity": 1.1421130033036135
+  },
+  {
+    "file": "output_perplexity_P0_0.txt",
+    "longest_low_perplexity_text": " the United States, and the United States, the United States, the United States, and the United States, the United States, the United States, and the United States, the United States, the United States, and the United States, the United States,",
+    "longest_low_perplexity_length": 52,
+    "token_count": 52,
+    "avg_perplexity": 1.4136442703976264
+  },
+  {
+    "file": "output_perplexity_P0_1.txt",
+    "longest_low_perplexity_text": " American American American American American American American American American American American American American American American American American American American American American American American American American American American American American American American American American American American American American American American American American American American American American American American American American American American American American American American American American American American American American American American American American American American American American American American American American American American American American American American American American American American American",
+    "longest_low_perplexity_length": 84,
+    "token_count": 84,
+    "avg_perplexity": 1.260314326771166
+  },
+  {
+    "file": "output_perplexity_P0_2.txt",
+    "longest_low_perplexity_text": " alumni\nCategory:University of Virginia alumni\nCategory:University of Virginia faculty\nCategory:University of Virginia faculty\nCategory:University of Virginia faculty\nCategory:University of Virginia faculty\nCategory:University of Virginia faculty\nCategory:University of Virginia faculty\nCategory:University of Virginia faculty\nCategory:University of Virginia faculty\nCategory:University of Virginia faculty\nCategory:University of Virginia",
+    "longest_low_perplexity_length": 77,
+    "token_count": 77,
+    "avg_perplexity": 1.810377827235726
+  },
+  {
+    "file": "output_perplexity_P0_3.txt",
+    "longest_low_perplexity_text": "the\n\nconviction\n\nthe\n\nconviction\n\nthe\n\nconviction\n\nthe\n\nconviction\n\nthe\n\nconviction\n\nthe\n\nconviction\n\nthe\n\nconviction\n\nthe\n\nconviction\n\nthe\n\nconviction\n\nthe\n\nconviction\n\nthe\n\nconviction",
+    "longest_low_perplexity_length": 64,
+    "token_count": 64,
+    "avg_perplexity": 2.0009413577177964
+  },
+  {
+    "file": "output_perplexity_P0_4.txt",
+    "longest_low_perplexity_text": " Baltimore\nCategory:Cities in Baltimore\nCategory:Cities in Baltimore\nCategory:Cities in Baltimore\nCategory:Cities in Baltimore\nCategory:Cities in Baltimore\nCategory:Cities in Baltimore\nCategory:Cities in Baltimore\nCategory:Cities in Baltimore\nCategory:Cities in Baltimore\nCategory:Cities in Baltimore\nCategory:Cities in Baltimore",
+    "longest_low_perplexity_length": 78,
+    "token_count": 78,
+    "avg_perplexity": 1.5455690578002268
   }
 ]

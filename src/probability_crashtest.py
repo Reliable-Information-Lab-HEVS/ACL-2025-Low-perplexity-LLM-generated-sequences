@@ -240,7 +240,7 @@ def main():
         help="JSON file to store perplexity results",
     )
     
-    
+    args = parser.parse_args()
     
     # Set device
     device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -279,9 +279,14 @@ def main():
             
             # Generate text and compute perplexity
             generated_text, token_perplexities, raw_tokens = generate_and_compute_perplexity(
-                model, tokenizer, prompt, args.max_length, args.temp,                 args.temp,
+                model, 
+                tokenizer, 
+                prompt, 
+                args.max_length, 
+                args.temp,
                 args.top_k,
-                args.top_p,device
+                args.top_p,
+                device
             )
             
             # Extract just the perplexity values for the get_longest_low_perplexity function
