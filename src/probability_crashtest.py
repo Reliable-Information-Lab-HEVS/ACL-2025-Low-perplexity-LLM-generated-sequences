@@ -255,11 +255,11 @@ def main():
     if args.prompt.endswith('.json'):
         with open(args.prompt, 'r', encoding='utf-8') as f:
             prompt_data = json.load(f)
-            prompts = prompt_data.get('prompts', [])
-            if not prompts:
-                prompts = prompt_data.get('variants', [])
-            if not prompts:
-                raise ValueError("No prompts found in the JSON file.")
+        prompts = prompt_data.get('prompts', [])
+        if not prompts:
+            prompts = prompt_data.get('variants', [])
+        if not prompts:
+            raise ValueError("No prompts found in the JSON file.")
     else:
         prompts = [args.prompt]
         
