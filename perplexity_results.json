@@ -82,5 +82,75 @@
     "longest_low_perplexity_length": 78,
     "token_count": 78,
     "avg_perplexity": 1.5455690578002268
+  },
+  {
+    "file": "output_perplexity_P0_0.txt",
+    "longest_low_perplexity_text": " namely, the quantum field theory, namely, the quantum field theory, namely, the quantum field theory, namely, the quantum field theory, namely, the quantum field theory, namely, the quantum field theory, namely, the",
+    "longest_low_perplexity_length": 45,
+    "token_count": 45,
+    "avg_perplexity": 1.684469891471582
+  },
+  {
+    "file": "output_perplexity_P0_1.txt",
+    "longest_low_perplexity_text": " quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum quantum",
+    "longest_low_perplexity_length": 91,
+    "token_count": 91,
+    "avg_perplexity": 1.2849316711207501
+  },
+  {
+    "file": "output_perplexity_P0_2.txt",
+    "longest_low_perplexity_text": " a quantum field theory. The quantum field theory is the case of a quantum field theory. The quantum field theory is the case of a quantum field theory. The quantum field theory is the case of a quantum field theory. The quantum field theory is the case of a quantum field theory. The quantum field theory is the case of a quantum field theory. The quantum field theory",
+    "longest_low_perplexity_length": 74,
+    "token_count": 74,
+    "avg_perplexity": 1.5258629841716305
+  },
+  {
+    "file": "output_perplexity_P0_3.txt",
+    "longest_low_perplexity_text": " written as a quantum field theory, which is the case of a quantum field theory.",
+    "longest_low_perplexity_length": 17,
+    "token_count": 17,
+    "avg_perplexity": 2.736652781576843
+  },
+  {
+    "file": "output_perplexity_P0_4.txt",
+    "longest_low_perplexity_text": "\n\nLet us show that the particle is the number of particles. Let us show that the particle is the number of particles.",
+    "longest_low_perplexity_length": 26,
+    "token_count": 26,
+    "avg_perplexity": 2.6194617788112295
+  },
+  {
+    "file": "output_perplexity_P1_0.txt",
+    "longest_low_perplexity_text": " which is a particle, which is a particle, which is a particle, which is a particle, which is a particle, which is a particle, which is a particle, which is a particle, which is a particle, which is a particle, which is a particle, which is a particle, which is a particle, which is a particle, which is a particle, which is a particle, which is a particle, which is a particle, which is a",
+    "longest_low_perplexity_length": 93,
+    "token_count": 93,
+    "avg_perplexity": 1.1810144903818756
+  },
+  {
+    "file": "output_perplexity_P1_1.txt",
+    "longest_low_perplexity_text": "Fig. \\[fig:Fig. \\[fig:Fig. \\[fig:Fig. \\[fig:Fig. \\[fig:Fig. \\[fig:Fig. \\[fig:Fig. \\[fig:Fig. \\[fig:Fig. \\[fig:Fig. \\[fig:Fig. \\[fig:Fig. \\[fig:Fig. \\[fig:Fig",
+    "longest_low_perplexity_length": 85,
+    "token_count": 85,
+    "avg_perplexity": 1.3075960299365108
+  },
+  {
+    "file": "output_perplexity_P1_2.txt",
+    "longest_low_perplexity_text": "fig:fig:fig:fig:fig:fig:fig:fig:fig:fig:fig:fig:fig:fig:fig:fig:fig:fig:fig:fig:fig:fig:fig:",
+    "longest_low_perplexity_length": 46,
+    "token_count": 46,
+    "avg_perplexity": 2.4698830605551785
+  },
+  {
+    "file": "output_perplexity_P1_3.txt",
+    "longest_low_perplexity_text": "\n\nThe model is called the model. The model is called the model. The model is called the model. The model is called the model. The model is called the model. The model is called the model. The model is called the model. The model is called the model. The model is called the model. The model",
+    "longest_low_perplexity_length": 67,
+    "token_count": 67,
+    "avg_perplexity": 1.8435157767996855
+  },
+  {
+    "file": "output_perplexity_P1_4.txt",
+    "longest_low_perplexity_text": ",3}$ and $N_{2,3,4}$ is the number of particles in the same shape.\n\n",
+    "longest_low_perplexity_length": 25,
+    "token_count": 25,
+    "avg_perplexity": 3.8764423399694876
   }
 ]
