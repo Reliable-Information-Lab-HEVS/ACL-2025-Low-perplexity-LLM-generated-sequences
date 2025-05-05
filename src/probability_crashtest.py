@@ -6,44 +6,54 @@ import os
 import json
 from utils import get_longest_low_perplexity, get_longest_high_probability
 
-def generate_and_compute_perplexity(model, tokenizer, prompt, max_length, temperature, device):
+def generate_and_compute_perplexity(
+    model,
+    tokenizer,
+    prompt,
+    max_length,
+    temperature,
+    top_k,
+    top_p,
+    device,
+):
     # Tokenize the prompt
     input_ids = tokenizer.encode(prompt, return_tensors="pt").to(device)
-    
+
     # Generate response with output_scores=True
     with torch.no_grad():
         outputs = model.generate(
-            input_ids, 
+            input_ids,
             max_new_tokens=max_length,
             do_sample=True,
             temperature=temperature,
             return_dict_in_generate=True,
-            output_scores=True
+            output_scores=True,
+            top_k=top_k,
+            top_p=top_p,
         )
-        
+
         # Get generated tokens and scores
         generated_tokens = outputs.sequences[0, input_ids.shape[1]:]
         token_scores = outputs.scores
-        
+
         # Decode generated response
         generated_text = tokenizer.decode(generated_tokens, skip_special_tokens=True)
-        
+
         # Calculate perplexity for each token
         token_perplexities = []
+
         for i, (token, score_tensor) in enumerate(zip(generated_tokens, token_scores)):
             token_str = tokenizer.decode(token)
-            
+
             # Convert logits to probabilities with softmax
             logits = score_tensor[0]
             probs = torch.nn.functional.softmax(logits, dim=0)
-            
-            # Get probability of the chosen token
-            token_prob = probs[token].item()
-            
+
             # Calculate perplexity from probability
-            token_perplexity = 1 / token_prob if token_prob > 0 else float('inf')
+            token_prob = probs[token].item()
+            token_perplexity = 1 / token_prob if token_prob > 0 else float("inf")
             token_perplexities.append((token_str, token_perplexity))
-    
+
     return generated_text, token_perplexities, generated_tokens.tolist()
 
 
@@ -185,22 +195,50 @@ def save_to_json_probs(json_file, prompt, generated_text, token_probabilities, l
 
 
 def main():
-    parser = argparse.ArgumentParser(description='Generate text and compute perplexity per token')
-    parser.add_argument('--model_name', type=str, required=True, help='Model name or path')
-    parser.add_argument('--prompt', type=str, required=True, help='Input prompt for generation')
-    parser.add_argument('--max_length', type=int, default=100, help='Maximum length of generated text')
-    parser.add_argument('--temp', type=float, default=1.0, help='Temperature for sampling')
-    parser.add_argument('--n_gen', type=int, default=3, help='Number of generations to perform')
-    parser.add_argument('--output_file', type=str, default='output_probability.txt', help='Output file name')
-    parser.add_argument('--candidates', type=str, default='candidates.json', help='Candidate json file name')
-    parser.add_argument('--perplexity_threshold', type=float, default=1.0, 
-                        help='Threshold for low perplexity in finding longest sequence')
-    parser.add_argument('--probability_threshold', type=float, default=0.9, 
-                        help='Threshold for high probability in finding longest sequence')
-    parser.add_argument('--json_output', type=str, default='probability_results.json', 
-                        help='JSON file to store perplexity results')
-    
-    args = parser.parse_args()
+    parser = argparse.ArgumentParser(
+        description="Generate text and compute perplexity per token"
+    )
+    parser.add_argument(
+        "--model_name", type=str, required=True, help="Model name or path"
+    )
+    parser.add_argument(
+        "--prompt", type=str, required=True, help="Input prompt for generation"
+    )
+    parser.add_argument(
+        "--max_length", type=int, default=100, help="Maximum length of generated text"
+    )
+    parser.add_argument(
+        "--temp", type=float, default=0.4, help="Temperature for sampling"
+    )
+    parser.add_argument("--top_k", type=int, default=20, help="top_k for sampling")
+    parser.add_argument("--top_p", type=float, default=0.8, help="top_p for sampling")
+    parser.add_argument(
+        "--n_gen", type=int, default=1, help="Number of generations to perform"
+    )
+    parser.add_argument(
+        "--output_file",
+        type=str,
+        default="output_perplexity.txt",
+        help="Output file name",
+    )
+    parser.add_argument(
+        "--candidates",
+        type=str,
+        default="candidates.json",
+        help="Candidate json file name",
+    )
+    parser.add_argument(
+        "--perplexity_threshold",
+        type=float,
+        default=1.0,
+        help="Threshold for low perplexity in finding longest sequence",
+    )
+    parser.add_argument(
+        "--json_output",
+        type=str,
+        default="perplexity_results.json",
+        help="JSON file to store perplexity results",
+    )
     
     
     
@@ -241,7 +279,9 @@ def main():
             
             # Generate text and compute perplexity
             generated_text, token_perplexities, raw_tokens = generate_and_compute_perplexity(
-                model, tokenizer, prompt, args.max_length, args.temp, device
+                model, tokenizer, prompt, args.max_length, args.temp,                 args.temp,
+                args.top_k,
+                args.top_p,device
             )
             
             # Extract just the perplexity values for the get_longest_low_perplexity function
