@@ -4,7 +4,68 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 import numpy as np
 import os
 import json
-from utils import get_longest_low_perplexity, get_longest_high_probability
+from utils import get_fixed_low_perplexity_windows
+
+def calculate_expected_token_probs(
+    model,
+    tokenizer,
+    expected_completion,
+    device,
+):
+    """
+    Calculate the probability of expected tokens given the prompt.
+    Returns token-by-token probabilities of the expected completion.
+    """
+    if not expected_completion:
+        return []
+    
+    # Tokenize the expected completion
+    completion_ids = tokenizer.encode(
+        expected_completion, add_special_tokens=False, return_tensors="pt"
+    ).to(device)[0]
+    
+    # Store probabilities and tokens
+    token_probs = []
+    
+    bos_token_id = tokenizer.bos_token_id if tokenizer.bos_token_id is not None else tokenizer.cls_token_id
+    prompt_ids = torch.tensor([[bos_token_id]], device=device) if bos_token_id is not None else torch.tensor([[]], device=device)
+
+    # Get the decoded tokens for better output
+    completion_tokens = []
+    for token_id in completion_ids:
+        token_str = tokenizer.decode(token_id)
+        completion_tokens.append(token_str)
+    
+    current_context = prompt_ids
+    
+    # For each token in the expected completion
+    for i, token_id in enumerate(completion_ids):
+        # Forward pass with the current context
+        with torch.no_grad():
+            outputs = model(input_ids=current_context)
+            logits = outputs.logits
+            
+            # Get probabilities for the next token
+            next_token_logits = logits[0, -1, :]
+            probs = torch.nn.functional.softmax(next_token_logits, dim=0)
+            
+            # Get probability of the expected token
+            token_prob = probs[token_id].item()
+            token_perplexity = 1 / token_prob if token_prob > 0 else float("inf")
+            
+            # Save the token and its probability
+            token_probs.append({
+                "token": completion_tokens[i],
+                "token_id": token_id.item(),
+                "probability": token_prob,
+                "perplexity": token_perplexity
+            })
+            
+            # Add this token to the context for the next iteration
+            current_context = torch.cat([current_context, token_id.unsqueeze(0).unsqueeze(0)], dim=1)
+    
+    return token_probs
+
 
 def generate_and_compute_perplexity(
     model,
@@ -97,29 +158,20 @@ def generate_and_compute_probability(model, tokenizer, prompt, max_length, tempe
     return generated_text, token_probabilities, generated_tokens.tolist()
 # This function is no longer needed as we're using get_longest_low_perplexity from utils
 
-def save_to_json(json_file, prompt, generated_text, token_perplexities, longest_low_perp_indices, raw_tokens, filename):
-    # Get the start and end indices of the longest low perplexity sequence
-    start_idx, end_idx = longest_low_perp_indices
+def save_to_json(json_file, prompt, generated_text, token_perplexities, windows_texts, windows_probs, filename):
     
-    # Extract the longest sequence based on indices
-    longest_sequence = []
-    if end_idx >= start_idx:  # Make sure the indices are valid
-        longest_sequence = token_perplexities[start_idx:end_idx+1]
-    
-    # Create the longest sequence text as a single string
-    longest_sequence_text = "".join([token for token, _ in longest_sequence])
-    
-    # Count the number of tokens in the longest sequence
-    token_count = len(longest_sequence)
-    
-    # Create simplified dictionary with only the requested fields
+    dic = []
+    for i, (window_text, window_probs) in enumerate(zip(windows_texts, windows_probs)):
+        dic.append({
+            "window_text": window_text,
+            "window_avg_perplexity": window_probs
+        })
+        
     result = {
         # "prompt": prompt,
         # "generated_text": generated_text,
         "file": filename,
-        "longest_low_perplexity_text": longest_sequence_text,
-        "longest_low_perplexity_length": len(longest_sequence),
-        "token_count": token_count,
+        "low_perplexity_windows": dic,
         "avg_perplexity": np.mean([perp for _, perp in token_perplexities])
     }
     
@@ -143,56 +195,6 @@ def save_to_json(json_file, prompt, generated_text, token_perplexities, longest_
     # Write updated results to file
     with open(json_file, 'w', encoding='utf-8') as f:
         json.dump(existing_results, f, indent=2, ensure_ascii=False)
-
-
-def save_to_json_probs(json_file, prompt, generated_text, token_probabilities, longest_high_prob_indices, raw_tokens, filename):
-    # Get the start and end indices of the longest low perplexity sequence
-    start_idx, end_idx = longest_high_prob_indices
-    
-    # Extract the longest sequence based on indices
-    longest_sequence = []
-    if end_idx >= start_idx:  # Make sure the indices are valid
-        longest_sequence = token_probabilities[start_idx:end_idx+1]
-    
-    # Create the longest sequence text as a single string
-    longest_sequence_text = "".join([token for token, _ in longest_sequence])
-    
-    # Count the number of tokens in the longest sequence
-    token_count = len(longest_sequence)
-    
-    # Create simplified dictionary with only the requested fields
-
-    result = {
-        # "prompt": prompt,
-        # "generated_text": generated_text,
-        "file": filename,
-        "longest_high_prob_text": longest_sequence_text,
-        "longest_high_prob_length": len(longest_sequence),
-        "token_count": token_count,
-        "avg_prob": np.mean([perp for _, perp in token_probabilities])
-    }
-
-
-    # Load existing results if file exists
-    existing_results = []
-    if os.path.exists(json_file):
-        try:
-            with open(json_file, 'r', encoding='utf-8') as f:
-                existing_results = json.load(f)
-        except json.JSONDecodeError:
-            # If file exists but is not valid JSON, start with empty list
-            existing_results = []
-    
-    # Append new result
-    if isinstance(existing_results, list):
-        existing_results.append(result)
-    else:
-        existing_results = [result]
-    
-    # Write updated results to file
-    with open(json_file, 'w', encoding='utf-8') as f:
-        json.dump(existing_results, f, indent=2, ensure_ascii=False)
-
 
 def main():
     parser = argparse.ArgumentParser(
@@ -222,10 +224,10 @@ def main():
         help="Output file name",
     )
     parser.add_argument(
-        "--candidates",
-        type=str,
-        default="candidates.json",
-        help="Candidate json file name",
+        "--window-size",
+        type=int,
+        default=6,
+        help="Size of the window that contains the low perplexity tokens",
     )
     parser.add_argument(
         "--perplexity_threshold",
@@ -250,6 +252,9 @@ def main():
     print(f"Loading model: {args.model_name}")
     tokenizer = AutoTokenizer.from_pretrained(args.model_name)
     model = AutoModelForCausalLM.from_pretrained(args.model_name).to(device)
+    
+    #Llama2 tokenizer
+    llama2_tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-2-7b-hf")
     
     # Check if the prompt argument is a .json file
     if args.prompt.endswith('.json'):
@@ -298,7 +303,7 @@ def main():
             perplexity_values = list(np.log(perplexity_values))
             
             # Find longest sequence of low perplexity tokens
-            longest_low_perp_indices = get_longest_low_perplexity(perplexity_values, args.perplexity_threshold)
+            low_perp_windows = get_fixed_low_perplexity_windows(perplexity_values, args.perplexity_threshold, 6)
             
             perplexity_values = [(token, perp) for perp, (token, _) in zip(perplexity_values, token_perplexities)]
             
@@ -308,21 +313,39 @@ def main():
                 f.write("Token perplexities:\n")
                 for token, perplexity in perplexity_values:
                     f.write(f"{token:<12}: {perplexity:<6.4f} (Probability: {np.exp(-perplexity):.4f})\n")
+
+
+                windows_texts = []
+                windows_perps = []
+
+                for window in low_perp_windows:
+                    start_idx, end_idx = window
+                    longest_sequence = []
+                    if end_idx >= start_idx:  # Make sure the indices are valid
+                        longest_sequence = perplexity_values[start_idx:end_idx+1]
                 
-                # Extract the longest sequence based on indices
-                start_idx, end_idx = longest_low_perp_indices
-                longest_sequence = []
-                if end_idx >= start_idx:  # Make sure the indices are valid
-                    longest_sequence = perplexity_values[start_idx:end_idx+1]
-                
-                f.write(f"\nLongest sequence of low perplexity tokens (threshold: {args.perplexity_threshold}):\n")
-                f.write(f"Indices: [{start_idx}, {end_idx}]\n")
-                for token, perplexity in longest_sequence:
-                    f.write(f"{token}: {perplexity:.4f}\n")
-                
-                # Also print the combined text of the sequence
-                longest_sequence_text = "".join([token for token, _ in longest_sequence])
-                f.write(f"\nLongest low perplexity text: {longest_sequence_text}\n")
+                    f.write(f"\nLongest sequence of low perplexity tokens (threshold: {args.perplexity_threshold}):\n")
+                    f.write(f"Indices: [{start_idx}, {end_idx}]\n")
+                    for token, perplexity in longest_sequence:
+                        f.write(f"{token}: {perplexity:.4f}\n")
+                    
+                    # Also print the combined text of the sequence
+                    longest_sequence_text = "".join([token for token, _ in longest_sequence])
+                    f.write(f"\nLongest low perplexity text: {longest_sequence_text}\n")
+                    
+                    no_context_token_probs = calculate_expected_token_probs(
+                        model,
+                        tokenizer,
+                        longest_sequence_text,
+                        device,
+                    )
+                    
+                    windows_texts.append(longest_sequence_text)
+                    windows_perps.append(np.mean([np.log2(prob['perplexity']) for prob in no_context_token_probs]))
+                                        
+                    f.write(f"Token perplexities (no context): {[prob['perplexity'] for prob in no_context_token_probs]}\n")
+                    f.write(f"Average perplexity (no context): {np.mean([prob['perplexity'] for prob in no_context_token_probs]):.4f}\n")
+                    
                 
                 f.write(f"Generated text:\n{generated_text}\n\n")
             
@@ -332,8 +355,8 @@ def main():
                 prompt,
                 generated_text,
                 perplexity_values,
-                longest_low_perp_indices,
-                raw_tokens,
+                windows_texts,
+                windows_perps,
                 current_output_file
             )
             
