@@ -7,6 +7,7 @@ import time
 import concurrent.futures
 from functools import partial
 import random
+import os
 
 def query_infinigram(text, index="v4_piletrain_llama", max_retries=5, initial_backoff=1):
     """
@@ -57,17 +58,43 @@ def query_infinigram(text, index="v4_piletrain_llama", max_retries=5, initial_ba
             # Exponential backoff with jitter
             backoff = min(backoff * 2, 30)  # Cap at 30 seconds
 
-def process_window(window, index, max_retries=5, initial_backoff=1.0, remove_first_word=False):
+def process_window(window, index, max_retries=5, initial_backoff=1.0, file=""):
     """Process a single window entry with the API"""
     window_text = window.get('window_text', '')
     
-    if not window_text:
+    # Check if file exists
+    if not os.path.exists(file):
+        print(f"File {file} does not exist. Skipping window.")
         return window
     
-    # Remove first word if requested and if there's more than one word
-    if remove_first_word and len(window_text.split()) > 1:
-        window_text = ' '.join(window_text.split()[1:])
+    window['in_prompt'] = False
+
+    # Open the file and check that the window text is after "Generated text:" in the file
+    if file:
+        # reads all content
+        with open(file, 'r') as f:
+            lines = f.readlines()
+            text = "\n".join(lines)
+            generation = text.split('Generated text:')
+            if len(generation) <= 1 or window_text.replace("\n", "") not in generation[1].replace("\n", ""):
+                print(f"Window text {window_text} not found. Skipping window.")
+                return window
+            generation = text.split('Token perplexities:')
+            if len(generation) <= 1 or window_text.replace("\n", "") not in generation[0].replace("\n", ""):
+                # print(f"Window text found in prompt..")
+                window['in_prompt'] = True
+            
+            # for i, split in enumerate(text.split('Longest low perplexity text: ' + window_text)):
+                
+    else:
+        print(f"File not found.")
+        return window
+
+    # In the file, check if the window 
     
+    if not window_text:
+        return window
+
     # Query the API
     result = query_infinigram(window_text, index, max_retries, initial_backoff)
     
@@ -99,7 +126,7 @@ def process_entry(entry, index, max_retries=5, initial_backoff=1.0, remove_first
                 index=index, 
                 max_retries=max_retries, 
                 initial_backoff=initial_backoff,
-                remove_first_word=remove_first_word
+                file=entry.get('file', '')  # Pass the file if it exists
             )
             
             # Submit all windows for processing
@@ -120,9 +147,6 @@ def process_entry(entry, index, max_retries=5, initial_backoff=1.0, remove_first
     elif 'longest_low_perplexity_text' in entry and entry['longest_low_perplexity_text']:
         text = entry['longest_low_perplexity_text']
         
-        if remove_first_word and len(text.split()) > 1:
-            text = ' '.join(text.split()[1:])
-        
         result = query_infinigram(text, index, max_retries, initial_backoff)
         
         if result and 'error' not in result:
@@ -135,6 +159,8 @@ def process_entry(entry, index, max_retries=5, initial_backoff=1.0, remove_first
             entry['infinigram_count'] = 0
             entry['infinigram_approx'] = False
             entry['infinigram_error'] = True if result and 'error' in result else "API request failed"
+            
+    
     
     # Also check for the old style with window_text directly in the entry
     elif 'window_text' in entry and entry['window_text']:
