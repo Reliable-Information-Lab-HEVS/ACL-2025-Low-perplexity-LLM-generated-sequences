@@ -1,21 +1,14 @@
 import argparse
 
-import matplotlib.gridspec as gridspec
-import matplotlib.patches as patches
 import matplotlib.pyplot as plt
 import numpy as np
-from matplotlib.colors import LinearSegmentedColormap
-from matplotlib.font_manager import FontProperties
 
 import matplotlib.pyplot as plt
-import matplotlib.patches as patches
-import matplotlib.gridspec as gridspec
 import numpy as np
 
 import html
 import numpy as np
 import matplotlib.cm
-import matplotlib.colors
 
 def visualize_token_perplexity_html(
     tokens,
