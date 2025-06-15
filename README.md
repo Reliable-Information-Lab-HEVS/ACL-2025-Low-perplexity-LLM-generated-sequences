@@ -58,7 +58,7 @@ cd HAIDI-Graphs
 ### 2. Basic Perplexity Analysis
 
 ```bash
-# Analyze a single prompt with GPT-2
+# Single prompt
 python src/infer.py \
     --model_name "EleutherAI/pythia-70m-deduped" \
     --prompt "The quick brown fox jumps over the lazy dog" \
@@ -133,21 +133,21 @@ python src/plot.py experiments/test_experiment/ --prompt-id P001 --output prompt
         247,
         3558,
         273,
-        253, ...
+        253, # etc.
       ],
       "token_texts": [
         " a",
         " member",
         " of",
         " the",
-        " International", ...
+        " International", # etc....
       ],
       "token_perplexities": [
         1.0,
         1.9969673910624095,
         1.0,
         1.0,
-        1.0, ...
+        1.0, # etc. ...
       ],
       "generation_params": {
         "seed": 42,
@@ -201,8 +201,8 @@ python src/plot.py experiments/test_experiment/ --prompt-id P001 --output prompt
           "avg_perplexity": 1.0,
           "min_perplexity": 1.0,
           "max_perplexity": 1.0,
-        }
-    }
+        }]
+    }]
 }
 ```
 
