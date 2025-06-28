@@ -3,6 +3,7 @@ import torch
 import os
 import json
 import random
+from typing import List, Union, Tuple, Optional
 
 
 def compute_standalone_perplexity(
