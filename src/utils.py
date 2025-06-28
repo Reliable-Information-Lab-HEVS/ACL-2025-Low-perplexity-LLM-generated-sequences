@@ -5,6 +5,267 @@ import json
 import random
 
 
+def compute_standalone_perplexity(
+    tokens: Union[List[str], str], 
+    model, 
+    tokenizer, 
+    device: str = "cuda",
+    logger: Optional[logging.Logger] = None
+) -> Tuple[float, List[float], List[str], List[int]]:
+    """
+    Compute standalone perplexity of a text sequence without any context.
+    
+    This function tokenizes the input text and computes the perplexity of each token
+    given only the preceding tokens in the sequence (no external context).
+    
+    Args:
+        tokens: Either a string of text or a list of token strings
+        model: HuggingFace language model (AutoModelForCausalLM)
+        tokenizer: HuggingFace tokenizer (AutoTokenizer)
+        device: Device to run computation on ("cuda" or "cpu")
+        logger: Optional logger for debug information
+        
+    Returns:
+        tuple: (
+            average_perplexity: float,
+            per_token_perplexities: List[float],
+            token_strings: List[str],
+            token_ids: List[int]
+        )
+    """
+    if logger is None:
+        logger = logging.getLogger(__name__)
+    
+    # Handle input - convert tokens list to string if needed
+    if isinstance(tokens, list):
+        text = "".join(tokens)
+    else:
+        text = tokens
+    
+    if not text.strip():
+        logger.warning("Empty text provided for standalone perplexity calculation")
+        return float('inf'), [], [], []
+    
+    logger.debug(f"Computing standalone perplexity for text: {text[:50]}...")
+    
+    try:
+        # Tokenize the text
+        encoding = tokenizer.encode(text, return_tensors="pt")
+        token_ids = encoding[0].tolist()
+        
+        if len(token_ids) == 0:
+            logger.warning("Text tokenized to empty sequence")
+            return float('inf'), [], [], []
+        
+        if len(token_ids) == 1:
+            logger.warning("Text tokenized to single token - cannot compute perplexity")
+            # For single token, we can't compute perplexity in the traditional sense
+            # Return a high perplexity value
+            token_text = tokenizer.decode([token_ids[0]])
+            return float('inf'), [float('inf')], [token_text], token_ids
+        
+        # Convert token IDs back to strings
+        token_strings = [tokenizer.decode([token_id]) for token_id in token_ids]
+        
+        # Move to device
+        input_ids = encoding.to(device)
+        
+        # Compute standalone perplexity
+        model.eval()
+        per_token_perplexities = []
+        
+        with torch.no_grad():
+            # For each position, compute the probability of the token given the prefix
+            for i in range(1, len(token_ids)):  # Start from 1 since we need at least one token of context
+                # Create input with tokens up to position i-1
+                context_ids = input_ids[:, :i]
+                target_token_id = token_ids[i]
+                
+                # Get model outputs
+                outputs = model(context_ids)
+                logits = outputs.logits
+                
+                # Get logits for the last position (where we predict the next token)
+                last_token_logits = logits[0, -1, :]  # [vocab_size]
+                
+                # Convert to probabilities
+                probs = torch.softmax(last_token_logits, dim=-1)
+                
+                # Get probability of the actual target token
+                target_prob = probs[target_token_id].item()
+                
+                # Compute perplexity (inverse of probability)
+                if target_prob > 0:
+                    token_perplexity = 1.0 / target_prob
+                else:
+                    token_perplexity = float('inf')
+                
+                per_token_perplexities.append(token_perplexity)
+                
+                logger.debug(f"Token {i}: '{token_strings[i]}' -> prob: {target_prob:.6f}, perplexity: {token_perplexity:.3f}")
+        
+        # For the first token, we can't compute perplexity in the same way
+        # We'll use the unconditional probability or set it to a default value
+        if len(per_token_perplexities) > 0:
+            # Option 1: Use the average of other tokens
+            first_token_perplexity = np.mean(per_token_perplexities)
+            # Option 2: Compute using just the first token as context (uncomment if preferred)
+            # first_token_perplexity = compute_first_token_perplexity(token_ids[0], model, tokenizer, device)
+        else:
+            first_token_perplexity = float('inf')
+        
+        # Prepend first token perplexity
+        per_token_perplexities = [first_token_perplexity] + per_token_perplexities
+        
+        # Compute average perplexity (excluding infinite values)
+        finite_perplexities = [p for p in per_token_perplexities if np.isfinite(p)]
+        if finite_perplexities:
+            avg_perplexity = np.mean(finite_perplexities)
+        else:
+            avg_perplexity = float('inf')
+        
+        logger.debug(f"Standalone perplexity computed: avg={avg_perplexity:.3f}, tokens={len(token_strings)}")
+        
+        return avg_perplexity, per_token_perplexities, token_strings, token_ids
+        
+    except Exception as e:
+        logger.error(f"Error computing standalone perplexity: {e}")
+        return float('inf'), [], [], []
+
+def compute_first_token_perplexity(
+    token_id: int, 
+    model, 
+    tokenizer, 
+    device: str = "cuda"
+) -> float:
+    """
+    Compute perplexity of the first token using the model's unconditional distribution.
+    
+    Args:
+        token_id: ID of the first token
+        model: HuggingFace language model
+        tokenizer: HuggingFace tokenizer
+        device: Device to run computation on
+        
+    Returns:
+        float: Perplexity of the first token
+    """
+    try:
+        model.eval()
+        with torch.no_grad():
+            # Use BOS token or empty context
+            if tokenizer.bos_token_id is not None:
+                context = torch.tensor([[tokenizer.bos_token_id]], device=device)
+            else:
+                # For models without BOS token, use a minimal context
+                # This is a fallback - results may not be as meaningful
+                context = torch.tensor([[token_id]], device=device)
+                return float('inf')  # Cannot compute meaningful first token perplexity
+            
+            outputs = model(context)
+            logits = outputs.logits[0, -1, :]  # Last position logits
+            probs = torch.softmax(logits, dim=-1)
+            
+            target_prob = probs[token_id].item()
+            
+            if target_prob > 0:
+                return 1.0 / target_prob
+            else:
+                return float('inf')
+                
+    except Exception as e:
+        return float('inf')
+
+def batch_compute_standalone_perplexity(
+    text_list: List[Union[str, List[str]]], 
+    model, 
+    tokenizer, 
+    device: str = "cuda",
+    logger: Optional[logging.Logger] = None
+) -> List[Tuple[float, List[float], List[str], List[int]]]:
+    """
+    Compute standalone perplexity for multiple text sequences.
+    
+    Args:
+        text_list: List of texts (strings or token lists)
+        model: HuggingFace language model
+        tokenizer: HuggingFace tokenizer
+        device: Device to run computation on
+        logger: Optional logger
+        
+    Returns:
+        List of tuples, each containing (avg_perplexity, per_token_perplexities, token_strings, token_ids)
+    """
+    if logger is None:
+        logger = logging.getLogger(__name__)
+    
+    results = []
+    
+    for i, text in enumerate(text_list):
+        logger.debug(f"Processing text {i+1}/{len(text_list)}")
+        result = compute_standalone_perplexity(text, model, tokenizer, device, logger)
+        results.append(result)
+    
+    return results
+
+# Integration function for use in your main analysis script
+def add_standalone_perplexity_to_regions(
+    regions_data: List[dict], 
+    model, 
+    tokenizer, 
+    device: str = "cuda",
+    logger: Optional[logging.Logger] = None
+) -> List[dict]:
+    """
+    Add standalone perplexity calculations to existing region data.
+    
+    Args:
+        regions_data: List of region dictionaries with 'tokens' field
+        model: HuggingFace language model
+        tokenizer: HuggingFace tokenizer
+        device: Device to run computation on
+        logger: Optional logger
+        
+    Returns:
+        List of region dictionaries with added standalone perplexity fields
+    """
+    if logger is None:
+        logger = logging.getLogger(__name__)
+    
+    logger.info(f"Computing standalone perplexity for {len(regions_data)} regions")
+    
+    for i, region in enumerate(regions_data):
+        if 'tokens' not in region:
+            logger.warning(f"Region {i} missing 'tokens' field, skipping")
+            region['standalone_avg_perplexity'] = float('inf')
+            region['standalone_per_token_perplexities'] = []
+            continue
+        
+        tokens = region['tokens']
+        
+        # Compute standalone perplexity
+        avg_perp, per_token_perps, token_strings, token_ids = compute_standalone_perplexity(
+            tokens, model, tokenizer, device, logger
+        )
+        
+        # Add to region data
+        region['standalone_avg_perplexity'] = avg_perp
+        region['standalone_per_token_perplexities'] = per_token_perps
+        region['standalone_token_strings'] = token_strings
+        region['standalone_token_ids'] = token_ids
+        
+        # Compute ratio of contextual to standalone perplexity
+        contextual_perp = region.get('avg_perplexity', float('inf'))
+        if np.isfinite(avg_perp) and avg_perp > 0:
+            region['perplexity_ratio'] = contextual_perp / avg_perp
+        else:
+            region['perplexity_ratio'] = float('inf')
+        
+        logger.debug(f"Region {i}: contextual={contextual_perp:.3f}, standalone={avg_perp:.3f}, ratio={region['perplexity_ratio']:.3f}")
+    
+    logger.info("Standalone perplexity computation completed")
+    return regions_data
+
 def calculate_expected_token_probs(
     model,
     tokenizer,

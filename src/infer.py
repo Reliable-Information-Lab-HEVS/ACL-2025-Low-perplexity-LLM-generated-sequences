@@ -10,7 +10,6 @@ import time
 PROMPT_ID_DIGITS = 4  # Number of digits to represent the prompt ID, e.g., 0001, 0002, etc.
 GEN_ID_DIGITS = 2  # Number of digits to represent the generation ID, e.g., 01, 02, etc.
 REGION_ID_DIGITS = 2  # Number of digits to represent the region ID, e.g., 01, 02, etc.
-
 def main():
     parser = argparse.ArgumentParser(
         description="Generate text and compute perplexity per token"
@@ -266,6 +265,13 @@ def main():
             except Exception as e:
                 logger.error(f"Failed generation {i+1} for prompt {prompt_id_str}: {e}")
                 continue
+        
+        for generation_data in low_perp_analysis['per_prompt_regions']:
+            regions = generation_data['per_gen_regions']
+            enhanced_regions = add_standalone_perplexity_to_regions(
+                regions, model, tokenizer, device, logger
+            )
+            generation_data['per_gen_regions'] = enhanced_regions
         
         # Write results to files
         try:
