@@ -25,7 +25,7 @@ def main():
         "--max_length", type=int, default=100, help="Maximum length of generated text"
     )
     parser.add_argument(
-        "--temp", type=float, default=1.0, help="Temperature for sampling"
+        "--temp", type=float, default=0.7, help="Temperature for sampling"
     )
     parser.add_argument("--top_k", type=int, default=20, help="top_k for sampling")
     parser.add_argument("--top_p", type=float, default=0.8, help="top_p for sampling")
