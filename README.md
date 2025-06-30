@@ -60,7 +60,7 @@ cd HAIDI-Graphs
 ```bash
 # Single prompt
 python src/infer.py \
-    --model_name "EleutherAI/pythia-70m-deduped" \
+    --model_name "EleutherAI/pythia-70m" \
     --prompt "The quick brown fox jumps over the lazy dog" \
     --experiment-name "test_experiment" \
     --n_gen 3 \
@@ -68,7 +68,7 @@ python src/infer.py \
 
 # Analyze multiple prompts from a JSON file
 python src/infer.py \
-    --model_name "EleutherAI/pythia-140m-deduped" \
+    --model_name "EleutherAI/pythia-160m" \
     --prompt "prompts.json" \
     --experiment-name "batch_experiment" \
     --n_gen 5 \
