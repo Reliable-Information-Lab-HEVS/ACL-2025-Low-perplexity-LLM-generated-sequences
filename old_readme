@@ -1,9 +1,11 @@
-# Low-Perplexity LLM-Generated Sequences and Where To Find Them
+# HAIDI-Graphs
 
-**Last updated: 04/07/2025**
+Tool to help with Training Data Attribution. It can generate sentences on LLMs, extract low-perplexity regions in its completions and count the number of utterances in their training data using [Infinigram](https://infini-gram.io/). It can also generates visualization to see the perplexities of each token and where the low-perplexity regions are. 
 
-This repository contains the source code associated with our paper "Low-Perplexity LLM-Generated Sequences and Where To Find Them", accepted at [ACL'25](https://2025.aclweb.org/). The paper is available at https://arxiv.org/abs/2507.01844. 
-Our tool extracts low-perplexity regions from LLM-generated sequences and counts the number of their occurances in the training data using [Infinigram](https://infini-gram.io/). It also creates visualization of the process: the perplexities of each token and highlight of the low-perplexity regions.
+The paper is available at https://arxiv.org/abs/2507.01844
+
+This project will be presented at ACL 2025, in Vienna. 
+
 ![Image](images/sample_viz.png)
 
 ## 📁 Project Structure
@@ -49,9 +51,9 @@ git clone https://github.com/Reliable-Information-Lab-HEVS/HAIDI-Graphs
 cd HAIDI-Graphs
 ```
 
-### 2. LLM output generation, Perplexity Analysis
+### 2. Basic Perplexity Analysis
 
-This script does inference on the chosen model chosen for the given prompts, stores LLM's outputs in the experiment folder referred and extracts the low-perplexity regions from each output. It **does not** count the utterances in the training data. 
+This script does inference on the model chosen for the prompts given, stores it in the experiment folder referred and extract the low-perplexity regions. It **does not** count the utterances in the training data. 
 
 ```bash
 # Single prompt
@@ -74,7 +76,7 @@ python src/infer.py \
 
 ### 3. Add Infinigram Corpus Frequencies
 
-This script counts the number of matches in the training data of each low-perp window in the Experiment folder (in examples _"batch_experiment"_ and _"test_experiment"_). This must be run after `infer`.
+This script counts the number of utterances of each low-perp window in the experiment folder. This must be run after `infer`.
 
 
 ```bash
