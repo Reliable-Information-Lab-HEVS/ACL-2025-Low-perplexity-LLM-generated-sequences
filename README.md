@@ -1,11 +1,9 @@
-# HAIDI-Graphs
+# Low-Perplexity LLM-Generated Sequences and Where To Find Them
 
-Tool to help with Training Data Attribution. It can generate sentences on LLMs, extract low-perplexity regions in its completions and count the number of utterances in their training data using [Infinigram](https://infini-gram.io/). It can also generates visualization to see the perplexities of each token and where the low-perplexity regions are. 
+**Last updated: 04/07/2025**
 
-The paper is available at https://arxiv.org/abs/2507.01844
-
-This project will be presented at ACL 2025, in Vienna. 
-
+This repository contains the source code associated with our paper "Low-Perplexity LLM-Generated Sequences and Where To Find Them", accepted at [ACL'25](https://2025.aclweb.org/). The paper is available at https://arxiv.org/abs/2507.01844. 
+Our tool extracts low-perplexity regions from LLM-generated sequences and counts the number of their occurances in the training data using [Infinigram](https://infini-gram.io/). It also creates visualization of the process: the perplexities of each token and highlight of the low-perplexity regions.
 ![Image](images/sample_viz.png)
 
 ## 📁 Project Structure
