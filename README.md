@@ -49,7 +49,7 @@ git clone https://github.com/Reliable-Information-Lab-HEVS/HAIDI-Graphs
 cd HAIDI-Graphs
 ```
 
-### 2. Basic Perplexity Analysis
+### 2. LLM output generation, Perplexity Analysis
 
 This script does inference on the chosen model chosen for the given prompts, stores LLM's outputs in the experiment folder referred and extracts the low-perplexity regions from each output. It **does not** count the utterances in the training data. 
 
