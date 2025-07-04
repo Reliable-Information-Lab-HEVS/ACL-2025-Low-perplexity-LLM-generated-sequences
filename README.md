@@ -1,6 +1,6 @@
 # HAIDI-Graphs
 
-Tool to help with Training Data Attribution. It can generate sentences on LLMs, extract low-perplexity regions in its completions and count the number of utterances in their training data using [Infinigram](https://infini-gram.io/). It can also generates visualization to see the perplexities of each token and where the low-perplexity regions are. 
+Tool to help with Training Data Attribution. It can generate sentences on LLMs, extract low-perplexity regions in its completions and count the number of occurances in their training data using [Infinigram](https://infini-gram.io/). It can also generates visualization to see the perplexities of each token and where the low-perplexity regions are. 
 
 The paper is available at https://arxiv.org/abs/2507.01844
 
@@ -53,7 +53,7 @@ cd HAIDI-Graphs
 
 ### 2. Basic Perplexity Analysis
 
-This script does inference on the model chosen for the prompts given, stores it in the experiment folder referred and extract the low-perplexity regions. It **does not** count the utterances in the training data. 
+This script does inference on the model chosen for the prompts given, stores it in the experiment folder referred and extract the low-perplexity regions. It **does not** count the occurances in the training data. 
 
 ```bash
 # Single prompt
@@ -76,7 +76,7 @@ python src/infer.py \
 
 ### 3. Add Infinigram Corpus Frequencies
 
-This script counts the number of utterances of each low-perp window in the experiment folder. This must be run after `infer`.
+This script counts the number of occurances of each low-perp window in the experiment folder. This must be run after `infer`.
 
 
 ```bash
