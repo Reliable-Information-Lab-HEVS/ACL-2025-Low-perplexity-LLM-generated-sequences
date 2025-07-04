@@ -51,7 +51,7 @@ cd HAIDI-Graphs
 
 ### 2. Basic Perplexity Analysis
 
-This script does inference on the model chosen for the prompts given, stores it in the experiment folder referred and extract the low-perplexity regions. It **does not** count the utterances in the training data. 
+This script does inference on the chosen model chosen for the given prompts, stores LLM's outputs in the experiment folder referred and extracts the low-perplexity regions from each output. It **does not** count the utterances in the training data. 
 
 ```bash
 # Single prompt
