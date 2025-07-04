@@ -74,7 +74,7 @@ python src/infer.py \
 
 ### 3. Add Infinigram Corpus Frequencies
 
-This script counts the number of utterances of each low-perp window in the experiment folder. This must be run after `infer`.
+This script counts the number of matches in the training data of each low-perp window in the Experiment folder (in examples _"batch_experiment"_ and _"test_experiment"_). This must be run after `infer`.
 
 
 ```bash
