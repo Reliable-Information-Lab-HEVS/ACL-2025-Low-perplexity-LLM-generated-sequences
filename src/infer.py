@@ -103,7 +103,8 @@ def main():
     logger.info(f"Loading model: {args.model_name}")
     try:
         tokenizer = AutoTokenizer.from_pretrained(args.model_name)
-        model = AutoModelForCausalLM.from_pretrained(args.model_name).to(device)
+        model = AutoModelForCausalLM.from_pretrained(args.model_name, device_map="auto")
+        device= model.device
         logger.info("Model and tokenizer loaded successfully")
     except Exception as e:
         logger.error(f"Failed to load model: {e}")
