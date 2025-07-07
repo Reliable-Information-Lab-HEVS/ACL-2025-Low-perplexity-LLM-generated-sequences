@@ -58,7 +58,7 @@ This script does inference on the chosen model chosen for the given prompts, sto
 python src/infer.py \
     --model_name "EleutherAI/pythia-70m" \
     --prompt "The quick brown fox jumps over the lazy dog" \
-    --experiment-name "test_experiment" \
+    --experiment-name "experiments/test_experiment" \
     --n_gen 3 \
     --verbose
 
@@ -66,7 +66,7 @@ python src/infer.py \
 python src/infer.py \
     --model_name "EleutherAI/pythia-160m" \
     --prompt "prompts.json" \
-    --experiment-name "batch_experiment" \
+    --experiment-name "experiments/batch_experiment" \
     --n_gen 5 \
     --window-size 8 \
     --perplexity_threshold 1.5
@@ -78,11 +78,12 @@ This script counts the number of matches in the training data of each low-perp w
 
 
 ```bash
-# Process entire experiment directory
-python src/infinigram.py experiments/test_experiment/ --confirm --verbose
 
 # Process single file
 python src/infinigram.py experiments/test_experiment/perplexity_analysis/low_perp_regions/prompt_001_regions.json
+
+# Process entire experiment directory
+python src/infinigram.py experiments/batch_experiment/ --confirm --verbose
 ```
 
 ### 4. Generate Visualizations
