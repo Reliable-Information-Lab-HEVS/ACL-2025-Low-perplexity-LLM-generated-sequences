@@ -78,7 +78,6 @@ This script counts the number of matches in the training data of each low-perp w
 
 
 ```bash
-
 # Process single file
 python src/infinigram.py experiments/test_experiment/perplexity_analysis/low_perp_regions/prompt_001_regions.json
 
@@ -91,11 +90,11 @@ python src/infinigram.py experiments/batch_experiment/ --confirm --verbose
 This script generates a HTML file for visualizations. It can be open in a regular browser. 
 
 ```bash
-# Create HTML visualization for entire experiment
-python src/plot.py experiments/test_experiment/ --output results.html
-
 # Visualize specific prompt
 python src/plot.py experiments/test_experiment/ --prompt-id P001 --output prompt_001.html
+
+# Create HTML visualization for entire experiment
+python src/plot.py experiments/batch_experiment/ --output results.html
 ```
 
 ## 📊 Data Formats
