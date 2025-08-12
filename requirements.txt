@@ -1,8 +1,8 @@
 accelerate==1.7.0
 huggingface-hub==0.32.4
 matplotlib==3.9.4
-networkx==3.4.2
-numpy==2.2.6
+networkx==3.2.1
+numpy==2.0.2
 pandas==2.3.0
 regex==2024.11.6
 safetensors==0.5.3
