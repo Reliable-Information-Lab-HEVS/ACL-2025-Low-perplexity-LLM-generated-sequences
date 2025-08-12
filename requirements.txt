@@ -1,6 +1,6 @@
 accelerate==1.7.0
-huggingfaceconda -hub==0.32.4
-matplotlib==3.10.3
+huggingface-hub==0.32.4
+matplotlib==3.9.4
 networkx==3.4.2
 numpy==2.2.6
 pandas==2.3.0
